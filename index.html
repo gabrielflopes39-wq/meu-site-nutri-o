@@ -1,0 +1,2167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriScience Pro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<nav class="sidebar" id="sidebar">
+    <div class="brand"><i class="fas fa-atom"></i> NutriScience Pro</div>
+    <button onclick="compartilharSite()" class="card-modern" style="cursor: pointer; border: 1px solid #4f46e5; background: rgba(79, 70, 229, 0.1); color: #818cf8; padding: 10px; width: 90%; margin: 10px auto; border-radius: 8px; font-weight: bold; display: block;">
+        <i class="fas fa-share-alt"></i> Compartilhar
+    </button>
+    <ul class="menu" style="list-style: none; padding: 0;">
+        <li class="menu-item active" onclick="nav('inicio')" style="cursor: pointer;">
+            <i class="fas fa-home"></i> Início
+        </li>
+    </ul>
+        
+    <div class="sidebar-nav">
+        <div class="menu-category">
+            <button class="dropdown-btn" onclick="toggleDropdown(this)">
+                <span><i class="fas fa-microscope"></i> Fundamentos</span>
+                <i class="fas fa-chevron-down arrow"></i>
+            </button>
+           <div class="dropdown-container" style="display: none;">
+    <div class="menu-item" onclick="nav('quimica')"><i class="fas fa-atom"></i> Nomenclatura Química</div>
+    <div class="menu-item" onclick="nav('bioenergetica')"><i class="fas fa-bolt"></i> ATP, ADP, NAD & NADH</div>
+    <div class="menu-item" onclick="nav('carb')"><i class="fas fa-bread-slice"></i> Carboidratos</div>
+    <div class="menu-item" onclick="nav('lip')"><i class="fas fa-tint"></i> Lipídios</div>
+    <div class="menu-item" onclick="nav('prot')"><i class="fas fa-dumbbell"></i> Proteínas</div>
+    
+    <div class="menu-item" onclick="nav('vit-min')"><i class="fas fa-capsules"></i> Vitaminas e Minerais</div>
+    
+    <div class="menu-item" onclick="nav('agcc')"><i class="fas fa-bacteria"></i> AGCC (Ácidos Graxos)</div>
+</div>
+        </div>
+
+        <div class="menu-category">
+            <button class="dropdown-btn" onclick="toggleDropdown(this)">
+                <span><i class="fas fa-running"></i> Performance</span>
+                <i class="fas fa-chevron-down arrow"></i>
+            </button>
+            <div class="dropdown-container" style="display: none;">
+                <div class="menu-item" onclick="nav('creatina')"><i class="fas fa-flask"></i> Creatina</div>
+                <div class="menu-item" onclick="nav('mtor')"><i class="fas fa-microchip"></i> mTOR & AMPK</div>
+                <div class="menu-item" onclick="nav('lactato')"><i class="fas fa-fire-alt"></i> Metabolismo do Lactato</div>
+                <div class="menu-item" onclick="nav('esporte')"><i class="fas fa-running"></i> Nutrição Esportiva</div>
+                <div class="menu-item" onclick="nav('ciclo-carb')"><i class="fas fa-sync"></i> Ciclo de Carboidratos</div>
+                <div class="menu-item" onclick="nav('plant-based')"><i class="fas fa-leaf"></i> Nutrição Plant-Based</div>
+            </div>
+        </div>
+
+        <div class="menu-category">
+            <button class="dropdown-btn" onclick="toggleDropdown(this)">
+                <span><i class="fas fa-stethoscopes"></i> Clínica & Saúde</span>
+                <i class="fas fa-chevron-down arrow"></i>
+            </button>
+            <div class="dropdown-container" style="display: none;">
+                <div class="menu-item" onclick="nav('obesidade')"><i class="fas fa-weight"></i> Obesidade & Emagrecimento</div>
+                <div class="menu-item" onclick="nav('diabetes')"><i class="fas fa-syringe"></i> Diabetes Mellitus</div>
+                <div class="menu-item" onclick="nav('celiaca')"><i class="fas fa-bread-slice" style="color: #ef4444;"></i> Doença Celíaca</div>
+                <div class="menu-item" onclick="nav('transtornos')"><i class="fas fa-brain"></i> Transtornos Alimentares</div>
+            </div>
+        </div>
+
+        <div class="menu-category">
+            <button class="dropdown-btn" onclick="toggleDropdown(this)">
+                <span><i class="fas fa-tools"></i> Ferramentas</span>
+                <i class="fas fa-chevron-down arrow"></i>
+            </button>
+            <div class="dropdown-container" style="display: none;">
+                <div class="menu-item" onclick="nav('calc')"><i class="fas fa-calculator"></i> Calculadora TMB</div>
+                <div class="menu-item" onclick="nav('alimentos')"><i class="fas fa-utensils"></i> Tabela Alimentos</div>
+            </div>
+        </div>
+
+        <div class="menu-category">
+            <button class="dropdown-btn" onclick="toggleDropdown(this)">
+                <span><i class="fas fa-shield-alt"></i> Institucional</span>
+                <i class="fas fa-chevron-down arrow"></i>
+            </button>
+            <div class="dropdown-container" style="display: none;">
+                <div class="menu-item" onclick="nav('termos')">Termos de Uso</div>
+                <div class="menu-item" onclick="nav('privacidade')">Política de Privacidade</div>
+            </div>
+        </div>
+    </div>
+</nav>
+<main class="main-content">
+    <section id="inicio" class="tab-content active">
+    <div style="text-align: center; padding: 40px 20px;">
+        <h1 style="font-size: 3.5rem; font-weight: 800; background: linear-gradient(to right, #6366f1, #a855f7); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 10px;">
+            NutriScience Pro
+        </h1>
+        <p style="font-size: 1.2rem; color: var(--text-muted);">Bem-vindo à sua central de Bioquímica Avançada e Performance.</p>
+    </div>
+
+    <div id="quote-container" class="card-modern" style="border-left: 5px solid var(--primary);">
+        <i class="fas fa-quote-left" style="color: var(--primary); font-size: 1.5rem; margin-bottom: 15px; display: block;"></i>
+        <p id="frase-texto" style="font-size: 1.4rem; font-style: italic; color: var(--text-main);">"A bioquímica é a linguagem da vida."</p>
+        <span id="frase-autor" style="color: var(--primary); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; display: block; margin-top: 10px;">— NutriScience Pro</span>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px;">
+        <div class="card-modern" style="text-align: center; cursor: pointer;" onclick="nav('quimica')">
+            <i class="fas fa-flask" style="font-size: 2rem; color: #10b981; margin-bottom: 15px;"></i>
+            <h3>Fundamentos</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">Explore a nomenclatura e as bases moleculares.</p>
+        </div>
+
+        <div class="card-modern" style="text-align: center; cursor: pointer;" onclick="nav('mtor')">
+            <i class="fas fa-bolt" style="font-size: 2rem; color: #f59e0b; margin-bottom: 15px;"></i>
+            <h3>Performance</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">Entenda o metabolismo energético e vias de sinalização.</p>
+        </div>
+    </div>
+
+    <div style="margin-top: 50px; border-top: 1px solid var(--border); padding-top: 40px; width: 100%;">
+        <h3 style="color: var(--text-main); border-left: 4px solid var(--primary); padding-left: 15px; margin-bottom: 25px;">Mural da Comunidade</h3>
+        
+        <div class="card-modern">
+            <input type="text" id="comentario-nome" placeholder="Seu nome" style="margin-bottom: 15px;">
+            <textarea id="comentario-texto" placeholder="Deixe sua dúvida ou contribuição sobre bioquímica..." style="height: 100px; margin-bottom: 15px;"></textarea>
+            <button onclick="postarComentario()" class="btn-primary" style="width: 100%; padding: 15px; font-weight: bold;">Postar no Mural</button>
+        </div>
+
+        <div id="lista-comentarios" style="margin-top: 20px;">
+            </div>
+    </div>
+</section>
+<section id="comunidade" class="tab-content">
+    <div class="header-modern" style="background: linear-gradient(135deg, #6366f1, #4338ca); padding: 40px; border-radius: 24px; margin-bottom: 30px; color: white;">
+        <h1 style="margin: 0;">Jornada da Comunidade</h1>
+        <p style="opacity: 0.8; margin-top: 5px;">Compartilhe sua evolução, dúvidas ou conquistas!</p>
+    </div>
+
+    <div class="card-modern" style="background: #1e293b; padding: 25px; border-radius: 20px; margin-bottom: 30px; border: 1px solid rgba(255,255,255,0.1);">
+        <h3 style="color: white; margin-bottom: 15px;">Nova Postagem</h3>
+        <input type="text" id="comentario-nome" placeholder="Seu nome ou apelido" class="search-bar" style="margin-bottom: 10px;">
+        <textarea id="comentario-texto" placeholder="Como está sendo sua jornada hoje?" class="search-bar" style="height: 100px; resize: none;"></textarea>
+        <button onclick="postarComentario()" class="btn-modern" style="width: 100%; padding: 15px; background: #6366f1; border: none; border-radius: 12px; color: white; font-weight: bold; cursor: pointer; transition: 0.3s;">
+            <i class="fas fa-paper-plane"></i> Compartilhar
+        </button>
+    </div>
+
+    <div id="lista-comentarios" style="display: flex; flex-direction: column; gap: 20px;">
+        </div>
+</section>
+<section id="termos" class="tab-content">
+    <h1>Termos de Uso</h1>
+    <div class="card-modern">
+        <p>Ao acessar o <strong>NutriScience Pro</strong>, você concorda em cumprir estes termos de serviço, todas as leis e regulamentos aplicáveis. O conteúdo aqui presente é estritamente educativo e baseado em literatura científica de bioquímica nutricional.</p>
+        
+        <h3 style="margin-top:20px; color:var(--primary);">1. Uso de Licença</h3>
+        <p>É concedida permissão para baixar temporariamente uma cópia dos materiais (informações ou software) no site apenas para visualização transitória pessoal e não comercial.</p>
+
+        <h3 style="margin-top:20px; color:var(--primary);">2. Isenção de Responsabilidade</h3>
+        <p>Os materiais no site são fornecidos 'como estão'. O NutriScience Pro não oferece garantias, expressas ou implícitas, e por este meio isenta e nega todas as outras garantias. <strong>Este site não substitui aconselhamento médico ou nutricional individualizado.</strong></p>
+    </div>
+</section>
+<section id="privacidade" class="tab-content">
+    <h1>Política de Privacidade</h1>
+    <div class="card-modern">
+        <p>A sua privacidade é importante para nós. É política do NutriScience Pro respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar no site.</p>
+
+        <h3 style="margin-top:20px; color:var(--primary);">Cookies e Anúncios</h3>
+        <p>Utilizamos cookies para melhorar sua experiência. Como utilizamos o <strong>Google AdSense</strong> para veicular anúncios, o Google pode usar cookies (como o cookie DART) para exibir anúncios baseados em suas visitas a este e outros sites na internet.</p>
+
+        <h3 style="margin-top:20px; color:var(--primary);">Segurança dos Dados</h3>
+        <p>Apenas retemos informações coletadas pelo tempo necessário para fornecer o serviço solicitado. Quando armazenamos dados, os protegemos dentro de meios comercialmente aceitáveis ​​para evitar perdas e roubos.</p>
+        
+        <p style="margin-top:15px;">Você é livre para recusar a nossa solicitação de informações pessoais, entendendo que talvez não possamos fornecer alguns dos serviços desejados.</p>
+    </div>
+</section>
+<section id="calc" class="tab-content">
+    <div class="calculator-header">
+        <h1>Calculadora Metabólica Pro</h1>
+        <p>Dados baseados na equação de Mifflin-St Jeor</p>
+    </div>
+
+    <div class="card-modern glass-calc">
+        <div class="input-group-grid">
+            <div class="input-box">
+                <label><i class="fas fa-venus-mars"></i> Gênero</label>
+                <select id="tmb-sexo" class="custom-input">
+                    <option value="m">Masculino</option>
+                    <option value="f">Feminino</option>
+                </select>
+            </div>
+
+            <div class="input-box">
+                <label><i class="fas fa-calendar-alt"></i> Idade</label>
+                <input type="number" id="tmb-idade" placeholder="Ex: 25" class="custom-input">
+            </div>
+
+            <div class="input-box">
+                <label><i class="fas fa-weight"></i> Peso (kg)</label>
+                <input type="number" id="tmb-peso" placeholder="Ex: 80" class="custom-input">
+            </div>
+
+            <div class="input-box">
+                <label><i class="fas fa-ruler-vertical"></i> Altura (cm)</label>
+                <input type="number" id="tmb-altura" placeholder="Ex: 175" class="custom-input">
+            </div>
+        </div>
+
+        <div class="input-box full-width" style="margin-top: 20px;">
+            <label><i class="fas fa-running"></i> Nível de Atividade Física</label>
+            <select id="tmb-atividade" class="custom-input">
+                <option value="1.2">Sedentário (Escritório / Sem treino)</option>
+                <option value="1.375">Leve (Treino 1-3x na semana)</option>
+                <option value="1.55">Moderado (Treino 3-5x na semana)</option>
+                <option value="1.725">Intenso (Treino diário pesado)</option>
+                <option value="1.9">Extremo (Atleta / Trabalho braçal)</option>
+            </select>
+        </div>
+
+        <button onclick="calcularTMB()" class="btn-calc-glow">
+            <span>CALCULAR METABOLISMO</span>
+            <i class="fas fa-bolt"></i>
+        </button>
+
+        <div id="tmb-resultado"></div>
+    </div>
+</section>
+<section id="alimentos" class="tab-content">
+    <h1>Tabela de Alimentos (100g)</h1>
+    <div class="card-modern">
+        <input type="text" id="busca-alimento" onkeyup="filtrarAlimentos()" placeholder="🔍 Buscar alimento (ex: Frango, Arroz...)">
+        
+        <div style="overflow-x: auto; margin-top: 20px;">
+            <table style="width: 100%; border-collapse: collapse; text-align: left;" id="tabela-corpo">
+                <thead>
+                    <tr style="border-bottom: 2px solid var(--primary); color: var(--primary);">
+                        <th style="padding: 10px;">Alimento</th>
+                        <th>Proteína</th>
+                        <th>Carbo</th>
+                        <th>Gordura</th>
+                        <th>Kcal</th>
+                    </tr>
+                </thead>
+                <tbody id="lista-alimentos">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+<section id="lactato" class="tab-content">
+    <div class="header-modern" style="background: linear-gradient(135deg, #0f172a, #1e1b4b);">
+        <h1>Tratado Abrangente: Bioquímica e Fisiopatologia do Lactato</h1>
+        <p>Da Cinética Enzimática à Sinalização Epigenética e Clínica Crítica.</p>
+    </div>
+
+    <div class="card-modern">
+        <h3><i class="fas fa-atom"></i> 1. Termodinâmica e a Falácia da Acidose Lática</h3>
+        <p>A conversão de piruvato em lactato pela <strong>Lactato Desidrogenase (LDH)</strong> é uma necessidade termodinâmica. Com um $\Delta G^\circ'$ de aproximadamente $-6 \text{ kcal/mol}$, a reação favorece massivamente a formação de lactato para regenerar o pool citosólico de $NAD^+$.</p>
+        
+        <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 15px; margin: 20px 0; border: 1px solid var(--glass-border);">
+            <p style="text-align: center; font-size: 1.1rem; color: var(--primary);">
+                $$\text{Piruvato} + NADH + H^+ \xrightleftharpoons{LDH} \text{Lactato}^- + NAD^+$$
+            </p>
+            <p style="font-size: 0.85rem; margin-top: 10px;">
+                <strong>Nota Crítica:</strong> Observe a estequiometria. A reação <strong>consome</strong> um íon $H^+$. Portanto, a lactatemia elevada durante o exercício intenso é um mecanismo de <strong>alcalinização</strong> que retarda a queda do pH intracelular causada pela hidrólise do ATP ($ATP + H_2O \rightarrow ADP + P_i + H^+$).
+            </p>
+        </div>
+    </div>
+
+    <div class="card-modern">
+        <h3><i class="fas fa-shuttle-van"></i> 2. Dinâmica de Transporte: A Lançadeira de Brooks</h3>
+        <p>O lactato não é um resíduo, mas a moeda de troca de carbono entre tecidos glicolíticos e oxidativos. Este fluxo é mediado pelos <strong>MCTs (Monocarboxylate Transporters)</strong>, que operam via co-transporte de prótons.</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-top: 15px;">
+            <div class="sub-card" style="border-top: 4px solid var(--primary); background: rgba(0,0,0,0.2); padding: 15px; border-radius: 12px;">
+                <h4 style="color: var(--primary);">MCT4 (Exportador)</h4>
+                <p style="font-size: 0.8rem;">Alta capacidade ($V_{max}$) e baixa afinidade ($K_m \approx 25-30 \text{ mM}$). Localizado em fibras tipo IIb. Atua como válvula de escape quando o fluxo glicolítico excede a capacidade mitocondrial.</p>
+            </div>
+            <div class="sub-card" style="border-top: 4px solid var(--accent); background: rgba(0,0,0,0.2); padding: 15px; border-radius: 12px;">
+                <h4 style="color: var(--accent);">MCT1 (Importador)</h4>
+                <p style="font-size: 0.8rem;">Alta afinidade ($K_m \approx 3-5 \text{ mM}$). Abundante no miocárdio e fibras tipo I. Permite o uso do lactato circulante como combustível oxidativo preferencial.</p>
+            </div>
+            <div class="sub-card" style="border-top: 4px solid #f59e0b; background: rgba(0,0,0,0.2); padding: 15px; border-radius: 12px;">
+                <h4 style="color: #f59e0b;">MCT2 (Neuronal)</h4>
+                <p style="font-size: 0.8rem;">Afinidade extrema ($K_m < 1 \text{ mM}$). Garante que os neurônios captem lactato dos astrócitos (Lançadeira ANLS) mesmo em níveis basais.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-modern">
+        <h3><i class="fas fa-brain"></i> 3. Neurobiologia: Lançadeira Astrócito-Neurônio (ANLS)</h3>
+        <p>Durante a atividade sináptica, o glutamato estimula os astrócitos a realizar glicólise aeróbia. O lactato resultante é exportado para os neurônios, onde entra na mitocôndria para gerar 36 ATPs.</p>
+        <div style="margin-top: 10px; padding: 15px; background: rgba(99, 102, 241, 0.1); border-radius: 12px; border-left: 5px solid var(--primary);">
+            <strong>Lactato e Memória:</strong> O lactato induz a expressão de <strong>BDNF</strong> via ativação do eixo SIRT1/PGC-1α. Sem o transporte de lactato para o hipocampo, a consolidação da memória de longo prazo é severamente prejudicada.
+        </div>
+    </div>
+
+    <div class="card-modern" style="background: rgba(16, 185, 129, 0.05);">
+        <h3><i class="fas fa-signal"></i> 4. O Conceito de "Lactormona" e o Receptor GPR81</h3>
+        <p>O lactato atua como um ligante para o receptor <strong>HCAR1 (GPR81)</strong>, acoplado à proteína $G_i$, regulando o metabolismo sistêmico:</p>
+        <ul style="padding-left: 20px; font-size: 0.9rem; margin-top: 10px;">
+            <li><strong>Inibição da Lipólise:</strong> Níveis altos de lactato reduzem o cAMP nos adipócitos, desligando a HSL (Lipase Sensível a Hormônio). Isso impede a liberação excessiva de ácidos graxos quando a glicólise é a via prioritária.</li>
+            <li><strong>Angiogênese:</strong> Estímulo da migração celular endotelial para reparação tecidual.</li>
+            <li><strong>Simbiose Microbiótica:</strong> A bactéria <i>Veillonella</i> consome lactato intestinal para produzir propionato, melhorando a performance cardíaca do hospedeiro.</li>
+        </ul>
+    </div>
+
+    <div class="card-modern">
+        <h3><i class="fas fa-fingerprint"></i> 5. Lactilação de Histonas: O Código Epigenético</h3>
+        <p>A descoberta da <strong>Lactilação (Kla)</strong> mudou a imunologia. O lactato não é apenas energia; ele altera a leitura do DNA.</p>
+        <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 15px;">
+            <div style="flex: 1; min-width: 250px; padding: 15px; background: rgba(0,0,0,0.3); border-radius: 12px;">
+                <h5 style="color: #6366f1;">O Relógio Celular</h5>
+                <p style="font-size: 0.8rem;">Em macrófagos pró-inflamatórios (M1), o acúmulo de lactato leva à lactilação da histona H3K18la. Isso ativa genes de <strong>reparação tecidual</strong>, forçando a transição para o fenótipo anti-inflamatório (M2).</p>
+            </div>
+            <div style="flex: 1; min-width: 250px; padding: 15px; background: rgba(0,0,0,0.3); border-radius: 12px;">
+                <h5 style="color: #ef4444;">Efeito Warburg Reverso</h5>
+                <p style="font-size: 0.8rem;">Tumores agressivos "escravizam" fibroblastos vizinhos para produzirem lactato via glicólise, utilizando este lactato como combustível mitocondrial para proliferação rápida via MCT1.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-modern" style="border-top: 5px solid #3b82f6;">
+        <h3><i class="fas fa-stopwatch"></i> 6. Otimização de Performance e Limiares</h3>
+        <p>O segredo dos atletas de elite (como os triatletas noruegueses) é o controle preciso do <strong>MLSS (Máximo Estado Estável de Lactato)</strong>.</p>
+        
+        <div style="overflow-x: auto;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Parâmetro</th>
+                        <th>Nível (mmol/L)</th>
+                        <th>Fisiologia Subjacente</th>
+                        <th>Estratégia de Treino</th>
+                    </tr>
+                </thead>
+                <tbody style="font-size: 0.85rem;">
+                    <tr>
+                        <td><strong>LT1</strong></td>
+                        <td>~1.5 - 2.0</td>
+                        <td>Início do recrutamento de fibras IIa.</td>
+                        <td>Zona de Endurance: Densidade Mitocondrial.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>LT2 (Limiar)</strong></td>
+                        <td>~3.5 - 4.5</td>
+                        <td>Equilíbrio limite entre produção e depuração.</td>
+                        <td>Intervalados de Limiar: Eficiência de MCTs.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>VLaMax</strong></td>
+                        <td>Variável</td>
+                        <td>Taxa máxima de produção de lactato.</td>
+                        <td>Define o perfil (Explosivo vs Resistente).</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="card-modern" style="background: rgba(239, 68, 68, 0.1);">
+        <h3><i class="fas fa-ambulance"></i> 7. Hiperlactatemia e Choque Sético</h3>
+        <p>Na Unidade de Terapia Intensiva (UTI), o lactato é o marcador biológico da sobrevivência.</p>
+        <div style="margin-top: 10px;">
+            <p style="font-size: 0.9rem;"><strong>Clearance de Lactato:</strong> Medir o valor absoluto é insuficiente. A meta clínica é uma redução de <strong>>10% a cada 2 horas</strong> durante a ressuscitação volêmica.</p>
+            <p style="font-size: 0.85rem; color: #fca5a5; margin-top: 5px;">*A hiperlactatemia persistente (>4 mmol/L) sem queda indica <strong>Citopatia Hipóxica</strong> e disfunção mitocondrial irreversível, correlacionando-se com mortalidade > 80%.</p>
+        </div>
+    </div>
+   <div class="card-modern" style="background: var(--card-bg); padding: 25px; border-radius: 20px; border-top: 5px solid #ef4444;">
+        <h3 style="color: var(--text-main);"><i class="fas fa-chart-line"></i> Visualização Gráfica: A Curva de Lactato</h3>
+        <p style="font-size: 0.85rem; margin-bottom: 15px; color: var(--text-muted);">Interação visual dos limiares metabólicos conforme a intensidade do esforço.</p>
+        
+        <div style="width: 100%; height: 350px; background: rgba(0,0,0,0.05); border-radius: 12px; padding: 10px;">
+            <canvas id="chartLactato"></canvas> 
+        </div>
+        
+        <div style="display: flex; gap: 20px; justify-content: center; margin-top: 15px; font-size: 0.8rem; color: var(--text-muted);">
+            <span><i class="fas fa-circle" style="color: #10b981;"></i> LT1 (Aeróbio)</span>
+            <span><i class="fas fa-circle" style="color: #ef4444;"></i> LT2 (Anaeróbio)</span>
+        </div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 30px;">
+    
+    <div class="card-modern" style="background: rgba(16, 185, 129, 0.1); border-left: 5px solid #10b981; padding: 20px;">
+        <h4 style="color: #10b981; margin-bottom: 10px;"><i class="fas fa-leaf"></i> Fase 1: Limiar Aeróbio (LT1)</h4>
+        <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">
+            O ponto verde no gráfico indica o momento onde o lactato começa a subir acima dos níveis de repouso (geralmente em torno de **2.0 mmol/L**). 
+            <br><br>
+            <strong>Significado:</strong> O corpo ainda consegue remover o lactato na mesma velocidade em que o produz. É a zona ideal para treinos de endurance longa e oxidação de gorduras.
+        </p>
+    </div>
+
+    <div class="card-modern" style="background: rgba(239, 68, 68, 0.1); border-left: 5px solid #ef4444; padding: 20px;">
+        <h4 style="color: #ef4444; margin-bottom: 10px;"><i class="fas fa-fire"></i> Fase 2: Limiar Anaeróbio (LT2)</h4>
+        <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">
+            O ponto vermelho marca o **MLSS** (Máximo Estado Estável de Lactato). Acima deste ponto (aprox. **4.0 mmol/L**), a subida torna-se exponencial.
+            <br><br>
+            <strong>Significado:</strong> A acidose intracelular começa a interferir na contração muscular. É o limite máximo que um atleta consegue sustentar por cerca de 30 a 60 minutos.
+        </p>
+    </div>
+</div>
+
+<div class="card-modern" style="margin-top: 20px; padding: 20px; background: var(--card-bg); border: 1px dashed var(--border);">
+    <h4 style="color: var(--text-main);"><i class="fas fa-lightbulb"></i> Como ler a inclinação?</h4>
+    <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 10px;">
+        Quanto mais "deitada" for a sua curva, mais eficiente é o seu sistema mitocondrial. Atletas de elite conseguem manter potências altíssimas com níveis de lactato muito baixos, "empurrando" a curva para a direita.
+    </p>
+</div>
+<div style="text-align: center; margin-top: 20px;">
+    <button onclick="exportarSecaoPDF('lactato', 'Relatorio_Fisiologia_Lactato')" class="btn-pdf">
+    <i class="fas fa-file-pdf"></i> Baixar Relatório de Lactato
+</button>
+</div>
+</section>
+
+     <section id="carb" class="tab-content">
+    <div class="calculator-header" style="background: linear-gradient(to right, #f39c12, #e67e22);">
+        <h1>Carboidratos: A Moeda Energética</h1>
+        <p>Da glicólise citoplasmática à sinalização da insulina e estoques de glicogênio.</p>
+    </div>
+
+    <div class="card-modern">
+        <h3><i class="fas fa-project-diagram" style="color: #f39c12;"></i> Estrutura e Classificação</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 10px;">
+            <div style="padding: 12px; background: rgba(243, 156, 18, 0.05); border-radius: 10px; border: 1px solid rgba(243, 156, 18, 0.2);">
+                <strong style="color: #f39c12;">Monossacarídeos:</strong>
+                <p style="font-size: 0.8rem; color: #cbd5e1;">Glicose, Frutose e Galactose. São as unidades básicas de absorção.</p>
+            </div>
+            <div style="padding: 12px; background: rgba(243, 156, 18, 0.05); border-radius: 10px; border: 1px solid rgba(243, 156, 18, 0.2);">
+                <strong style="color: #f39c12;">Dissacarídeos:</strong>
+                <p style="font-size: 0.8rem; color: #cbd5e1;">Sacarose (Glic+Frut), Lactose (Glic+Gal) e Maltose (Glic+Glic).</p>
+            </div>
+            <div style="padding: 12px; background: rgba(243, 156, 18, 0.05); border-radius: 10px; border: 1px solid rgba(243, 156, 18, 0.2);">
+                <strong style="color: #f39c12;">Polissacarídeos:</strong>
+                <p style="font-size: 0.8rem; color: #cbd5e1;">Amido (plantas) e Glicogênio (animais). Longas cadeias de glicose.</p>
+            </div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+        <div class="card-modern">
+            <h4><i class="fas fa-chart-line" style="color: #e67e22;"></i> Índice vs. Carga Glicêmica</h4>
+            <p style="font-size: 0.85rem; color: #cbd5e1; margin-top: 10px;">
+                <strong>Índice Glicêmico (IG):</strong> Velocidade com que o carboidrato vira açúcar no sangue.<br><br>
+                <strong>Carga Glicêmica (CG):</strong> Considera o IG e a <em>quantidade</em> de carboidrato na porção. É mais preciso para o controle dietético.
+            </p>
+        </div>
+        <div class="card-modern">
+            <h4><i class="fas fa-syringe" style="color: #e67e22;"></i> O Papel da Insulina</h4>
+            <p style="font-size: 0.85rem; color: #cbd5e1; margin-top: 10px;">
+                A insulina abre os receptores <strong>GLUT4</strong> nas células musculares. 
+                Sem ela (ou com resistência), a glicose fica no sangue, gerando inflamação e glicação de proteínas.
+            </p>
+        </div>
+    </div>
+
+    <div class="card-modern">
+        <h3><i class="fas fa-bolt" style="color: #f1c40f;"></i> O Caminho da Energia (ATP)</h3>
+        <div style="margin-top: 15px; background: rgba(0,0,0,0.2); padding: 20px; border-radius: 15px; border-left: 4px solid #f1c40f;">
+            <p style="font-size: 0.9rem; line-height: 1.6;">
+                <strong>1. Glicólise:</strong> Ocorre no citosol. Transforma 1 glicose em 2 Piruvatos, gerando um saldo líquido de <strong>2 ATPs</strong>.<br>
+                <strong>2. Ciclo de Krebs:</strong> O Piruvato entra na mitocôndria como Acetil-CoA. Aqui, produzimos <strong>NADH</strong> e <strong>FADH2</strong> (transportadores de elétrons).<br>
+                <strong>3. Cadeia Respiratória:</strong> Onde a mágica acontece. O oxigênio entra e produzimos cerca de <strong>32 a 36 ATPs</strong> por molécula de glicose.
+            </p>
+        </div>
+    </div>
+
+    <div class="card-modern" style="border-top: 5px solid #27ae60 !important;">
+        <h3><i class="fas fa-utensils" style="color: #27ae60;"></i> Recomendações Diárias</h3>
+        <table style="width: 100%; margin-top: 10px; border-collapse: collapse; font-size: 0.85rem; color: #cbd5e1;">
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding: 10px;"><strong>Sedentários</strong></td>
+                <td style="padding: 10px; text-align: right;">3 - 4 g/kg</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <td style="padding: 10px;"><strong>Atletas de Endurance</strong></td>
+                <td style="padding: 10px; text-align: right;">6 - 10 g/kg</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px;"><strong>Fibras (Mínimo)</strong></td>
+                <td style="padding: 10px; text-align: right;">25g a 35g / dia</td>
+            </tr>
+        </table>
+    </div>
+
+    <button onclick="window.print()" class="btn-calc-glow" style="max-width: 400px; margin: 20px auto;">
+        <i class="fas fa-file-pdf"></i> Baixar Relatório de Carboidratos
+    </button>
+</section>
+
+<section id="prot" class="tab-content">
+    <div class="calculator-header" style="background: linear-gradient(to right, #3498db, #2980b9);">
+        <h1>Proteínas: Arquitetura e Sinalização</h1>
+        <p>Do Turnover Proteico à ativação da via mTOR e síntese de tecidos.</p>
+    </div>
+
+    <div class="card-modern">
+        <h3><i class="fas fa-dna" style="color: #3498db;"></i> A Unidade Fundamental: Aminoácidos</h3>
+        <p style="font-size: 0.9rem; margin-bottom: 15px;">As proteínas são polímeros de aminoácidos unidos por ligações peptídicas.</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+            <div style="padding: 15px; background: rgba(52, 152, 219, 0.05); border-radius: 12px; border: 1px solid rgba(52, 152, 219, 0.2);">
+                <strong style="color: #3498db;">Indispensáveis (Essenciais):</strong>
+                <p style="font-size: 0.8rem; color: #cbd5e1; margin-top: 5px;">Não produzidos pelo corpo. Devem vir da dieta (Leucina, Valina, Isoleucina, Lisina, etc).</p>
+            </div>
+            <div style="padding: 15px; background: rgba(52, 152, 219, 0.05); border-radius: 12px; border: 1px solid rgba(52, 152, 219, 0.2);">
+                <strong style="color: #3498db;">Dispensáveis:</strong>
+                <p style="font-size: 0.8rem; color: #cbd5e1; margin-top: 5px;">Sintetizados pelo fígado através do processo de transaminação.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-modern">
+        <h3><i class="fas fa-digest" style="color: #3498db;"></i> O Processo de Quebra</h3>
+        <div style="margin-top: 10px; border-left: 4px solid #3498db; padding-left: 15px; font-size: 0.85rem; color: #cbd5e1; line-height: 1.6;">
+            <p><strong>Estômago:</strong> O $HCl$ desnatura a proteína e ativa a <strong>Pepsina</strong>, iniciando a quebra em polipeptídeos.</p>
+            <p><strong>Intestino Delgado:</strong> Proteases pancreáticas (Tripsina, Quimiotripsina) quebram tudo em tripeptídeos, dipeptídeos e aminoácidos livres.</p>
+            <p><strong>Absorção:</strong> Ocorre nos enterócitos. Diferente das gorduras, os aminoácidos vão direto para o fígado pela <strong>Veia Porta</strong>.</p>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+        <div class="card-modern" style="background: rgba(46, 204, 113, 0.05); border: 1px solid rgba(46, 204, 113, 0.2);">
+            <h4 style="color: #2ecc71;"><i class="fas fa-microchip"></i> Via mTOR</h4>
+            <p style="font-size: 0.8rem; color: #cbd5e1; margin-top: 8px;">
+                A principal via anabólica. É ativada pela presença de <strong>Leucina</strong> e pelo estresse mecânico (treino). Ela sinaliza para a célula iniciar a síntese proteica.
+            </p>
+        </div>
+        <div class="card-modern" style="background: rgba(231, 76, 60, 0.05); border: 1px solid rgba(231, 76, 60, 0.2);">
+            <h4 style="color: #e74c3c;"><i class="fas fa-recycle"></i> Turnover Proteico</h4>
+            <p style="font-size: 0.8rem; color: #cbd5e1; margin-top: 8px;">
+                O corpo degrada e reconstrói cerca de 200g a 300g de proteína por dia. O balanço nitrogenado deve ser positivo para ocorrer ganho de massa.
+            </p>
+        </div>
+    </div>
+
+    <div class="card-modern">
+        <h3><i class="fas fa-clipboard-check" style="color: #3498db;"></i> Ingestão Sugerida (g/kg)</h3>
+        <div style="overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.85rem; color: #cbd5e1;">
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05);">
+                    <th style="padding: 10px; text-align: left;">Objetivo / Perfil</th>
+                    <th style="padding: 10px; text-align: center;">Recomendação</th>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                    <td style="padding: 10px;">Saúde Geral (RDA)</td>
+                    <td style="padding: 10px; text-align: center;">0.8 - 1.0 g/kg</td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                    <td style="padding: 10px;">Resistência / Endurance</td>
+                    <td style="padding: 10px; text-align: center;">1.2 - 1.4 g/kg</td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                    <td style="padding: 10px;">Hipertrofia / Força</td>
+                    <td style="padding: 10px; text-align: center;">1.6 - 2.2 g/kg</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px;">Cutting (Perda de Gordura)</td>
+                    <td style="padding: 10px; text-align: center;">2.0 - 2.4 g/kg</td>
+                </tr>
+            </table>
+        </div>
+        <p style="font-size: 0.75rem; color: #94a3b8; margin-top: 10px; font-style: italic;">*Doses acima de 2.2g/kg são úteis para preservar massa magra em déficit calórico agressivo.</p>
+    </div>
+
+    <button onclick="window.print()" class="btn-calc-glow" style="max-width: 350px; margin: 20px auto;">
+        <i class="fas fa-file-pdf"></i> Imprimir Guia de Proteínas
+    </button>
+</section>
+
+<section id="lip" class="tab-content">
+    <div class="calculator-header">
+        <h1>Lipídios: Energia e Estrutura Celular</h1>
+        <p>A bioquímica das gorduras, do transporte linfático às membranas biológicas.</p>
+    </div>
+
+    <div class="card-modern">
+        <h3><i class="fas fa-microscope" style="color: var(--primary);"></i> Classificação Molecular</h3>
+        <p style="margin-bottom: 15px;">Lipídios são moléculas orgânicas insolúveis em água, fundamentais para a vida.</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+            <div style="padding: 15px; background: rgba(16, 185, 129, 0.1); border-radius: 10px; border-left: 3px solid var(--accent);">
+                <strong style="color: var(--accent);">Saturadas:</strong> Sem ligações duplas. Sólidas à temperatura ambiente (Ex: gordura animal, coco).
+            </div>
+            <div style="padding: 15px; background: rgba(99, 102, 241, 0.1); border-radius: 10px; border-left: 3px solid var(--primary);">
+                <strong style="color: var(--primary);">Insaturadas:</strong> Possuem ligações duplas (Mono ou Poli). Líquidas (Ex: azeite, peixes/Ômega 3).
+            </div>
+            <div style="padding: 15px; background: rgba(239, 68, 68, 0.1); border-radius: 10px; border: 1px solid rgba(239, 68, 68, 0.3); grid-column: span 1;">
+                <strong style="color: #f87171;">Gorduras Trans:</strong> Hidrogenação industrial (geometria Cis para Trans). Altamente inflamatória.
+            </div>
+        </div>
+    </div>
+
+    <div class="card-modern">
+        <h3><i class="fas fa-truck-loading" style="color: var(--primary);"></i> Digestão e o Mistério dos Quilomícrons</h3>
+        <p style="font-size: 0.9rem; margin-bottom: 15px;">Diferente de carboidratos, a gordura não vai direto para o fígado pela veia porta.</p>
+        
+        <div style="background: rgba(0,0,0,0.2); padding: 20px; border-radius: 15px; border-left: 4px solid var(--accent);">
+            <ul style="list-style: none; padding: 0; font-size: 0.9rem; line-height: 1.6;">
+                <li><i class="fas fa-caret-right" style="color: var(--accent);"></i> <strong>Emulsificação:</strong> A bile quebra gotas de gordura em micelas.</li>
+                <li><i class="fas fa-caret-right" style="color: var(--accent);"></i> <strong>Hidrólise:</strong> Lipase pancreática quebra triglicerídeos.</li>
+                <li><i class="fas fa-caret-right" style="color: var(--accent);"></i> <strong>Quilomícrons:</strong> As gorduras são "embaladas" em proteínas no intestino.</li>
+                <li><i class="fas fa-caret-right" style="color: var(--accent);"></i> <strong>Via Linfática:</strong> Entram nos vasos linfáticos antes de atingir o sangue.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+        <div class="card-modern">
+            <h3><i class="fas fa-fire" style="color: #fbbf24;"></i> Beta-Oxidação</h3>
+            <p style="font-size: 0.85rem;">Os ácidos graxos entram na mitocôndria via <strong>Carnitina</strong> para gerar ATP. 1g de gordura fornece <strong>9 kcal</strong>.</p>
+        </div>
+        <div class="card-modern">
+            <h3><i class="fas fa-clipboard-list" style="color: var(--primary);"></i> Recomendações (DRI)</h3>
+            <ul style="font-size: 0.85rem; padding-left: 18px; line-height: 1.5;">
+                <li>AMDR: 20% a 35% das calorias totais.</li>
+                <li>Saturadas: < 10% do VET.</li>
+                <li>Essenciais: Foco em Ômega-3 e Ômega-6.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card-modern" style="border-top: 5px solid #ef4444 !important;">
+        <h3 style="color: #ef4444;"><i class="fas fa-heart-broken"></i> Patologias Associadas</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px;">
+            <div style="background: rgba(239, 68, 68, 0.05); padding: 12px; border-radius: 8px; font-size: 0.8rem;">
+                <strong>Dislipidemia:</strong> Aumento do LDL e redução do HDL (risco de ateroma).
+            </div>
+            <div style="background: rgba(239, 68, 68, 0.05); padding: 12px; border-radius: 8px; font-size: 0.8rem;">
+                <strong>Esteatose Hepática:</strong> Acúmulo lipídico no parênquima do fígado.
+            </div>
+            <div style="background: rgba(239, 68, 68, 0.05); padding: 12px; border-radius: 8px; font-size: 0.8rem;">
+                <strong>Resistência Insulínica:</strong> Ácidos graxos livres interferindo no GLUT4.
+            </div>
+        </div>
+    </div>
+
+    <button onclick="window.print()" class="btn-calc-glow" style="max-width: 320px; margin: 20px auto;">
+        <i class="fas fa-file-pdf"></i> Baixar Guia de Lipídios
+    </button>
+</section>
+<section id="vit-min" class="tab-content">
+    <div class="calculator-header">
+        <h1>Micronutrientes: Vitaminas e Minerais</h1>
+        <p>A bioquímica dos cofatores orgânicos e elementos inorgânicos essenciais.</p>
+    </div>
+
+    <div class="card-modern">
+        <h3 style="color: #a855f7;"><i class="fas fa-capsules"></i> 1. Vitaminas: Bioquímica Orgânica</h3>
+        
+        <div style="margin-top: 15px; padding: 15px; background: rgba(168, 85, 247, 0.05); border-left: 4px solid #a855f7; border-radius: 12px;">
+            <h4 style="color: #a855f7; font-size: 1rem; margin-bottom: 5px;">Lipossolúveis (A, D, E, K)</h4>
+            <p style="font-size: 0.85rem; opacity: 0.9;">
+                Requerem lipídios e sais biliares para absorção. São transportadas via <strong>Quilomícrons</strong> e armazenadas no tecido adiposo e fígado.
+            </p>
+            <ul style="font-size: 0.8rem; margin-top: 8px; display: grid; grid-template-columns: 1fr 1fr; gap: 5px; list-style: none; padding: 0;">
+                <li><i class="fas fa-eye"></i> <strong>A:</strong> Ciclo visual e imunidade.</li>
+                <li><i class="fas fa-bone"></i> <strong>D:</strong> Homeostase do Cálcio.</li>
+                <li><i class="fas fa-shield-alt"></i> <strong>E:</strong> Antioxidante de membrana.</li>
+                <li><i class="fas fa-tint"></i> <strong>K:</strong> Coagulação sanguínea.</li>
+            </ul>
+        </div>
+
+        <div style="margin-top: 15px; padding: 15px; background: rgba(99, 102, 241, 0.05); border-left: 4px solid var(--primary); border-radius: 12px;">
+            <h4 style="color: var(--primary); font-size: 1rem; margin-bottom: 5px;">Hidrossolúveis (Complexo B e C)</h4>
+            <p style="font-size: 0.85rem; opacity: 0.9;">
+                Solúveis em água, absorvidas diretamente no sangue. Não possuem estoques (exceto B12) e o excesso é excretado via renal.
+            </p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 10px; font-size: 0.75rem;">
+                <div>
+                    <strong>Energia:</strong> B1, B2 (FAD), B3 (NAD), B5 (CoA).
+                </div>
+                <div>
+                    <strong>Síntese:</strong> B9 (DNA), B12 (Mielina), Vit. C (Colágeno).
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-modern">
+        <h3 style="color: var(--accent);"><i class="fas fa-gem"></i> 2. Minerais: Elementos Inorgânicos</h3>
+        <p style="font-size: 0.9rem; margin-bottom: 15px;">Diferente das vitaminas, os minerais são elementos da tabela periódica e não são destruídos pelo calor.</p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+            <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 12px; border-top: 3px solid var(--accent);">
+                <h4 style="font-size: 0.9rem; color: var(--accent);">Macrominerais (>100mg/dia)</h4>
+                <ul style="font-size: 0.8rem; padding-left: 15px; margin-top: 5px; line-height: 1.6;">
+                    <li><strong>Cálcio & Fósforo:</strong> Estrutura óssea e ATP.</li>
+                    <li><strong>Magnésio:</strong> Cofator em +300 enzimas.</li>
+                    <li><strong>Sódio & Potássio:</strong> Balanço hídrico e impulsos elétricos.</li>
+                </ul>
+            </div>
+
+            <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 12px; border-top: 3px solid #94a3b8;">
+                <h4 style="font-size: 0.9rem; color: #cbd5e1;">Microminerais / Traço</h4>
+                <ul style="font-size: 0.8rem; padding-left: 15px; margin-top: 5px; line-height: 1.6;">
+                    <li><strong>Ferro:</strong> Transporte de oxigênio ($Hb$).</li>
+                    <li><strong>Zinco:</strong> Imunidade e cicatrização.</li>
+                    <li><strong>Selênio & Iodo:</strong> Função tireoidiana.</li>
+                    <li><strong>Cromo:</strong> Sensibilidade à insulina.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <button onclick="window.print()" class="btn-calc-glow" style="max-width: 350px; margin: 20px auto;">
+        <i class="fas fa-file-pdf"></i> Imprimir Guia de Micronutrientes
+    </button>
+</section>
+<section id="mtor" class="tab-content">
+    <div class="calculator-header" style="background: linear-gradient(to right, #6366f1, #a855f7);">
+        <h1>Eixo mTOR-AMPK: O Interruptor da Vida</h1>
+        <p>Dinâmica Molecular, Homeostase Celular e a Ciência da Longevidade.</p>
+    </div>
+
+    <div class="card-modern">
+        <h3><i class="fas fa-microchip" style="color: #a855f7;"></i> A Dualidade Metabólica</h3>
+        <p style="margin-bottom: 15px;">A sobrevivência celular depende do equilíbrio constante entre dois eixos fundamentais:</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div style="padding: 15px; background: rgba(99, 102, 241, 0.1); border-radius: 12px; border-top: 4px solid #6366f1;">
+                <h4 style="color: #818cf8;">mTOR (Anabolismo)</h4>
+                <p style="font-size: 0.85rem; color: #cbd5e1; margin-top: 5px;">Ativado pela abundância (Insulina, Aminoácidos). Promove síntese proteica, crescimento e inibição da autofagia.</p>
+            </div>
+            <div style="padding: 15px; background: rgba(34, 197, 94, 0.1); border-radius: 12px; border-top: 4px solid #22c55e;">
+                <h4 style="color: #4ade80;">AMPK (Catabolismo)</h4>
+                <p style="font-size: 0.85rem; color: #cbd5e1; margin-top: 5px;">Ativado pela escassez ($ \uparrow $ AMP/$ \downarrow $ ATP). Promove quebra de gordura, biogênese mitocondrial e reciclagem celular.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-modern">
+        <h3><i class="fas fa-layer-group" style="color: #f43f5e;"></i> Complexos Moleculares</h3>
+        <div style="overflow-x: auto; margin-top: 10px;">
+            <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; color: #cbd5e1;">
+                <thead>
+                    <tr style="background: rgba(255,255,255,0.1); text-align: left;">
+                        <th style="padding: 12px;">Característica</th>
+                        <th style="padding: 12px; color: #a855f7;">mTORC1</th>
+                        <th style="padding: 12px; color: #3b82f6;">mTORC2</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td style="padding: 10px;"><strong>Proteína-Chave</strong></td>
+                        <td style="padding: 10px;">Raptor</td>
+                        <td style="padding: 10px;">Rictor</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td style="padding: 10px;"><strong>Ativadores</strong></td>
+                        <td style="padding: 10px;">Leucina e Energia</td>
+                        <td style="padding: 10px;">Insulina e Akt</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px;"><strong>Alvo Principal</strong></td>
+                        <td style="padding: 10px;">S6K1 e 4E-BP1</td>
+                        <td style="padding: 10px;">Citoesqueleto / SGK1</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="card-modern">
+        <h3><i class="fas fa-vial" style="color: #fbbf24;"></i> Mecanismo de Ativação (Lisossomo)</h3>
+        <p style="font-size: 0.9rem; line-height: 1.6;">A Leucina não entra apenas na célula; ela é "percebida" por sensores moleculares:</p>
+        <div style="margin-top: 10px; padding: 15px; background: rgba(0,0,0,0.3); border-radius: 12px; border-left: 4px solid #fbbf24;">
+            <ul style="font-size: 0.85rem; color: #cbd5e1; list-style: none; padding: 0;">
+                <li style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #fbbf24;"></i> <strong>Sestrin2:</strong> Atua como sensor de Leucina, liberando o complexo GATOR.</li>
+                <li style="margin-bottom: 8px;"><i class="fas fa-check-circle" style="color: #fbbf24;"></i> <strong>Rag GTPases:</strong> Ancoram o mTOR na superfície do lisossomo para ser ativado pela <strong>Rheb</strong>.</li>
+                <li><i class="fas fa-check-circle" style="color: #fbbf24;"></i> <strong>Resultado:</strong> Início imediato da tradução de proteínas e hipertrofia.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+        <div class="card-modern" style="border-left: 5px solid #ef4444 !important;">
+            <h4><i class="fas fa-fire" style="color: #ef4444;"></i> Estresse Térmico (Calor)</h4>
+            <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 8px;">Ativa proteínas de choque térmico (HSPs) que estabilizam o mTORC1, prevenindo a perda de massa muscular (anti-atrofia).</p>
+        </div>
+        <div class="card-modern" style="border-left: 5px solid #3b82f6 !important;">
+            <h4><i class="fas fa-snowflake" style="color: #3b82f6;"></i> Exposição ao Frio</h4>
+            <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 8px;">Inibe agudamente o mTORC1. Embora reduza a síntese proteica momentânea, estimula a biogênese mitocondrial via PGC-1α.</p>
+        </div>
+    </div>
+
+    <div class="card-modern" style="background: rgba(139, 92, 246, 0.1); border: 1px dashed #8b5cf6;">
+        <h3><i class="fas fa-hourglass-half" style="color: #a78bfa;"></i> O Paradoxo da Longevidade</h3>
+        <p style="font-size: 0.9rem; margin-top: 10px;">A inibição periódica do mTOR (via jejum ou restrição proteica) estimula a <strong>Autofagia</strong>.</p>
+        <div style="display: flex; gap: 15px; margin-top: 15px; font-size: 0.8rem; color: #cbd5e1;">
+            <div style="flex: 1; text-align: center; border: 1px solid rgba(255,255,255,0.1); padding: 10px; border-radius: 8px;">
+                <strong>Dia de Treino</strong><br><span style="color: #818cf8;">mTOR Ativo / Crescimento</span>
+            </div>
+            <div style="flex: 1; text-align: center; border: 1px solid rgba(255,255,255,0.1); padding: 10px; border-radius: 8px;">
+                <strong>Dia de Jejum</strong><br><span style="color: #4ade80;">AMPK Ativo / Limpeza</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-modern" style="margin-top: 20px; background: rgba(15, 23, 42, 0.4); border-top: 2px solid #6366f1;">
+        <h4 style="font-size: 0.9rem; color: #cbd5e1; margin-bottom: 10px;"><i class="fas fa-book-open"></i> Literatura Científica</h4>
+        <div style="font-size: 0.75rem; color: #94a3b8; line-height: 1.6;">
+            • Nature Reviews Molecular Cell Biology: "The mTOR signaling network in metabolism and cancer".<br>
+            • Frontiers in Physiology: "Leucine and mTORC1: The molecular basis of muscle protein synthesis".<br>
+            • Journal of Clinical Investigation: "AMPK and mTOR: The yin and yang of cellular homeostasis".
+        </div>
+    </div>
+
+    <button onclick="window.print()" class="btn-calc-glow" style="max-width: 400px; margin: 30px auto;">
+        <i class="fas fa-file-pdf"></i> Baixar Relatório mTOR-AMPK
+    </button>
+</section>
+<section id="esporte" class="tab-content">
+    <div class="calculator-header" style="background: linear-gradient(to right, #e67e22, #c0392b);">
+        <h1>Nutrição Esportiva de Elite</h1>
+        <p>Gestão Biológica: Da Sinalização Molecular à Performance Máxima.</p>
+    </div>
+
+    <div class="card-modern">
+        <h3><i class="fas fa-shield-virus" style="color: #e67e22;"></i> Imunologia: Resistência vs Tolerância</h3>
+        <p style="margin-bottom: 15px;">O exercício intenso abre uma "janela" de imunossupressão. A estratégia foca em reduzir a carga infecciosa sem inibir as adaptações.</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+            <div style="padding: 15px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px;">
+                <strong style="color: #f1c40f;"><i class="fas fa-sun"></i> Vitamina D:</strong>
+                <p style="font-size: 0.8rem; color: #cbd5e1; margin-top: 5px;">Manter > 75 nmol/L. Reduz risco de infecções respiratórias (ITRS).</p>
+            </div>
+            <div style="padding: 15px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px;">
+                <strong style="color: #2ecc71;"><i class="fas fa-microbe"></i> Probióticos:</strong>
+                <p style="font-size: 0.8rem; color: #cbd5e1; margin-top: 5px;">Mínimo 10¹⁰ CFU/dia. Reduz em 50% a duração de resfriados.</p>
+            </div>
+            <div style="padding: 15px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px;">
+                <strong style="color: #3498db;"><i class="fas fa-vial"></i> Zinco & Vit C:</strong>
+                <p style="font-size: 0.8rem; color: #cbd5e1; margin-top: 5px;">Zinco (25mg) para barreira epitelial e Vit C para estresse extremo.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-modern">
+        <h3><i class="fas fa-fist-raised" style="color: #e74c3c;"></i> Gestão de Peso (Weight Cut)</h3>
+        <p style="font-size: 0.9rem; margin-bottom: 15px;">A perda rápida de peso (RWL) exige um protocolo de reidratação milimétrico.</p>
+        <div style="background: rgba(231, 76, 60, 0.1); padding: 20px; border-radius: 15px; border-left: 4px solid #e74c3c;">
+            <strong style="color: #ff7675; display: block; margin-bottom: 10px;">Protocolo de Recuperação:</strong>
+            <ul style="font-size: 0.85rem; color: #cbd5e1; line-height: 1.6; padding-left: 18px;">
+                <li><strong>Reidratação:</strong> 125% a 150% do peso perdido (SRO com 50-90 mmol/L de Sódio).</li>
+                <li><strong>Glicogênio:</strong> 1.0-1.5 g/kg de CHO a cada 2h nas primeiras 6h.</li>
+                <li><strong>Baixo Resíduo:</strong> Manter fibras < 10g/dia para reduzir peso intestinal.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+        <div class="card-modern" style="border-left: 5px solid #3498db !important;">
+            <h4><i class="fas fa-swimmer"></i> Natação Competitiva</h4>
+            <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 8px;"><strong>Desidratação Involuntária:</strong> A imersão reduz a percepção da sede. Nadadores perdem até 2,5% do peso.</p>
+            <p style="font-size: 0.8rem; color: #3498db; font-style: italic; margin-top: 5px;">Estratégia: 150-200mL a cada 20 min.</p>
+        </div>
+
+        <div class="card-modern" style="border-left: 5px solid #95a5a6 !important;">
+            <h4><i class="fas fa-weight-hanging"></i> Powerlifting e Força</h4>
+            <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 8px;">Hipohidratação > 2% reduz força máxima em 2% e potência em 3%.</p>
+            <ul style="font-size: 0.8rem; color: #cbd5e1; margin-top: 10px; list-style: none; padding: 0;">
+                <li><i class="fas fa-check" style="color: #2ecc71;"></i> Creatina: 0,1g/kg (Manutenção).</li>
+                <li><i class="fas fa-check" style="color: #2ecc71;"></i> Proteína: 20-40g a cada 3-4h (Leucina).</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card-modern">
+        <h3><i class="fas fa-flask" style="color: #9b59b6;"></i> Evidências ISSN</h3>
+        <div style="overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.85rem; color: #cbd5e1;">
+                <thead>
+                    <tr style="background: rgba(255,255,255,0.1); text-align: left;">
+                        <th style="padding: 12px; border-bottom: 2px solid var(--primary);">Suplemento</th>
+                        <th style="padding: 12px; border-bottom: 2px solid var(--primary);">Dose</th>
+                        <th style="padding: 12px; border-bottom: 2px solid var(--primary);">Benefício</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td style="padding: 10px;"><strong>Creatina</strong></td>
+                        <td style="padding: 10px;">3-5g ou 0,1g/kg</td>
+                        <td style="padding: 10px;">Força e potência.</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td style="padding: 10px;"><strong>Cafeína</strong></td>
+                        <td style="padding: 10px;">3-6 mg/kg</td>
+                        <td style="padding: 10px;">Foco e redução de RPE.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px;"><strong>Beta-Alanina</strong></td>
+                        <td style="padding: 10px;">4-6g/dia</td>
+                        <td style="padding: 10px;">Buffer de H+ intracelular.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <button onclick="window.print()" class="btn-calc-glow" style="max-width: 400px; margin: 30px auto;">
+        <i class="fas fa-file-pdf"></i> Baixar Guia de Nutrição Esportiva
+    </button>
+</section>
+<section id="ciclo-carb" class="tab-content">
+    <div class="calculator-header" style="background: linear-gradient(135deg, #0f172a, #334155);">
+        <h1>Tratado de Periodização Bioenergética</h1>
+        <p>A Ciência do Ciclo de Carboidratos: Dinâmica Molecular e Endocrinologia Esportiva.</p>
+    </div>
+
+    <div class="card-modern">
+        <h3><i class="fas fa-microchip" style="color: #60a5fa;"></i> 1. Bioquímica da Adaptação Metabólica</h3>
+        <p style="margin-bottom: 15px;">A alternância de glicídios manipula o status energético ($ATP/AMP$), ativando vias antagônicas conforme o glicogênio.</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+            <div style="padding: 20px; background: rgba(96, 165, 250, 0.05); border-radius: 12px; border-top: 4px solid #60a5fa;">
+                <h4 style="color: #60a5fa;">Status de Baixa (AMPK)</h4>
+                <p style="font-size: 0.85rem; color: #cbd5e1; line-height: 1.6;">
+                    Nos <strong>Dias Baixos</strong>, a depleção eleva a $AMPK$. Ela inibe o anabolismo dispendioso e ativa o <strong>PGC-1α</strong>, promovendo a biogênese mitocondrial e aumentando a eficiência na oxidação de lipídios via $β-oxidação$.
+                </p>
+            </div>
+            <div style="padding: 20px; background: rgba(52, 211, 153, 0.05); border-radius: 12px; border-top: 4px solid #34d399;">
+                <h4 style="color: #34d399;">Status de Alta (mTOR)</h4>
+                <p style="font-size: 0.85rem; color: #cbd5e1; line-height: 1.6;">
+                    Nos <strong>Dias Altos</strong>, o pico insulínico ativa o <strong>mTORc1</strong> via $Akt/PI3K$. Isso maximiza a ressíntese de glicogênio (até $50.000$ unidades de glicose por partícula) e inibe a proteólise muscular.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-modern">
+        <h3><i class="fas fa-layer-group" style="color: #fbbf24;"></i> 2. Modelagem de Microciclo</h3>
+        <div style="overflow-x: auto; margin-top: 15px;">
+            <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; color: #cbd5e1;">
+                <thead>
+                    <tr style="background: rgba(251, 191, 36, 0.1); color: #fbbf24; text-align: left;">
+                        <th style="padding: 12px; border-bottom: 2px solid rgba(251, 191, 36, 0.3);">Nível</th>
+                        <th style="padding: 12px; border-bottom: 2px solid rgba(251, 191, 36, 0.3);">Treino Alvo</th>
+                        <th style="padding: 12px; border-bottom: 2px solid rgba(251, 191, 36, 0.3);">Substrato</th>
+                        <th style="padding: 12px; border-bottom: 2px solid rgba(251, 191, 36, 0.3);">Endocrinologia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td style="padding: 12px;"><strong>Alto (High)</strong></td>
+                        <td style="padding: 12px;">Força/Hipertrofia</td>
+                        <td style="padding: 12px;">Glicogênio</td>
+                        <td style="padding: 12px;">↑ Insulina / ↑ Leptina</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td style="padding: 12px;"><strong>Médio (Mod)</strong></td>
+                        <td style="padding: 12px;">Metabólico/Técnico</td>
+                        <td style="padding: 12px;">Misto</td>
+                        <td style="padding: 12px;">Euglicemia Estável</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px;"><strong>Baixo (Low)</strong></td>
+                        <td style="padding: 12px;">LISS / Off</td>
+                        <td style="padding: 12px;">Ácidos Graxos</td>
+                        <td style="padding: 12px;">↑ Sensibilidade Insulínica</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="card-modern">
+        <h3><i class="fas fa-dna" style="color: #10b981;"></i> 3. Termogênese e Deiodinases</h3>
+        <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 15px;">O refeed glicídico previne a queda da taxa metabólica ($RMR$) ao regular as enzimas deiodinases:</p>
+        <div style="background: rgba(0,0,0,0.2); padding: 20px; border-radius: 12px; border-left: 4px solid #10b981;">
+            <ul style="list-style: none; padding: 0; font-size: 0.85rem; color: #cbd5e1;">
+                <li style="margin-bottom: 10px;"><strong><span style="color: #10b981;">D1 (Fígado/Rim):</span></strong> Converte $T4 \rightarrow T3$ sistêmico. Ativada por picos de insulina.</li>
+                <li style="margin-bottom: 10px;"><strong><span style="color: #10b981;">D2 (Músculo):</span></strong> Mantém o $T3$ intracelular. Suprimida em déficits calóricos lineares e longos.</li>
+                <li><strong><span style="color: #f87171;">D3 (Inativadora):</span></strong> Cria o $T3$ Reverso ($rT3$), que bloqueia o metabolismo. Aumenta no estresse crônico.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card-modern">
+        <h3><i class="fas fa-calculator" style="color: #8b5cf6;"></i> 4. Distribuição de Macronutrientes</h3>
+        <div style="overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; color: #cbd5e1; margin-top: 10px;">
+                <thead>
+                    <tr style="border-bottom: 1px solid rgba(139, 92, 246, 0.3);">
+                        <th style="padding: 10px; text-align: left;">Macro</th>
+                        <th style="padding: 10px;">Low (Baixo)</th>
+                        <th style="padding: 10px;">Mod (Médio)</th>
+                        <th style="padding: 10px;">High (Alto)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td style="padding: 10px;"><strong>Proteína</strong></td>
+                        <td style="padding: 10px; text-align: center;">2.5 - 3.0g/kg</td>
+                        <td style="padding: 10px; text-align: center;">2.2 - 2.5g/kg</td>
+                        <td style="padding: 10px; text-align: center;">2.0g/kg</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td style="padding: 10px;"><strong>Carboidratos</strong></td>
+                        <td style="padding: 10px; text-align: center;">0.5 - 1.0g/kg</td>
+                        <td style="padding: 10px; text-align: center;">2.0 - 3.0g/kg</td>
+                        <td style="padding: 10px; text-align: center;">5.0 - 8.0g/kg</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px;"><strong>Gordura</strong></td>
+                        <td style="padding: 10px; text-align: center;">1.2 - 1.5g/kg</td>
+                        <td style="padding: 10px; text-align: center;">0.8 - 1.0g/kg</td>
+                        <td style="padding: 10px; text-align: center;">0.5g/kg (Mín)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p style="font-size: 0.75rem; color: #6366f1; margin-top: 10px; font-style: italic;">
+            *Efeito Randle: A gordura é reduzida no Dia Alto para evitar a competição de substratos energéticos e o armazenamento facilitado pela insulina.
+        </p>
+    </div>
+
+    <div class="card-modern" style="border: 1px solid #ef4444;">
+        <h3 style="color: #f87171;"><i class="fas fa-biohazard"></i> 5. Genética e Riscos Clínicos</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 10px;">
+            <div>
+                <h5 style="color: #fca5a5; margin-bottom: 5px;">Gene DIO2 (Thr92Ala)</h5>
+                <p style="font-size: 0.8rem; color: #94a3b8;">Portadores do alelo <i>Ala</i> possuem conversão ineficiente de T4 em T3, sofrendo letargia extrema em dias baixos.</p>
+            </div>
+            <div>
+                <h5 style="color: #fca5a5; margin-bottom: 5px;">Síndrome RED-S</h5>
+                <p style="font-size: 0.8rem; color: #94a3b8;">A deficiência energética severa pode causar falência do eixo HPT (Hipotálamo-Pituitária-Tireoide).</p>
+            </div>
+        </div>
+    </div>
+
+    <button onclick="window.print()" class="btn-calc-glow" style="max-width: 400px; margin: 30px auto;">
+        <i class="fas fa-file-pdf"></i> Baixar Guia de Carb Cycling
+    </button>
+</section>
+<section id="transtornos" class="tab-content">
+    <div class="header-modern" style="background: linear-gradient(135deg, #2c3e50, #000000);">
+        <h1>Relatório Clínico: Transtornos Alimentares</h1>
+        <p>Etiologia, Fisiopatologia e a Neurobiologia do Comportamento Alimentar.</p>
+    </div>
+
+    <div class="card-modern" style="border-left: 6px solid #e74c3c;">
+        <h3><i class="fas fa-exclamation-circle"></i> A Gravidade Clínica</h3>
+        <p>Os TAs não são escolhas comportamentais, mas patologias mentais graves. A <strong>Anorexia Nervosa</strong> possui uma das maiores taxas de mortalidade da psiquiatria, superada apenas pelos transtornos por uso de opioides.</p>
+        <div style="margin-top: 15px; padding: 15px; background: rgba(231, 76, 60, 0.1); border-radius: 10px;">
+            <strong>Mortalidade (SMR):</strong> Pacientes com AN têm quase <strong>6 vezes mais chances</strong> de óbito. 20% das mortes são por suicídio.
+        </div>
+    </div>
+
+    <div class="card-modern">
+        <h3><i class="fas fa-clipboard-check"></i> Nosologia e Classificação (DSM-5)</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+            <div class="sub-card" style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 15px;">
+                <h4 style="color: #6366f1;">AN - Anorexia Nervosa</h4>
+                <p style="font-size: 0.85rem;">Foco: Restrição energética e medo intenso de peso. <strong>Mudança chave:</strong> A amenorreia não é mais critério obrigatório.</p>
+            </div>
+            <div class="sub-card" style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 15px;">
+                <h4 style="color: #6366f1;">BN - Bulimia Nervosa</h4>
+                <p style="font-size: 0.85rem;">Ciclo de compulsão e purgação (vômitos, laxantes, exercício). Mínimo 1x por semana por 3 meses.</p>
+            </div>
+            <div class="sub-card" style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 15px;">
+                <h4 style="color: #6366f1;">TCA - Compulsão Alimentar</h4>
+                <p style="font-size: 0.85rem;">Episódios de descontrole sem purgação. É o transtorno mais prevalente no Brasil (aprox. 4,7%).</p>
+            </div>
+            <div class="sub-card" style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 15px;">
+                <h4 style="color: #6366f1;">TARE - Restritivo/Evitativo</h4>
+                <p style="font-size: 0.85rem;">Evitação baseada em características sensoriais ou medo de consequências (engasgo). Sem distorção de imagem corporal.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-modern" style="background: linear-gradient(to bottom right, rgba(99, 102, 241, 0.1), transparent);">
+        <h3><i class="fas fa-microchip"></i> Neurobiologia e Circuitos Neurais</h3>
+        <p>A pesquisa moderna revela que os TAs envolvem falhas nos circuitos de recompensa e interocepção.</p>
+        <ul style="font-size: 0.9rem; color: #cbd5e1; margin-top: 10px;">
+            <li><strong>Controle Top-Down:</strong> Na Anorexia, o córtex exerce controle inibitório excessivo sobre o hipotálamo, suprimindo os sinais biológicos de fome.</li>
+            <li><strong>Dopamina:</strong> Na Bulimia, há um "déficit de recompensa" (o indivíduo come para tentar estimular um sistema hipoativo).</li>
+            <li><strong>Insula:</strong> Centro da interocepção. Falha em processar os estados internos do corpo, criando desconexão entre mente e corpo físico.</li>
+        </ul>
+    </div>
+
+    <div class="card-modern">
+        <h3><i class="fas fa-vial"></i> Adaptações Endócrinas: Síndrome do Doente Eutireoideo</h3>
+        <p>O corpo em inanição entra em "hibernação metabólica".</p>
+        <div style="background: #0f172a; padding: 15px; border-radius: 10px; margin-top: 10px; border: 1px solid #334155;">
+            <p style="font-size: 0.9rem; color: #fbbf24;"><strong>O Paradoxo Hormonal:</strong></p>
+            <p style="font-size: 0.85rem;">Inibição da Desiodase Tipo 1 → Queda de T3 (ativo) → Aumento de <strong>T3 Reverso (rT3)</strong>. 
+            <br><em>Aviso Clínico:</em> A administração de hormônio tireoidiano é contraindicada; o foco deve ser a recuperação de peso.</p>
+        </div>
+    </div>
+
+    <div class="card-modern">
+        <h3><i class="fas fa-user-md"></i> Tratamento e SUS</h3>
+        <p>O tratamento deve ser transdisciplinar. No Brasil, o <strong>CAPS</strong> é a porta de entrada, mas os centros de referência (como AMBULIM) são os modelos de excelência.</p>
+        <table style="width: 100%; margin-top: 15px; border-collapse: collapse;">
+            <tr style="color: #94a3b8; font-size: 0.8rem; text-transform: uppercase;">
+                <th style="padding: 10px; text-align: left;">Protocolo</th>
+                <th style="padding: 10px; text-align: left;">Indicação</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-bottom: 1px solid var(--glass-border);"><strong>CBT-E</strong> (Cognitivo-Comportamental Aprimorada)</td>
+                <td>Padrão-ouro para adultos; foca nos mecanismos de manutenção do transtorno.</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-bottom: 1px solid var(--glass-border);"><strong>FBT</strong> (Baseado na Família)</td>
+                <td>Padrão-ouro para crianças e adolescentes com AN.</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px;"><strong>Lisdexanfetamina</strong> (Venvanse)</td>
+                <td>Único fármaco aprovado para Compulsão Alimentar (TCA) moderada/grave.</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card-modern" style="border: 1px dashed var(--primary);">
+        <p style="font-size: 0.85rem; font-style: italic;">
+            "No Brasil, a cultura fitness e o impacto de musas fitness nas redes sociais aumentam a insatisfação corporal em até 6,5 vezes entre adolescentes. A patologia é alimentada por uma moralidade estética de sucesso e disciplina."
+        </p>
+    </div>
+    <button onclick="exportarSecaoPDF('transtorno', 'Relatorio_Transtorno_NutriScience')" class="btn-pdf">
+    <i class="fas fa-file-pdf"></i> Baixar Guia de Transtornos Alimentares
+</button>
+</section>
+<section id="plant-based" class="tab-content">
+    <div class="header-modern" style="background: linear-gradient(135deg, #065f46, #064e3b);">
+        <h1>Tratado de Nutrição Vegetariana e Vegana</h1>
+        <p>Análise Fisiopatológica, Bioavaliabilidade Mineral e Planejamento ao Longo do Ciclo Vital.</p>
+    </div>
+<div class="card-modern" style="border-left: 6px solid #10b981;">
+        <h3><i class="fas fa-question-circle"></i> Vegetarianismo vs. Veganismo: A Diferença</h3>
+        <p>Embora compartilhem a base vegetal, as motivações e o alcance das restrições diferem drasticamente entre os grupos.</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 15px;">
+            <div style="background: rgba(255,255,255,0.03); padding: 20px; border-radius: 15px;">
+                <h4 style="color: #60a5fa;">O Espectro Vegetariano</h4>
+                <p style="font-size: 0.85rem; line-height: 1.6;">É uma <strong>classificação dietética</strong>. Refere-se exclusivamente ao que o indivíduo ingere. O objetivo pode ser saúde, performance esportiva ou religião. Divide-se em subgrupos conforme a aceitação de derivados (ovos e leite).</p>
+            </div>
+            <div style="background: rgba(255,255,255,0.03); padding: 20px; border-radius: 15px;">
+                <h4 style="color: #34d399;">O Movimento Vegano</h4>
+                <p style="font-size: 0.85rem; line-height: 1.6;">É uma <strong>postura ética e política</strong>. Define-se como o esforço para excluir todas as formas de exploração animal. O vegano é obrigatoriamente um vegetariano estrito, mas ele também estende essa exclusão para vestuário (lã, couro), cosméticos (testados em animais) e entretenimento.</p>
+            </div>
+        </div>
+
+        <div style="overflow-x: auto; margin-top: 20px;">
+            <table style="width: 100%;">
+                <thead>
+                    <tr style="background: rgba(16, 185, 129, 0.1);">
+                        <th>Categoria</th>
+                        <th>Carne/Peixe</th>
+                        <th>Ovos</th>
+                        <th>Laticínios</th>
+                        <th>Mel</th>
+                        <th>Insumos (Couro/Lã)</th>
+                    </tr>
+                </thead>
+                <tbody style="font-size: 0.85rem; text-align: center;">
+                    <tr>
+                        <td style="text-align: left;"><strong>Ovolactovegetariano</strong></td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;"><strong>Lactovegetariano</strong></td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;"><strong>Vegetariano Estrito</strong></td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left; color: #34d399;"><strong>Vegano</strong></td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td style="color: #ef4444;">❌</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;"><strong>Flexitariano</strong></td>
+                        <td>⚠️ (Ocasional)</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div style="margin-top: 15px; padding: 10px; background: rgba(255,255,255,0.05); border-radius: 8px; font-size: 0.8rem; font-style: italic; color: #94a3b8;">
+            * Nota: O termo <strong>"Plant-Based"</strong> é frequentemente usado no contexto clínico para focar na qualidade dos alimentos (vegetais íntegros e minimamente processados), independente da motivação ética.
+        </div>
+    </div>
+    <div class="card-modern">
+        <h3><i class="fas fa-atom"></i> Fisiologia das Proteínas Vegetais</h3>
+        <p>A classificação de proteínas "incompletas" é obsoleta. A ciência moderna foca no <strong>Aminoácido Limitante</strong> e no <strong>PDCAAS</strong>.</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 15px;">
+            <div class="sub-card" style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border);">
+                <h4 style="color: #34d399;">Cinética de Aminoácidos</h4>
+                <p style="font-size: 0.85rem; line-height: 1.6;">O organismo humano mantém um <strong>pool de aminoácidos livre</strong>. Cereais (pobres em lisina) e Leguminosas (pobres em metionina) se complementam endogenamente. A soja isolada possui PDCAAS de 1.0, equiparando-se à albumina e caseína em termos de eficiência de síntese proteica.</p>
+            </div>
+            <div class="sub-card" style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border);">
+                <h4 style="color: #34d399;">Via mTOR e Leucina</h4>
+                <p style="font-size: 0.85rem; line-height: 1.6;">Para disparar a síntese proteica via <strong>mTOR</strong>, é necessário atingir o "Limiar de Leucina" (aprox. 2.5g a 3g por refeição). Em dietas plant-based, isso exige um volume maior de leguminosas ou o uso de proteínas isoladas (ervilha/arroz) para compensar a menor densidade de leucina por grama de alimento.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-modern" style="border-left: 6px solid #ef4444;">
+        <h3><i class="fas fa-microscope"></i> Vitamina B12: O Único Nutriente Ausente</h3>
+        <p>A B12 é produzida por bactérias, não por plantas. O erro clínico mais comum é acreditar em "fontes alternativas".</p>
+        
+        <div style="margin-top: 15px; font-size: 0.9rem; color: #cbd5e1; background: rgba(0,0,0,0.2); padding: 20px; border-radius: 10px;">
+            <p><strong>O Perigo dos Análogos:</strong> Algas (Espirulina/Chlorella) e alimentos fermentados possuem <strong>análogos inativos (corrinoides)</strong>. Eles se ligam aos receptores, mas não possuem atividade biológica, podendo falsear exames séricos enquanto a deficiência neurológica progride.</p>
+            <p style="margin-top: 10px;"><strong>Manejo de Suplementação:</strong> A Cianocobalamina é a forma preferencial por sua estabilidade. Como a absorção via Fator Intrínseco é saturável, doses menores e frequentes são superiores. Em casos de deficiência (B12 < 200 pg/mL), recomenda-se protocolo de ataque com 1000mcg a 2000mcg diários.</p>
+        </div>
+    </div>
+
+    <div class="card-modern">
+        <h3><i class="fas fa-vial"></i> Micronutrientes e a Guerra dos Antinutrientes</h3>
+        <p>A densidade mineral é alta, mas a absorção é modulada por fatores químicos.</p>
+        
+        <table style="width: 100%; margin-top: 15px;">
+            <thead>
+                <tr style="color: #10b981;">
+                    <th>Mineral</th>
+                    <th>O Desafio</th>
+                    <th>Estratégia Clínica (Técnica Culinária)</th>
+                </tr>
+            </thead>
+            <tbody style="font-size: 0.85rem;">
+                <tr>
+                    <td><strong>Ferro Não-Heme</strong></td>
+                    <td>Sensível a fitatos e taninos.</td>
+                    <td>Adicionar Vitamina C para reduzir $Fe^{3+}$ em $Fe^{2+}$. <strong>Remolho</strong> de 12h reduz fitatos em até 50%.</td>
+                </tr>
+                <tr>
+                    <td><strong>Zinco</strong></td>
+                    <td>Alta interferência de fitatos.</td>
+                    <td><strong>Germinação</strong> e fermentação (leveduras degradam o ácido fítico). Necessidade 50% maior para vegetarianos.</td>
+                </tr>
+                <tr>
+                    <td><strong>Cálcio</strong></td>
+                    <td>Oxalatos precipitam o cálcio.</td>
+                    <td>Priorizar Brócolis e Couve (baixa taxa de oxalato). Evitar espinafre como fonte de cálcio (biodisponibilidade < 5%).</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card-modern" style="background: rgba(16, 185, 129, 0.05);">
+        <h3><i class="fas fa-sync-alt"></i> Manejo Clínico ao Longo do Ciclo Vital</h3>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 15px;">
+            <div class="sub-card">
+                <h4 style="color: #fbbf24;">Gestação e Lactação</h4>
+                <ul style="font-size: 0.8rem; line-height: 1.5;">
+                    <li><strong>DHA:</strong> Suplementação com óleo de microalgas (200-600mg) é vital para o desenvolvimento visual e cognitivo fetal.</li>
+                    <li><strong>Iodo:</strong> Essencial para síntese de T3/T4 e prevenção de bócio neonatal.</li>
+                </ul>
+            </div>
+            <div class="sub-card">
+                <h4 style="color: #fbbf24;">Idosos (Sarcopenia)</h4>
+                <ul style="font-size: 0.8rem; line-height: 1.5;">
+                    <li><strong>Resistência Anabólica:</strong> Idosos precisam de 1.2 a 1.5 g/kg de proteína.</li>
+                    <li><strong>Creatina:</strong> Auxilia na manutenção da força muscular e função cognitiva em vegetarianos (que possuem estoques musculares menores).</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-modern">
+        <h3><i class="fas fa-tint"></i> Ácidos Graxos e Saúde Cardiovascular</h3>
+        <p>Embora o <strong>ALA</strong> (Linhaça/Chia) seja abundante, a conversão para <strong>EPA</strong> e <strong>DHA</strong> é ineficiente (frequentemente < 5%).</p>
+        <div style="padding: 15px; border: 1px dashed #10b981; border-radius: 10px; font-size: 0.85rem; margin-top: 10px;">
+            <strong>Nota Técnica:</strong> Para garantir proteção cardiovascular e neuroproteção, o uso de óleo de microalgas (Schizochytrium) é a estratégia mais eficaz, sendo estruturalmente idêntico ao óleo de peixe, porém livre de mercúrio.
+        </div>
+    </div>
+    <div class="card-modern" style="margin-top: 40px; border-top: 3px solid #10b981; background: rgba(15, 23, 42, 0.4);">
+    <h3 style="font-size: 1rem; color: #10b981; margin-bottom: 15px;">
+        <i class="fas fa-bookmark"></i> Referências Bibliográficas e Fontes Acadêmicas
+    </h3>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; font-size: 0.8rem; line-height: 1.5; color: #94a3b8;">
+        
+        <div class="ref-item">
+            <p><strong>[1] Sociedade Vegetariana Brasileira (SVB).</strong> Guias de Saúde e Nutrição. Disponível em: <a href="https://www.svb.org.br" target="_blank" style="color: #10b981;">svb.org.br</a></p>
+        </div>
+
+        <div class="ref-item">
+            <p><strong>[2] PubMed (PMC).</strong> Efficacy of B12 supplementation in plant-based diet adults. <span style="color: #6366f1;">PMID: 25117996</span></p>
+        </div>
+
+        <div class="ref-item">
+            <p><strong>[3] SciELO Brasil.</strong> Baixa ingestão de proteínas e mortalidade em idosos brasileiros.</p>
+        </div>
+
+        <div class="ref-item">
+            <p><strong>[4] DGS Portugal.</strong> Linhas de Orientação para uma Alimentação Vegetariana Saudável.</p>
+        </div>
+
+        <div class="ref-item">
+            <p><strong>[5] RBONE.</strong> Dieta plant-based na dislipidemia e risco cardiovascular.</p>
+        </div>
+
+        <div class="ref-item">
+            <p><strong>[6] Unifesp.</strong> Impacto de ultraprocessados em dietas vegetarianas e veganas.</p>
+        </div>
+
+    </div>
+</div>
+<button onclick="exportarSecaoPDF('plantbased', 'Relatorio_Plant Based_NutriScience')" class="btn-pdf">
+    <i class="fas fa-file-pdf"></i> Baixar Guia de Plant Based
+</button>
+</section>
+<section id="alimentos" class="tab-content">
+    <div class="header-modern" style="background: linear-gradient(135deg, #10b981, #064e3b); padding: 40px; border-radius: 24px; margin-bottom: 30px; color: white;">
+        <h1 style="margin: 0;">Banco Nutricional</h1>
+        <p style="opacity: 0.8; margin-top: 5px;">Consulte os macros por 100g de alimento.</p>
+    </div>
+
+    <input type="text" id="campoBusca" class="search-bar" placeholder="🔍  Digite o nome do alimento (ex: frango, arroz)..." onkeyup="renderAlimentos(this.value)">
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Alimento</th>
+                    <th>Calorias</th>
+                    <th style="color: #fbbf24;">Carb</th>
+                    <th style="color: #60a5fa;">Prot</th>
+                    <th style="color: #34d399;">Gord</th>
+                </tr>
+            </thead>
+            <tbody id="foodBody">
+                </tbody>
+        </table>
+    </div>
+</section>
+
+<section id="celiaca" class="tab-content">
+    <div class="calculator-header">
+        <h1>Masterclass: Patologia e Clínica da DC</h1>
+        <p>Aprofundamento em Imunogenética, Histopatologia e Manejo Avançado.</p>
+    </div>
+
+    <div class="card-modern">
+        <h3 style="color: var(--primary);"><i class="fas fa-dna"></i> 1. A Cascata Imunomediada e Genética</h3>
+        <p style="margin: 10px 0;">A Doença Celíaca (DC) é uma <strong>desordem sistêmica autoimune</strong>. A patogênese depende da interação entre o glúten, a enzima <strong>tTG2</strong> e o sistema HLA.</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-top: 15px;">
+            <div style="border-left: 3px solid var(--primary); background: rgba(99, 102, 241, 0.05); padding: 15px; border-radius: 12px;">
+                <h4 style="color: var(--primary);">Genética (HLA-DQ2/DQ8)</h4>
+                <p style="font-size: 0.85rem; opacity: 0.9;">Cerca de <strong>95%</strong> dos celíacos portam HLA-DQ2. A ausência desses alelos tem um <strong>VPN</strong> de quase 100%, crucial para excluir o diagnóstico.</p>
+            </div>
+            <div style="border-left: 3px solid var(--accent); background: rgba(16, 185, 129, 0.05); padding: 15px; border-radius: 12px;">
+                <h4 style="color: var(--accent);">O Papel da tTG2</h4>
+                <p style="font-size: 0.85rem; opacity: 0.9;">A tTG2 desamina a gliadina, aumentando a carga negativa do peptídeo e facilitando o gatilho da resposta de células T.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-modern">
+        <h3><i class="fas fa-vial"></i> 2. Triagem e Diagnóstico Laboratorial</h3>
+        <div style="overflow-x: auto; margin-top: 15px;">
+            <table style="width: 100%; border-collapse: collapse;">
+                <thead>
+                    <tr style="text-align: left; border-bottom: 2px solid var(--primary);">
+                        <th style="padding: 10px;">Marcador</th>
+                        <th style="padding: 10px;">Sensibilidade</th>
+                        <th style="padding: 10px;">Aplicação</th>
+                    </tr>
+                </thead>
+                <tbody style="font-size: 0.85rem;">
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td style="padding: 12px;"><strong>tTG-IgA</strong></td>
+                        <td>~98%</td>
+                        <td>Padrão-ouro para triagem inicial.</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td style="padding: 12px;"><strong>EMA-IgA</strong></td>
+                        <td>~90%</td>
+                        <td>Confirmação (baixa falso-positividade).</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px;"><strong>HLA-DQ2/DQ8</strong></td>
+                        <td>100% (VPN)</td>
+                        <td>Usado para <strong>exclusão</strong> da doença.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="card-modern">
+        <h3><i class="fas fa-microscope"></i> 3. Avaliação da Mucosa: Escala de Marsh</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px;">
+            <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 12px; border-top: 4px solid #fbbf24;">
+                <h5 style="color: #fbbf24;">Marsh I (Infiltrativa)</h5>
+                <p style="font-size: 0.8rem; opacity: 0.8;">Arquitetura preservada, mas com aumento de linfócitos intraepiteliais.</p>
+            </div>
+            <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 12px; border-top: 4px solid #f87171;">
+                <h5 style="color: #f87171;">Marsh III (Destrutiva)</h5>
+                <p style="font-size: 0.8rem; opacity: 0.8;">Atrofia vilositária completa/parcial. Achatamento da mucosa e má absorção severa.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-modern">
+        <h3><i class="fas fa-pills"></i> 4. Deficiências de Micronutrientes</h3>
+        <div style="background: rgba(99, 102, 241, 0.1); padding: 15px; border-radius: 12px; margin-top: 10px;">
+            <p style="font-size: 0.9rem;"><i class="fas fa-info-circle"></i> Foco em: <strong>Ferro, Cálcio, Vitamina D e B12</strong>. A atrofia duodenal compromete a absorção desses nutrientes essenciais.</p>
+        </div>
+    </div>
+
+    <div class="card-modern" style="border-left: 5px solid #ef4444 !important;">
+        <h3 style="color: #ef4444;"><i class="fas fa-exclamation-triangle"></i> 5. Vigilância: Contaminação Cruzada</h3>
+        <p style="font-size: 0.9rem; margin: 10px 0;">O limite seguro é de apenas <strong>20ppm</strong> de glúten.</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+            <div style="font-size: 0.8rem; background: rgba(239, 68, 68, 0.05); padding: 10px; border-radius: 8px;">
+                <strong style="color: #fca5a5;">Risco Doméstico:</strong> Torradeiras, utensílios de madeira e esponjas compartilhadas.
+            </div>
+            <div style="font-size: 0.8rem; background: rgba(96, 165, 250, 0.05); padding: 10px; border-radius: 8px;">
+                <strong style="color: #93c5fd;">Rótulos:</strong> Cuidado com "Extrato de Malte" e "Proteína Vegetal Hidrolisada".
+            </div>
+        </div>
+    </div>
+
+    <div class="card-modern" style="background: rgba(15, 23, 42, 0.4); border-top: 2px solid var(--primary);">
+        <h4 style="font-size: 0.9rem; margin-bottom: 10px;"><i class="fas fa-gavel"></i> Referências e Legislação</h4>
+        <p style="font-size: 0.8rem; color: #94a3b8;">ANVISA RDC nº 40/2002, Protocolos PCDT/MS e Diretrizes da World Gastroenterology Organisation.</p>
+    </div>
+
+    <button onclick="window.print()" class="btn-calc-glow" style="max-width: 300px; margin: 20px auto;">
+        <i class="fas fa-file-pdf"></i> Imprimir Guia Clínico
+    </button>
+</section>
+<section id="creatina" class="tab-content">
+    <div class="header-modern" style="background: linear-gradient(135deg, #6366f1, #4338ca);">
+        <h1>Suplementação de Creatina</h1>
+        <p>Bioquímica, Fisiologia do Exercício e Aplicações Clínicas</p>
+    </div>
+
+    <div class="card-modern">
+        <h3>Natureza Química e Arquitetura Molecular</h3>
+        <p>A creatina ($C_4H_9N_3O_2$) é um composto nitrogenado sintetizado a partir de três aminoácidos: <strong>Glicina, Arginina e Metionina</strong>.</p>
+        
+        <table class="table-modern">
+            <thead>
+                <tr>
+                    <th>Propriedade</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Nome IUPAC</td><td>Ácido 2-(metilguanidino)acético</td></tr>
+                <tr><td>Precursores</td><td>Glicina, L-Arginina e Metionina</td></tr>
+                <tr><td>Armazenamento</td><td>95% Músculo Esquelético</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card-modern">
+        <h3>Bioenergética: O Sistema ATP-CP</h3>
+        <p>A principal função da creatina é a ressíntese ultra-rápida de energia através da enzima Creatina Quinase (CK):</p>
+        <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; text-align: center; margin: 20px 0;">
+            $$PCr + ADP + H^+ \xrightarrow{CK} Creatina + ATP$$
+        </div>
+        <p>Este sistema é o protagonista em esforços de altíssima intensidade (5 a 10 segundos).</p>
+    </div>
+
+    <div class="card-modern">
+        <h3>Protocolos de Suplementação</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div style="background: rgba(99, 102, 241, 0.1); padding: 15px; border-radius: 8px;">
+                <h4 style="color: #6366f1;">Carga (Loading)</h4>
+                <p>20g/dia (dividido em 4x) por 5-7 dias. Ideal para saturação rápida.</p>
+            </div>
+            <div style="background: rgba(16, 185, 129, 0.1); padding: 15px; border-radius: 8px;">
+                <h4 style="color: #10b981;">Manutenção</h4>
+                <p>3g a 5g por dia. Saturação completa em aproximadamente 28 dias.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-modern" style="border-left: 4px solid #ef4444;">
+        <h3>Referências Bibliográficas</h3>
+        <ul style="font-size: 0.85rem; color: #94a3b8; line-height: 1.6;">
+            <li>Sociedade Internacional de Nutrição Esportiva (ISSN) - Creatina Monohidratada.</li>
+            <li>Einstein, USP e SciELO - Revisões sobre Função Renal e Performance.</li>
+            <li>Journal of the International Society of Sports Nutrition (JISSN).</li>
+        </ul>
+    </div>
+    <div class="card-modern">
+    <h3>Calculadora de Dosagem Individualizada</h3>
+    <p>Calcule a dose exata baseada no protocolo de 0.3g/kg para carga e 0.05g/kg para manutenção.</p>
+    <div style="display: flex; gap: 10px; margin: 15px 0;">
+        <input type="number" id="peso-creatina" placeholder="Seu peso (kg)" style="padding: 10px; border-radius: 5px; border: 1px solid #ddd; flex: 1;">
+        <button onclick="calcularCreatina()" class="btn-primary" style="padding: 10px 20px; background: #6366f1; color: #fff; border: none; border-radius: 5px; cursor: pointer;">Calcular</button>
+    </div>
+    <div id="resultado-creatina"></div>
+</div>
+<div class="card-modern" style="margin-top: 40px; border-top: 3px solid #ef4444; background: rgba(15, 23, 42, 0.4);">
+    <h3 style="font-size: 1rem; color: #f87171; margin-bottom: 15px;">
+        <i class="fas fa-gavel"></i> Base Normativa e Evidências Clínicas
+    </h3>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; font-size: 0.8rem; line-height: 1.5; color: #94a3b8;">
+        
+        <div>
+            <h4 style="color: #cbd5e1; font-size: 0.85rem; margin-bottom: 8px;">Diretrizes e Diagnóstico</h4>
+            <ul style="list-style: none; padding: 0;">
+                <li>• <strong>Ministério da Saúde (PCDT):</strong> Protocolo Clínico e Diretrizes Terapêuticas da Doença Celíaca.</li>
+                <li>• <strong>World Gastroenterology Organisation:</strong> Guia Mundial de Manejo da DC.</li>
+                <li>• <strong>UFRGS/UFSC:</strong> Reposição de B12 e Revisão integrativa sobre Manifestações Extraintestinais.</li>
+            </ul>
+        </div>
+
+        <div>
+            <h4 style="color: #cbd5e1; font-size: 0.85rem; margin-bottom: 8px;">Segurança e Legislação</h4>
+            <ul style="list-style: none; padding: 0;">
+                <li>• <strong>ANVISA (RDC nº 40/2002):</strong> Regulamentação sobre a obrigatoriedade de advertências de glúten.</li>
+                <li>• <strong>FENACELBRA / ACELBRA:</strong> Guia de rotulagem de medicamentos e cosméticos para celíacos.</li>
+                <li>• <strong>Câmara dos Deputados/Fiocruz:</strong> Panorama regulatório e projetos de lei sobre alimentos industrializados.</li>
+            </ul>
+        </div>
+
+        <div>
+            <h4 style="color: #cbd5e1; font-size: 0.85rem; margin-bottom: 8px;">Substituições e Estilo de Vida</h4>
+            <ul style="list-style: none; padding: 0;">
+                <li>• <strong>CRN-2:</strong> A dieta sem glúten sob a ótica da segurança alimentar.</li>
+                <li>• <strong>SNS24 (Portugal):</strong> Linhas de orientação para dieta isenta de glúten e contaminação cruzada.</li>
+                <li>• <strong>Clínica Hepatogastro:</strong> Identificação de sintomas não digestivos em adultos.</li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+<button onclick="exportarSecaoPDF('creatina', 'Relatorio_Creatina_NutriScience')" class="btn-pdf">
+    <i class="fas fa-file-pdf"></i> Baixar Guia de Creatina
+</button>
+</section>
+<section id="agcc" class="tab-content">
+    <div class="hero-visual" style="background: linear-gradient(135deg, #065f46, #10b981); margin-bottom: 30px;">
+        <div style="position: relative; z-index: 2;">
+            <span style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; font-weight: 700; opacity: 0.9;">Metabolômica e Microbiota</span>
+            <h1>Ácidos Graxos de Cadeia Curta <span style="color: #a7f3d0;">(AGCC)</span></h1>
+            <p style="max-width: 700px; font-size: 1.1rem; margin: 20px 0; line-height: 1.6;">
+                A ponte bioquímica entre a fibra alimentar e a saúde sistêmica. Os AGCC são moléculas de sinalização pleiotrópicas que ditam desde a queima de gordura até a saúde mental.
+            </p>
+        </div>
+    </div>
+
+    <div class="card-modern">
+        <h2 style="color: #10b981; margin-bottom: 20px;"><i class="fas fa-atom"></i> Bioquímica e Formação</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            <div>
+                <p>Os AGCC são ácidos carboxílicos saturados de 2 a 6 carbonos. No corpo humano, 95% da produção resume-se a <strong>Acetato (C2), Propionato (C3) e Butirato (C4)</strong>.</p>
+                <div style="margin-top: 15px; padding: 15px; background: rgba(16, 185, 129, 0.1); border-radius: 12px; font-size: 0.9rem;">
+                    <strong>Processo:</strong> Fibras → Fermentação Anaeróbia (Cólon Proximal) → AGCC + Gases (H₂, CO₂, CH₄).
+                </div>
+            </div>
+            <div>
+                <p><strong>Substratos de Elite:</strong></p>
+                <ul style="font-size: 0.9rem; color: var(--text-main); margin-top: 10px;">
+                    <li><strong>Amido Resistente:</strong> Batata gelada, banana verde.</li>
+                    <li><strong>Fibras Solúveis:</strong> Pectina (maçã), Inulina (chicória).</li>
+                    <li><strong>Mucinas:</strong> A própria barreira mucosa serve de alimento para bactérias como a <em>Akkermansia</em> na falta de fibras.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 25px 0;">
+        <div class="card-modern" style="border-top: 4px solid #60a5fa;">
+            <h3 style="color: #60a5fa;">Acetato (C2)</h3>
+            <p style="font-size: 0.85rem; margin-top: 10px;">É o mais abundante (60%).</p>
+            <ul style="font-size: 0.85rem; padding-left: 15px; margin-top: 10px;">
+                <li>Atravessa a barreira hematoencefálica e sinaliza <strong>saciedade no hipotálamo</strong>.</li>
+                <li>Utilizado pelos tecidos periféricos (músculo e coração) para gerar ATP.</li>
+            </ul>
+        </div>
+        <div class="card-modern" style="border-top: 4px solid #fbbf24;">
+            <h3 style="color: #fbbf24;">Propionato (C3)</h3>
+            <p style="font-size: 0.85rem; margin-top: 10px;">O regulador metabólico.</p>
+            <ul style="font-size: 0.85rem; padding-left: 15px; margin-top: 10px;">
+                <li>Viaja até o fígado para inibir a síntese de colesterol e auxiliar na <strong>gliconeogênese</strong>.</li>
+                <li>Estimula a liberação de PYY e GLP-1, melhorando a resposta à insulina.</li>
+            </ul>
+        </div>
+        <div class="card-modern" style="border-top: 4px solid #f87171;">
+            <h3 style="color: #f87171;">Butirato (C4)</h3>
+            <p style="font-size: 0.85rem; margin-top: 10px;">O "Santo Graal" do intestino.</p>
+            <ul style="font-size: 0.85rem; padding-left: 15px; margin-top: 10px;">
+                <li>Fornece <strong>70% da energia</strong> total que as células do cólon precisam.</li>
+                <li>Potente inibidor de HDAC (epigenética), prevenindo mutações e câncer colorretal.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card-modern">
+        <h3 style="margin-bottom: 20px;"><i class="fas fa-shield-alt"></i> Mecanismos de Proteção e Sinalização</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
+            <div>
+                <h4 style="color: var(--primary);"><i class="fas fa-lock"></i> Manutenção da Barreira</h4>
+                <p style="font-size: 0.9rem;">Os AGCC, especialmente o butirato, aumentam a expressão das proteínas <strong>Claudina e Ocludina</strong> (Tight Junctions). Sem eles, ocorre o <em>Leaky Gut</em> (intestino permeável), permitindo que toxinas entrem na corrente sanguínea.</p>
+            </div>
+            <div>
+                <h4 style="color: var(--primary);"><i class="fas fa-dna"></i> Sinalização Epigenética</h4>
+                <p style="font-size: 0.9rem;">Eles ativam receptores acoplados à proteína G (<strong>GPR41, GPR43</strong>). Essa ativação reduz a inflamação sistêmica e "ensina" o sistema imune a não atacar o próprio corpo, prevenindo doenças autoimunes.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-modern" style="background: rgba(99, 102, 241, 0.05); border: 1px solid var(--primary);">
+        <h3><i class="fas fa-brain"></i> O Impacto Neurológico</h3>
+        <p style="margin-top: 10px;">Estudos recentes mostram que os AGCC são fundamentais para o cérebro:</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 15px;">
+            <div style="flex: 1; min-width: 200px; background: var(--card-bg); padding: 15px; border-radius: 12px;">
+                <strong style="color: #6366f1;">Neurogênese:</strong> Aumentam a produção de <strong>BDNF</strong>, estimulando o crescimento de novos neurônios.
+            </div>
+            <div style="flex: 1; min-width: 200px; background: var(--card-bg); padding: 15px; border-radius: 12px;">
+                <strong style="color: #6366f1;">Microglia:</strong> Regulam as células de defesa do cérebro, prevenindo neuroinflamação ligada ao Alzheimer e Parkinson.
+            </div>
+        </div>
+    </div>
+
+    <div class="card-modern" style="border-left: 6px solid #ef4444;">
+        <h3 style="color: #ef4444;">Atenção: Nem todo AGCC é igual</h3>
+        <p style="font-size: 0.9rem; margin-top: 10px;">
+            O <strong>Propionato de Cálcio</strong> usado como conservante em pães industrializados pode atuar como um perturbador metabólico em crianças sensíveis, elevando glucagon e gerando resistência à insulina temporária. 
+            <strong>Conclusão:</strong> O AGCC deve vir da fermentação natural da fibra, não de aditivos químicos.
+        </p>
+    </div>
+
+    <div class="card-modern" style="margin-top: 40px; border-top: 3px solid #10b981; background: rgba(15, 23, 42, 0.4);">
+        <h3 style="font-size: 1rem; color: #34d399; margin-bottom: 15px;"><i class="fas fa-book-medical"></i> Base de Evidências (PMID/PMC)</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; font-size: 0.75rem; color: #94a3b8;">
+            <div>
+                <strong>Fisiologia Celular:</strong>
+                Butirato como inibidor de HDAC e regulador de FOXP3 em células T-reg (PubMed Central).
+            </div>
+            <div>
+                <strong>Metabolismo:</strong>
+                Sinalização via GPR43: O elo entre fermentação de fibras e oxidação de ácidos graxos no tecido adiposo.
+            </div>
+            <div>
+                <strong>Neurociência:</strong>
+                Short-chain fatty acids (SCFAs) cross the blood-brain barrier: Implications for neuroplasticity (Frontiers in Endocrinology).
+            </div>
+        </div>
+    </div>
+    <button onclick="exportarSecaoPDF('agcc', 'Relatorio_AGCC_NutriScience')" class="btn-pdf">
+    <i class="fas fa-file-pdf"></i> Baixar Guia de Ácido Graxos de Cadeia Curta
+</button>
+</section>
+<section id="diabetes" class="tab-content">
+    <div class="hero-visual" style="background: linear-gradient(135deg, #1e3a8a, #3b82f6); margin-bottom: 30px;">
+        <div style="position: relative; z-index: 2;">
+            <span style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; font-weight: 700; opacity: 0.9;">Endocrinologia Molecular</span>
+            <h1>Metabolismo da Insulina & Diabetes Mellitus</h1>
+            <p style="max-width: 750px; font-size: 1.1rem; margin: 20px 0; line-height: 1.6;">
+                Uma análise profunda sobre a sinalização do receptor de insulina, a falência das células β-pancreáticas e as repercussões sistêmicas da hiperglicemia crônica.
+            </p>
+        </div>
+    </div>
+
+    <div class="card-modern" style="border: 1px solid var(--primary); margin-bottom: 30px;">
+        <h3 style="margin-bottom: 15px;"><i class="fas fa-microscope"></i> Laboratório de Cinética da Glicose</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+            <div style="display: flex; flex-direction: column; gap: 15px;">
+                <label style="font-size: 0.85rem; font-weight: bold;">Variável de Ingestão:</label>
+                <select id="meal-type" onchange="simularCurva()" class="btn-modern" style="width: 100%; background: var(--card-bg); color: var(--text-main); border: 1px solid var(--glass-border);">
+                    <option value="high-gi">Carboidrato Refinado (Carga Glicêmica ↑↑)</option>
+                    <option value="mixed">Refeição Isocalórica (Proteína + Carbo)</option>
+                    <option value="high-fiber">Matriz Complexa (Fibras + Lipídios + Carbo)</option>
+                </select>
+                <div style="background: rgba(59, 130, 246, 0.1); padding: 15px; border-radius: 8px; font-size: 0.8rem;">
+                    <strong>Legenda Bioquímica:</strong>
+                    <div style="margin-top: 5px;"><span style="color: #ef4444;">▬</span> Curva Glicêmica (mg/dL)</div>
+                    <div><span style="color: #3b82f6;">▬</span> Resposta Insulínica (µU/mL)</div>
+                </div>
+            </div>
+            <div style="background: #0f172a; border-radius: 12px; padding: 20px; display: flex; align-items: center; justify-content: center; box-shadow: inset 0 2px 10px rgba(0,0,0,0.5);">
+                <canvas id="canvasGlicemia" width="400" height="200" style="max-width: 100%;"></canvas>
+            </div>
+        </div>
+        <div id="feedback-simulador" style="margin-top: 15px; font-size: 0.85rem; padding: 10px; border-radius: 6px; background: rgba(255,255,255,0.05);"></div>
+    </div>
+
+    <div class="card-modern" style="margin-bottom: 30px;">
+        <h2 style="color: var(--primary); margin-bottom: 25px;"><i class="fas fa-dna"></i> Diferenciação Etiológica e Mecanística</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px;">
+            <div>
+                <h3 style="color: #ef4444; border-bottom: 2px solid #ef4444; display: inline-block;">DM Tipo 1: Deficiência Absoluta</h3>
+                <p style="margin-top: 15px; font-size: 0.95rem; text-align: justify;">
+                    O <strong>DM1</strong> é uma patologia autoimune mediada por células T que resulta na destruição seletiva das células β nas ilhotas pancreáticas. 
+                    A suscetibilidade genética está fortemente ligada aos alelos do **Complexo Principal de Histocompatibilidade (HLA)**, especificamente DR3-DQ2 e DR4-DQ8.
+                </p>
+                <ul style="font-size: 0.9rem; margin-top: 10px; line-height: 1.6;">
+                    <li><strong>Fase Pré-clínica:</strong> Presença de autoanticorpos (Anti-GAD65, IA-2, Anti-insulina).</li>
+                    <li><strong>Patogênese:</strong> Infiltração linfocitária (insulite) e perda de >80% da massa celular β antes dos sintomas.</li>
+                    <li><strong>Risco Metabólico:</strong> Tendência severa à <strong>Cetoacidose Diabética (CAD)</strong> devido à oxidação descontrolada de ácidos graxos.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 style="color: #3b82f6; border-bottom: 2px solid #3b82f6; display: inline-block;">DM Tipo 2: Resistência e Exaustão</h3>
+                <p style="margin-top: 15px; font-size: 0.95rem; text-align: justify;">
+                    O <strong>DM2</strong> é um distúrbio multissistêmico onde a resistência periférica à insulina (especialmente no músculo esquelético e fígado) precede a falência das células β. 
+                    A obesidade visceral promove um estado inflamatório crônico (TNF-α, IL-6) que bloqueia a sinalização intracelular do receptor de insulina.
+                </p>
+                <ul style="font-size: 0.9rem; margin-top: 10px; line-height: 1.6;">
+                    <li><strong>Efeito Incretínico:</strong> Redução da resposta ao GLP-1 e GIP, hormônios que potencializam a secreção de insulina.</li>
+                    <li><strong>Disfunção da Célula β:</strong> Exposição crônica à hiperglicemia (glicotoxicidade) e ácidos graxos (lipotoxicidade).</li>
+                    <li><strong>Gliconeogênese Hepática:</strong> Perda da supressão da produção de glicose pelo fígado, mesmo em estado alimentado.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-modern" style="background: rgba(59, 130, 246, 0.05); margin-bottom: 30px; border: 1px dashed var(--primary);">
+        <h3 style="margin-bottom: 15px;"><i class="fas fa-project-diagram"></i> Sinalização Molecular e GLUT-4</h3>
+        <p style="font-size: 0.95rem;">
+            A insulina liga-se ao seu receptor (RTK), causando autofosforilação e recrutamento dos substratos do receptor de insulina (IRS-1/2). A ativação da via **PI3K -> Akt** é o evento central que promove:
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px;">
+            <div style="background: var(--card-bg); padding: 15px; border-radius: 8px; border: 1px solid var(--glass-border);">
+                <strong>Translocação de GLUT-4:</strong> O principal transportador de glicose move-se das vesículas intracelulares para a membrana plasmática.
+            </div>
+            <div style="background: var(--card-bg); padding: 15px; border-radius: 8px; border: 1px solid var(--glass-border);">
+                <strong>Síntese de Glicogênio:</strong> Ativação da Glicogênio Sintase através da inibição da GSK3.
+            </div>
+            <div style="background: var(--card-bg); padding: 15px; border-radius: 8px; border: 1px solid var(--glass-border);">
+                <strong>Anti-lipólise:</strong> Inibição da lipase sensível a hormônio no tecido adiposo.
+            </div>
+        </div>
+    </div>
+
+    <div class="card-modern">
+        <h3 style="margin-bottom: 20px;"><i class="fas fa-stethoscope"></i> Gestão Clínica e Complicações Sistêmicas</h3>
+        <div style="overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; min-width: 600px;">
+                <thead>
+                    <tr style="background: rgba(255,255,255,0.05); text-align: left;">
+                        <th style="padding: 12px; border-bottom: 2px solid var(--primary);">Categoria</th>
+                        <th style="padding: 12px; border-bottom: 2px solid var(--primary);">DM Tipo 1</th>
+                        <th style="padding: 12px; border-bottom: 2px solid var(--primary);">DM Tipo 2</th>
+                    </tr>
+                </thead>
+                <tbody style="font-size: 0.9rem;">
+                    <tr style="border-bottom: 1px solid var(--glass-border);">
+                        <td style="padding: 12px;"><strong>Tratamento Padrão</strong></td>
+                        <td style="padding: 12px;">Insulinoterapia intensiva (Análogos de ação ultra-rápida e longa).</td>
+                        <td style="padding: 12px;">Metformina, Inibidores de SGLT2 (glicosúria), Agonistas GLP-1.</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--glass-border);">
+                        <td style="padding: 12px;"><strong>Complicação Aguda</strong></td>
+                        <td style="padding: 12px;">Cetoacidose Diabética (CAD) - Emergência metabólica.</td>
+                        <td style="padding: 12px;">Estado Hiperosmolar Hiperglicêmico (EHH).</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px;"><strong>Complicações Crônicas</strong></td>
+                        <td style="padding: 12px; color: #94a3b8;" colspan="2">
+                            Retinopatia (formação de microaneurismas), Nefropatia (Glomeruloesclerose de Kimmelstiel-Wilson), 
+                            Neuropatia e Doença Cardiovascular Aterosclerótica acelerada.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="card-modern" style="border-left: 6px solid #fbbf24; background: rgba(251, 191, 36, 0.05);">
+    <h3 style="color: #fbbf24;"><i class="fas fa-dumbbell"></i> Bioquímica do Exercício: A Via da AMPK</h3>
+    <p style="font-size: 0.95rem; margin-top: 10px;">
+        Sabia que o exercício físico consegue contornar a resistência à insulina? 
+    </p>
+    <div style="margin-top: 10px; font-size: 0.9rem; line-height: 1.5;">
+        Durante a contração muscular, a relação ATP/AMP cai, ativando a enzima <strong>AMPK</strong>. 
+        Essa via promove a translocação do <strong>GLUT-4</strong> para a membrana de forma <u>independente de insulina</u>. 
+        <br><br>
+        <strong>Aplicação Prática:</strong> Por isso o treino de força é considerado um "medicamento" para diabéticos tipo 2, pois ele cria uma rota alternativa para limpar a glicose do sangue.
+    </div>
+</div>
+
+    <div class="card-modern" style="margin-top: 40px; border-top: 3px solid var(--primary); background: rgba(15, 23, 42, 0.4);">
+        <h3 style="font-size: 1rem; color: #3b82f6; margin-bottom: 15px;"><i class="fas fa-book-open"></i> Corpo de Evidência Científica</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; font-size: 0.8rem; color: #94a3b8; line-height: 1.4;">
+            <div>
+                <strong>Ministério da Saúde (Brasil):</strong> Diretrizes para o diagnóstico e tratamento do Diabetes Mellitus - Protocolo Clínico 2024.
+            </div>
+            <div>
+                <strong>International Diabetes Federation (IDF):</strong> "Diabetes Atlas 10th Edition" - Dados globais sobre prevalência e mortalidade.
+            </div>
+            <div>
+                <strong>American Diabetes Association (ADA):</strong> "Standards of Care in Diabetes" - Fisiopatologia da resistência à insulina e novos fármacos.
+            </div>
+            <div>
+                <strong>MedEstratégia:</strong> Revisão sistemática sobre alelos HLA e destruição autoimune no Diabetes Tipo 1.
+            </div>
+        </div>
+    </div>
+    <button onclick="exportarSecaoPDF('diabetes', 'Relatorio_Diabetes_NutriScience')" class="btn-pdf">
+    <i class="fas fa-file-pdf"></i> Baixar Guia de Diabetes
+</button>
+</section>
+<section id="obesidade" class="tab-content">
+    <div class="hero-visual" style="background: linear-gradient(135deg, #1e293b, #334155); margin-bottom: 30px;">
+        <div style="position: relative; z-index: 2;">
+            <span style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; font-weight: 700; opacity: 0.9;">Doença Crônica e Sistêmica</span>
+            <h1>Obesidade: <span style="color: #fbbf24;">Fisiopatologia & Desafios</span></h1>
+            <p style="max-width: 750px; font-size: 1.1rem; margin: 20px 0; line-height: 1.6;">
+                Uma análise da obesidade como órgão endócrino metabolicamente ativo, explorando desde o eixo hipotalâmico até as novas fronteiras dos triplos agonistas (Retatrutida).
+            </p>
+        </div>
+    </div>
+
+    <div class="card-modern" style="margin-bottom: 25px;">
+        <h3 style="color: var(--primary); margin-bottom: 15px;"><i class="fas fa-calculate"></i> Taxonomia Diagnóstica: Além do IMC</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+            <div>
+                <p style="font-size: 0.95rem;">O IMC ($massa / altura^2$) é a métrica universal, mas possui limitações em distinguir massa magra de adiposidade visceral. A <strong>Circunferência Abdominal (CA)</strong> surge como padrão-ouro para risco metabólico.</p>
+                <div style="margin-top: 15px; background: rgba(251, 191, 36, 0.1); padding: 15px; border-radius: 8px;">
+                    <strong>Risco Muito Elevado (CA):</strong><br>
+                    • Homens: > 102 cm <br>
+                    • Mulheres: > 88 cm
+                </div>
+            </div>
+            <div style="overflow-x: auto;">
+                <table style="width: 100%; font-size: 0.8rem; border-collapse: collapse;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--primary);">
+                            <th style="padding: 8px; text-align: left;">Classificação</th>
+                            <th style="padding: 8px; text-align: left;">IMC (kg/m²)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td style="padding: 8px;">Eutrófico</td><td style="padding: 8px;">18,5 – 24,9</td></tr>
+                        <tr style="color: #fbbf24;"><td style="padding: 8px;">Sobrepeso</td><td style="padding: 8px;">25,0 – 29,9</td></tr>
+                        <tr style="color: #f87171;"><td style="padding: 8px;">Obesidade I</td><td style="padding: 8px;">30,0 – 34,9</td></tr>
+                        <tr style="color: #ef4444;"><td style="padding: 8px;">Obesidade III</td><td style="padding: 8px;">≥ 40,0</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 25px;">
+        <div class="card-modern" style="border-left: 5px solid #ef4444;">
+            <h4><i class="fas fa-chart-area"></i> A "Pandemia Não Infecciosa"</h4>
+            <p style="font-size: 0.9rem; margin-top: 10px;">
+                No Brasil, a prevalência de obesidade saltou de 15,1% (2010) para <strong>31% em 2024</strong>. 
+                Estudos da Fiocruz projetam que <strong>48% dos adultos brasileiros</strong> serão obesos até 2044 se a tendência persistir.
+            </p>
+        </div>
+        <div class="card-modern">
+            <h4><i class="fas fa-map-marker-alt"></i> Variação Regional (VMA)</h4>
+            <ul style="font-size: 0.85rem; margin-top: 10px; list-style: none; padding: 0;">
+                <li style="margin-bottom: 5px;">📍 <strong>Porto Velho:</strong> Crescimento explosivo (+13.6 pts).</li>
+                <li style="margin-bottom: 5px;">📍 <strong>Rio de Janeiro:</strong> Desaceleração significativa.</li>
+                <li>📍 <strong>Aracaju:</strong> Crescimento médio constante.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card-modern" style="background: rgba(59, 130, 246, 0.03); margin-bottom: 25px;">
+        <h3 style="margin-bottom: 20px;"><i class="fas fa-brain"></i> Regulação Hipotalâmica e Hormonal</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            <div>
+                <h4 style="color: #f87171;">Via Orexigênica (Fome)</h4>
+                <p style="font-size: 0.85rem;">Neurônios <strong>NPY/AgRP</strong> no núcleo arqueado. Ativados pela <strong>Grelina</strong> (estômago) durante o jejum.</p>
+                <h4 style="color: #34d399; margin-top: 15px;">Via Anorexigênica (Saciedade)</h4>
+                <p style="font-size: 0.85rem;">Neurônios <strong>POMC/CART</strong>. Ativados pela <strong>Leptina</strong> (tecido adiposo). Na obesidade, ocorre a <em>resistência à leptina</em>.</p>
+            </div>
+            <div style="background: var(--card-bg); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border);">
+                <h4 style="margin-bottom: 10px;">Apetite Hedônico</h4>
+                <p style="font-size: 0.85rem;">Sistema de recompensa dopaminérgico. Alimentos ultraprocessados sobrepõem os sinais biológicos, gerando compulsão e o "comer emocional".</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-modern" style="border-top: 4px solid #10b981; margin-bottom: 25px;">
+        <h3><i class="fas fa-microbe"></i> O Órgão Metabólico Virtual</h3>
+        <p style="font-size: 0.9rem; margin-top: 10px;">
+            A disbiose (desequilíbrio Firmicutes/Bacteroidetes) compromete a integridade da barreira intestinal (<strong>Leaky Gut</strong>). 
+            A entrada de LPS (lipopolissacarídeos) na circulação induz uma inflamação de baixa intensidade, agravando a resistência insulínica.
+        </p>
+    </div>
+
+    <div class="card-modern" style="background: linear-gradient(to right, rgba(59, 130, 246, 0.1), transparent);">
+        <h3 style="margin-bottom: 15px;"><i class="fas fa-pills"></i> Fronteiras Terapêuticas (2025-2026)</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+            <div style="padding: 15px; border-radius: 10px; background: var(--card-bg);">
+                <strong>Semaglutida:</strong> Agonista GLP-1 (Redução de 15-20% do peso).
+            </div>
+            <div style="padding: 15px; border-radius: 10px; background: var(--card-bg);">
+                <strong>Tirzepatida:</strong> Dual GLP-1/GIP (Potencializa queima lipídica).
+            </div>
+            <div style="padding: 15px; border-radius: 10px; background: var(--card-bg); border: 1px solid #fbbf24;">
+                <strong>Retatrutida:</strong> Triplo Agonista (GLP-1, GIP, Glucagon). Perda de até <strong>24%</strong> do peso total.
+            </div>
+        </div>
+    </div>
+
+    <div class="card-modern" style="margin-top: 25px;">
+        <h3 style="margin-bottom: 15px;"><i class="fas fa-hospital-user"></i> Intervenções Cirúrgicas (Diretrizes CFM)</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+            <div style="font-size: 0.85rem;">
+                <strong>Sleeve (Gastrectomia Vertical):</strong> Remoção de 80% do estômago. Reduz níveis de Grelina.
+            </div>
+            <div style="font-size: 0.85rem;">
+                <strong>Bypass em Y de Roux:</strong> Padrão-ouro. Desvio intestinal que aumenta PYY e GLP-1 endógenos.
+            </div>
+        </div>
+    </div>
+
+    <div class="card-modern" style="margin-top: 40px; border-top: 3px solid var(--primary); background: rgba(15, 23, 42, 0.4);">
+        <h3 style="font-size: 0.9rem; color: #3b82f6; margin-bottom: 15px;"><i class="fas fa-book-medical"></i> Base de Evidências e Citações</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; font-size: 0.75rem; color: #94a3b8;">
+            <div>• <strong>OMS & PAHO:</strong> Diretrizes Globais sobre Agonistas GLP-1 e classificação de DNTs.</div>
+            <div>• <strong>Atlas Mundial da Obesidade 2025:</strong> Projeções de custo global de US$ 3 trilhões/ano.</div>
+            <div>• <strong>Fiocruz/Vigitel:</strong> Série temporal de prevalência e transição nutricional no Brasil.</div>
+            <div>• <strong>SBCBM/CFM:</strong> Critérios para cirurgia metabólica em IMC ≥ 30 (DM2).</div>
+            <div>• <strong>Anvisa (2022):</strong> Nova rotulagem frontal (Lupa) para gorduras e açúcares.</div>
+        </div>
+    </div>
+    <button onclick="exportarSecaoPDF('obesidade', 'Relatorio_Obesidade_NutriScience')" class="btn-pdf">
+    <i class="fas fa-file-pdf"></i> Baixar Guia de Obesidade
+</button>
+</section>
+<section id="quimica" class="tab-content">
+    <div class="header-modern" style="background: linear-gradient(135deg, #1e293b, #4f46e5);">
+        <h1><i class="fas fa-atom"></i> Guia Mestre de Nomenclatura Química</h1>
+        <p>A linguagem universal da IUPAC: do átomo à fórmula final.</p>
+    </div>
+
+   <div class="card-modern" style="text-align: center;">
+    <h3><i class="fas fa-table"></i> Consulta Rápida</h3>
+    <button type="button" onclick="toggleTabela()" class="btn-modern" style="background: linear-gradient(135deg, #4f46e5, #7c3aed); color: white; border: none; padding: 12px 25px; border-radius: 8px; cursor: pointer; font-weight: bold; margin: 15px 0; display: inline-flex; align-items: center; gap: 8px;">
+        <i class="fas fa-eye"></i> Mostrar/Esconder Tabela Periódica
+    </button>
+
+    <div id="tabela-container" style="display: none; margin-top: 25px; animation: fadeIn 0.5s ease;">
+    <div class="card-modern" style="padding: 10px; border-color: var(--primary);">
+        <div class="table-wrapper" style="cursor: zoom-in; overflow: hidden; border-radius: 12px;" onclick="abrirLightbox(this)">
+            <img src="tabela.png" alt="Tabela Periódica" style="width: 100%; display: block; transition: transform 0.3s ease;">
+        </div>
+        
+        <div style="display: flex; align-items: center; gap: 10px; margin-top: 12px; padding: 0 10px;">
+            <i class="fas fa-search-plus" style="color: var(--primary);"></i>
+            <p style="font-size: 0.85rem; color: #94a3b8; margin: 0;">
+                Dica: Clique na imagem para ampliar e ver detalhes dos elementos.
+            </p>
+        </div>
+    </div>
+</div>
+
+    <div class="card-modern">
+        <h3><i class="fas fa-cut"></i> 1. A Anatomia do Nome: Prefixo, Infixo e Sufixo</h3>
+        <p>A IUPAC garante que cada nome revele a estrutura da substância através desta divisão:</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px;">
+            <div class="sub-card" style="border-left: 4px solid #6366f1; padding: 10px; background: rgba(255,255,255,0.05);">
+                <strong>Prefixo:</strong> Quantidade de átomos (Mono, Di, Tri, Tetra).
+            </div>
+            <div class="sub-card" style="border-left: 4px solid #a855f7; padding: 10px; background: rgba(255,255,255,0.05);">
+                <strong>Infixo (Radical):</strong> O elemento central (Clor-, Sulf-, Nitr-, Fosf-, Ferr-).
+            </div>
+            <div class="sub-card" style="border-left: 4px solid #10b981; padding: 10px; background: rgba(255,255,255,0.05);">
+                <strong>Sufixo:</strong> Função ou estado de oxidação (Eto, Ato, Ido, Ico).
+            </div>
+        </div>
+    </div>
+
+    <div class="card-modern">
+        <h3><i class="fas fa-vial"></i> 2. Ácidos (Hidrácidos vs Oxiácidos)</h3>
+        <p>A chave aqui é a presença de Oxigênio:</p>
+        <ul>
+            <li><strong>Hidrácidos (Sem O):</strong> Elemento + <strong>ídrico</strong>. Ex: HCl (Ácido clorídrico).</li>
+            <li><strong>Oxiácidos (Com O):</strong> O sufixo varia conforme o Nox:</li>
+        </ul>
+        <div style="overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+                <thead>
+                    <tr style="background: rgba(255,255,255,0.1);">
+                        <th style="padding: 10px;">Prefixo/Sufixo</th>
+                        <th>Relação com Nox</th>
+                        <th>Exemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Per...ico</td><td>Nox Muito Alto (+7)</td><td>Ácido perclórico (HClO<sub>4</sub>)</td></tr>
+                    <tr><td>...ico</td><td>Nox Padrão/Alto</td><td>Ácido clórico (HClO<sub>3</sub>)</td></tr>
+                    <tr><td>...oso</td><td>Nox Baixo</td><td>Ácido cloroso (HClO<sub>2</sub>)</td></tr>
+                    <tr><td>Hipo...oso</td><td>Nox Muito Baixo (+1)</td><td>Ácido hipocloroso (HClO)</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="quote-box" style="margin-top: 15px; border-left: 4px solid #fbbf24; background: rgba(251, 191, 36, 0.1); padding: 10px;">
+            <i class="fas fa-lightbulb"></i> <strong>Dica de Ouro:</strong> "Bico de Pato, Formiga no Ouvido, Moscas no Chafariz" (Ídrico → Eto | Ico → Ato | Oso → Ito).
+        </div>
+    </div>
+
+    <div class="card-modern">
+        <h3><i class="fas fa-list-ol"></i> 3. Os Números na Fórmula</h3>
+        <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 250px;">
+                <strong>Atomicidade (Pequeno):</strong> O 2 em H<sub>2</sub>O. Indica quantos átomos existem.
+            </div>
+            <div style="flex: 1; min-width: 250px;">
+                <strong>Coeficiente (Grande):</strong> O 2 em 2 HCl. Indica a quantidade de moléculas.
+            </div>
+        </div>
+    </div>
+
+    <div class="card-modern">
+        <h3><i class="fas fa-shapes"></i> 4. Bases, Sais e Óxidos</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+            <div class="sub-card">
+                <h4 style="color: #10b981;">Bases (Hidróxidos)</h4>
+                <p>Presença de OH<sup>-</sup> à direita. Ex: NaOH.</p>
+            </div>
+            <div class="sub-card">
+                <h4 style="color: #3b82f6;">Sais</h4>
+                <p>Derivam do ácido original. Ex: Cloreto de Sódio.</p>
+            </div>
+            <div class="sub-card">
+                <h4 style="color: #ef4444;">Óxidos</h4>
+                <p>Binários com Oxigênio no fim. Ex: CO<sub>2</sub>.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-modern">
+        <h3><i class="fas fa-exchange-alt"></i> 5. Metais com Carga Variável</h3>
+        <ul>
+            <li><strong>FeCl<sub>2</sub>:</strong> Cloreto de ferro II.</li>
+            <li><strong>FeCl<sub>3</sub>:</strong> Cloreto de ferro III.</li>
+        </ul>
+    </div>
+
+    <div class="card-modern" style="background: rgba(99, 102, 241, 0.1);">
+        <h3><i class="fas fa-bolt"></i> 6. A Lógica do Nox e a "Regra do Escorrega"</h3>
+        <p>Na fórmula Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub>, as cargas se cruzam para manter o equilíbrio neutro.</p>
+    </div>
+
+    <div class="card-modern">
+        <h3><i class="fas fa-tasks"></i> 7. Checklist Final IUPAC</h3>
+        <ol style="padding-left: 20px;">
+            <li>Identifique a função (Ácido, Base, Óxido ou Sal).</li>
+            <li>Verifique se o Nox é fixo ou variável.</li>
+            <li>Monte o nome: Prefixo + Radical + Sufixo.</li>
+        </ol>
+    </div>
+
+    <div style="text-align: center; margin-bottom: 50px;">
+        <button onclick="exportarSecaoPDF('quimica', 'Guia_Nomenclatura_NutriScience')" class="btn-pdf">
+            <i class="fas fa-file-pdf"></i> Baixar Guia de Nomenclatura PDF
+        </button>
+    </div>
+</section>
+<section id="bioenergetica" class="tab-content">
+    <div class="header-modern" style="background: linear-gradient(135deg, #0f172a, #f59e0b);">
+        <h1><i class="fas fa-bolt"></i> Bioenergética: O Motor da Vida</h1>
+        <p>Fundamentos bioquímicos da manutenção da vida, performance e oxidação de substratos.</p>
+    </div>
+
+    <div class="card-modern">
+        <p>A manutenção da homeostase depende de processos capazes de captar e transformar energia de forma eficiente. No organismo humano, essa função é centralizada no <strong>ATP</strong>, a moeda energética, e em transportadores de elétrons como <strong>NAD⁺</strong> e <strong>NADH</strong>, fundamentais para o metabolismo oxidativo e a saúde metabólica.</p>
+    </div>
+
+    <div class="card-modern">
+        <h3><i class="fas fa-microscope"></i> 1. A Estrutura e Hidrólise do ATP</h3>
+        <p>O ATP é um nucleotídeo formado por adenina, ribose e três grupos fosfato ligados por ligações fosfoanidridas de alta energia.</p>
+        <div class="sub-card" style="border-left: 4px solid #f59e0b; background: rgba(245, 158, 11, 0.05); margin-top: 10px;">
+            <strong>A Reação de Liberação:</strong> Quando a célula precisa de energia, ocorre a hidrólise: 
+            <code style="display: block; text-align: center; padding: 10px; font-weight: bold;">ATP + H₂O → ADP + Pi + Energia (ΔG°' ≈ -30.5 kJ/mol)</code>
+            <em>Curiosidade Clínica:</em> Essa reação é dependente de <strong>Magnésio (Mg²⁺)</strong>. Sem magnésio suficiente, o ATP não se estabiliza adequadamente para a hidrólise, o que explica a fadiga em pacientes deficientes nesse mineral.
+        </div>
+    </div>
+
+    <div class="card-modern">
+        <h3><i class="fas fa-project-diagram"></i> 2. Vias de Ressíntese de ATP</h3>
+        <p>O corpo não armazena grandes quantidades de ATP; ele o regenera continuamente através de três mecanismos principais:</p>
+        
+        <div style="margin-top: 15px;">
+            <h4 style="color: #f59e0b;">A. Glicólise (Citosólica)</h4>
+            <p>Ocorre no citosol. Transforma glicose em piruvato, gerando 2 ATPs líquidos e 2 NADHs. É a via de "fuga ou luta", rápida e independente de oxigênio.</p>
+
+            <h4 style="color: #f59e0b;">B. Ciclo de Krebs (Matriz Mitocondrial)</h4>
+            <p>Sua função principal não é gerar ATP direto, mas sim "arrancar" elétrons dos substratos (carboidratos, gorduras e proteínas) e carregar os transportadores <strong>NADH</strong> e <strong>FADH₂</strong>.</p>
+
+            <h4 style="color: #f59e0b;">C. Fosforilação Oxidativa (Membrana Interna)</h4>
+            <p>Os elétrons do NADH passam pela cadeia respiratória, criando um gradiente de prótons que ativa a <strong>ATP Sintase</strong> (a turbina celular). Este processo produz cerca de 90% do ATP do corpo.</p>
+        </div>
+    </div>
+
+    <div class="card-modern">
+        <h3><i class="fas fa-exchange-alt"></i> 3. O Equilíbrio Redox: NAD⁺ vs NADH</h3>
+        <p>O NAD⁺ atua como um agente oxidante, aceitando elétrons para se tornar NADH.</p>
+        <ul>
+            <li><strong>NAD⁺:</strong> Forma oxidada (receptor de elétrons). Essencial para a continuidade da glicólise.</li>
+            <li><strong>NADH:</strong> Forma reduzida (transportador). Leva a energia potencial para a mitocôndria.</li>
+        </ul>
+        <div class="quote-box" style="border-left: 4px solid #10b981; background: rgba(16, 185, 129, 0.1); padding: 15px;">
+            <strong>Insight de Performance:</strong> Em exercícios de alta intensidade, se o NADH não puder ser oxidado rapidamente na mitocôndria, o corpo converte piruvato em lactato para regenerar NAD⁺ e manter o atleta em movimento.
+        </div>
+    </div>
+
+    <div class="card-modern">
+        <h3><i class="fas fa-table"></i> Diferenças Fundamentais</h3>
+        <div style="overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse;">
+                <thead>
+                    <tr style="background: #1e293b; color: white;">
+                        <th style="padding: 10px;">Molécula</th>
+                        <th>Papel Bioquímico</th>
+                        <th>Impacto Clínico</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>ATP</strong></td><td>Fonte imediata de energia</td><td>Contração muscular e transporte iônico</td></tr>
+                    <tr><td><strong>ADP</strong></td><td>Sinalizador de baixa energia</td><td>Ativa vias de queima de gordura</td></tr>
+                    <tr><td><strong>NAD⁺</strong></td><td>Coenzima de oxidação</td><td>Longevidade e reparo de DNA</td></tr>
+                    <tr><td><strong>NADH</strong></td><td>Doador de elétrons</td><td>Produção massiva de ATP mitocondrial</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="card-modern" style="font-size: 0.85rem; opacity: 0.8;">
+        <h4><i class="fas fa-book"></i> Referências Científicas Utilizadas</h4>
+        <ul style="list-style: none; padding: 0;">
+            <li>1. Nelson & Cox. Lehninger Princípios de Bioquímica.</li>
+            <li>2. Murray et al. Bioquímica Ilustrada de Harper.</li>
+            <li>3. Ying, W. NAD+/NADH e funções celulares.</li>
+        </ul>
+    </div>
+
+    <div style="text-align: center; margin-bottom: 50px;">
+        <button onclick="exportarSecaoPDF('bioenergetica', 'Bioenergetica_Master')" class="btn-pdf">
+            <i class="fas fa-file-pdf"></i> Baixar Apostila Completa
+        </button>
+    </div>
+</section>
+   
+    </main> <script src="script.js"></script> 
+    <button id="theme-toggle" onclick="toggleTheme()">
+    <i class="fas fa-adjust"></i>
+</button>
+</body>
+</html>

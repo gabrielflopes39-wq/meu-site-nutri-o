@@ -1,0 +1,364 @@
+/* ==========================================================================
+   1. VARIÁVEIS E RESET
+   ========================================================================== */
+:root {
+    --primary: #6366f1;
+    --accent: #a855f7;
+    --bg-body: #0f172a;
+    --card-bg: #1e293b; /* Cor sólida para evitar transparência confusa */
+    --text: #f1f5f9;
+    --sidebar-w: 280px;
+    --border: rgba(255, 255, 255, 0.08);
+}
+
+.light-mode {
+    --bg-body: #f1f5f9;
+    --card-bg: #ffffff;
+    --text: #1e293b;
+    --sidebar-bg: #ffffff;
+    --border: rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-body);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    min-height: 100vh;
+    overflow-x: hidden;
+    transition: background 0.3s ease;
+}
+
+/* ==========================================================================
+   2. SIDEBAR
+   ========================================================================== */
+.sidebar {
+    width: var(--sidebar-w);
+    height: 100vh;
+    background: #0b1224;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+    border-right: 1px solid var(--border);
+    z-index: 1000;
+}
+
+.light-mode .sidebar { background: var(--sidebar-bg); }
+
+.sidebar::-webkit-scrollbar { width: 5px; }
+.sidebar::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
+
+/* ==========================================================================
+   3. CONTEÚDO PRINCIPAL (POSICIONAMENTO CORRIGIDO)
+   ========================================================================== */
+.main-content {
+    margin-left: var(--sidebar-w);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* Alinha à esquerda para você ter o controle do recuo */
+    align-items: flex-start; 
+    /* 5% de recuo à esquerda para não colar na sidebar, mas não ficar longe demais */
+    padding: 40px 40px 40px 5%; 
+    min-height: 100vh;
+}
+
+.tab-content {
+    display: none;
+    width: 100%;
+    max-width: 1100px; /* Aumentado para ocupar melhor a tela */
+    animation: fadeIn 0.3s ease;
+}
+
+.tab-content.active {
+    display: block !important;
+}
+
+/* ==========================================================================
+   4. COMPONENTES (CARDS E BOTÕES)
+   ========================================================================== */
+.card-modern {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border);
+    width: 100%;
+    /* Garante que o texto interno seja legível */
+    color: var(--text);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Botão de Troca de Tema Moderno */
+#theme-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 55px;
+    height: 55px;
+    border-radius: 16px;
+    background: var(--card-bg);
+    color: var(--primary);
+    border: 1px solid var(--border);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    z-index: 9999;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+#theme-toggle:hover {
+    transform: scale(1.1) rotate(12deg);
+    border-color: var(--primary);
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+}
+
+.light-mode #theme-toggle {
+    color: #f59e0b;
+    background: #ffffff;
+}
+
+/* Menu e Itens */
+.brand {
+    padding: 30px 20px;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    text-align: center;
+}
+
+.dropdown-btn {
+    width: 100%;
+    padding: 15px 20px;
+    background: none;
+    border: none;
+    color: #94a3b8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.menu-item {
+    padding: 12px 25px;
+    cursor: pointer;
+    color: #94a3b8;
+    font-size: 0.9rem;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu-item:hover, .menu-item.active {
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--primary);
+    border-right: 4px solid var(--primary);
+}
+
+.light-mode .menu-item, .light-mode .dropdown-btn {
+    color: #64748b;
+}
+
+/* Formulários */
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    background: rgba(0,0,0,0.15);
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: 8px;
+    outline: none;
+}
+
+.light-mode input, .light-mode textarea {
+    background: #f8fafc;
+    color: #1e293b;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Estilo da Tabela de Alimentos */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+}
+
+th {
+    text-align: left;
+    padding: 12px;
+    color: var(--primary);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+td {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 15px;
+}
+
+td:first-child { border-radius: 10px 0 0 10px; }
+td:last-child { border-radius: 0 10px 10px 0; }
+
+.light-mode td { background: #f8fafc; }
+/* Header da Calc */
+.calculator-header {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.calculator-header h1 {
+    font-size: 2rem;
+    background: linear-gradient(to right, var(--primary), var(--accent));
+    background-clip: text; /* Versão padrão */
+    -webkit-background-clip: text; /* Versão para navegadores Webkit (Chrome/Safari) */
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* Fallback */
+}
+
+/* Glassmorphism Card */
+.glass-calc {
+    background: rgba(30, 41, 59, 0.7) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    max-width: 700px;
+}
+
+.input-group-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.input-box label {
+    display: block;
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-bottom: 8px;
+}
+
+.input-box i {
+    margin-right: 5px;
+    color: var(--primary);
+}
+
+/* Botão com Efeito Glow */
+.btn-calc-glow {
+    width: 100%;
+    margin-top: 30px;
+    padding: 18px;
+    border: none;
+    border-radius: 12px;
+    background: var(--primary);
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.3);
+}
+
+.btn-calc-glow:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(99, 102, 241, 0.6);
+    filter: brightness(1.1);
+}
+
+/* Resultado Estilizado */
+.result-display {
+    margin-top: 30px;
+    padding: 25px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    border-left: 4px solid var(--primary);
+    animation: fadeIn 0.5s ease;
+}
+
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.phrase-card {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, var(--card-bg), rgba(99, 102, 241, 0.08)) !important;
+    border-left: 5px solid var(--primary) !important;
+    padding: 35px !important;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.phrase-overlay {
+    flex: 1;
+}
+
+.quote-icon {
+    font-size: 1.8rem;
+    color: var(--primary);
+    opacity: 0.4;
+    margin-bottom: 15px;
+    display: block;
+}
+
+#frase-texto {
+    font-size: 1.4rem;
+    font-weight: 500;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--text);
+    margin-bottom: 5px;
+}
+
+#frase-autor {
+    font-size: 0.9rem;
+    color: var(--primary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-next-phrase {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    color: var(--text);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+}
+
+.btn-next-phrase:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateX(3px);
+}
