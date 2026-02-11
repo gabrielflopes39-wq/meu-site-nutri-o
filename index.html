@@ -30,20 +30,16 @@
             </button>
            <div class="dropdown-container" style="display: none;">
     <div class="menu-item" onclick="nav('quimica')"><i class="fas fa-atom"></i> Nomenclatura Química</div>
-    <div class="menu-item" onclick="nav('bioenergetica')"><i class="fas fa-bolt"></i> ATP, ADP, NAD & NADH</div>
     <div class="menu-item" onclick="nav('carb')"><i class="fas fa-bread-slice"></i> Carboidratos</div>
     <div class="menu-item" onclick="nav('lip')"><i class="fas fa-tint"></i> Lipídios</div>
     <div class="menu-item" onclick="nav('prot')"><i class="fas fa-dumbbell"></i> Proteínas</div>
-    
     <div class="menu-item" onclick="nav('vit-min')"><i class="fas fa-capsules"></i> Vitaminas e Minerais</div>
-    
-    <div class="menu-item" onclick="nav('agcc')"><i class="fas fa-bacteria"></i> AGCC (Ácidos Graxos)</div>
 </div>
         </div>
 
         <div class="menu-category">
             <button class="dropdown-btn" onclick="toggleDropdown(this)">
-                <span><i class="fas fa-running"></i> Performance</span>
+                <span><i class="fas fa-running"></i> Bioquímica</span>
                 <i class="fas fa-chevron-down arrow"></i>
             </button>
             <div class="dropdown-container" style="display: none;">
@@ -53,6 +49,9 @@
                 <div class="menu-item" onclick="nav('esporte')"><i class="fas fa-running"></i> Nutrição Esportiva</div>
                 <div class="menu-item" onclick="nav('ciclo-carb')"><i class="fas fa-sync"></i> Ciclo de Carboidratos</div>
                 <div class="menu-item" onclick="nav('plant-based')"><i class="fas fa-leaf"></i> Nutrição Plant-Based</div>
+                <div class="menu-item" onclick="nav('metabolismo')"><i class="fas fa-atom"></i><span>Metabolismo</span></div>
+                <div class="menu-item" onclick="nav('agcc')"><i class="fas fa-bacteria"></i> AGCC (Ácidos Graxos)</div>
+                <div class="menu-item" onclick="nav('bioenergetica')"><i class="fas fa-bolt"></i> ATP, ADP, NAD & NADH</div>
             </div>
         </div>
 
@@ -67,6 +66,7 @@
         <div class="menu-item" onclick="nav('celiaca')"><i class="fas fa-bread-slice" style="color: #ef4444;"></i> Doença Celíaca</div>
         <div class="menu-item" onclick="nav('transtornos')"><i class="fas fa-brain"></i> Transtornos Alimentares</div>
         <div class="menu-item" onclick="nav('emagrecimento')"><i class="fas fa-fire-alt"></i> Ciência do Emagrecimento</div>
+        <div class="menu-item" onclick="nav('incretinas')"><i class="fas fa-syringe"></i><span>Canetas Emagrecedoras</span></div>
     </div>
 </div>
         <div class="menu-category">
@@ -2398,10 +2398,297 @@
 </div>
     </div>
 </section>
+<section id="metabolismo" class="tab-content">
+    <div class="card-modern emagrecimento-container">
+        
+        <div class="hero-emagrecimento" style="background: linear-gradient(135deg, #4338ca 0%, #1e1b4b 100%);">
+            <div class="icon-circle"><i class="fas fa-atom"></i></div>
+            <h2>Metabolismo dos Carboidratos</h2>
+            <p>Integração de Vias: Glicólise, Gliconeogênese e Glicogênese</p>
+        </div>
+
+        <div class="math-card" style="border-left: 4px solid #6366f1;">
+            <div class="math-content">
+                <span class="math-title" style="color: #818cf8;">Glicólise (Via Catabólica)</span>
+                <p style="margin-top:10px;">Ocorre no citosol. Conversão de 1 Glicose em 2 Piruvatos.</p>
+                <div class="math-value" style="font-size: 1.5rem; color: #f8fafc;">Saldo: +2 ATP | +2 NADH</div>
+            </div>
+            <div class="math-visual"><i class="fas fa-bolt" style="color: #6366f1;"></i></div>
+        </div>
+
+        <div class="recomposition-box">
+            <h4><i class="fas fa-microscope"></i> Pontos de Controle (Irreversíveis)</h4>
+            <div class="timeline" style="margin-top: 15px;">
+                <div class="timeline-item">
+                    <div class="time-icon">1</div>
+                    <p><strong>Hexoquinase/Glicocinase:</strong> Glicose → G6P (Gasto de 1 ATP).</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="time-icon">2</div>
+                    <p><strong>PFK-1 (A Chave):</strong> Regulada por F-2,6-BP. Principal controle da via.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="time-icon">3</div>
+                    <p><strong>Piruvato Quinase:</strong> PEP → Piruvato (Geração de ATP).</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="math-card" style="border-left: 4px solid #10b981; background: rgba(16, 185, 129, 0.05);">
+            <div class="math-content">
+                <span class="math-title" style="color: #34d399;">Gliconeogênese (Via Anabólica)</span>
+                <p style="margin-top:10px;">Síntese de glicose de novo (Fígado e Córtex Renal).</p>
+                <p style="font-size: 0.85rem; color: #94a3b8;">Precursores: Lactato, Glicerol e Aminoácidos Glicogênicos.</p>
+            </div>
+            <div class="math-visual"><i class="fas fa-sync" style="color: #10b981;"></i></div>
+        </div>
+
+        <div class="comparison-grid">
+            <div class="comp-card success" style="border-top: 4px solid #10b981;">
+                <div class="comp-header">Contorno da Glicólise</div>
+                <ul style="font-size: 0.8rem;">
+                    <li><strong>Piruvato Carboxilase:</strong> Na mitocôndria (+ Acetil-CoA).</li>
+                    <li><strong>F-1,6-Bifosfatase:</strong> Contorna a PFK-1.</li>
+                    <li><strong>G6Pase:</strong> Gera glicose livre (Fígado/Rins).</li>
+                </ul>
+            </div>
+            <div class="comp-card danger" style="border-top: 4px solid #ef4444;">
+                <div class="comp-header">Custo Energético</div>
+                <p style="font-size: 0.85rem;">Para cada molécula de glicose produzida, o corpo investe <strong>4 ATP + 2 GTP</strong>. É uma via cara!</p>
+            </div>
+        </div>
+
+        <div class="math-card" style="border-left: 4px solid #f59e0b; background: rgba(245, 158, 11, 0.05);">
+            <div class="math-content">
+                <span class="math-title" style="color: #fbbf24;">Glicogênese (Armazenamento)</span>
+                <p style="margin-top:10px;">Glicose → Glicogênio (Fígado e Músculo).</p>
+                <p style="font-size: 0.85rem; color: #94a3b8;">Enzima Chave: <strong>Glicogênio Sintase</strong>.</p>
+            </div>
+            <div class="math-visual"><i class="fas fa-layer-group" style="color: #f59e0b;"></i></div>
+        </div>
+
+        <div class="table-container" style="margin: 20px; overflow-x: auto;">
+            <h3 style="margin-bottom: 15px; color: #60a5fa; font-size: 1.1rem;"><i class="fas fa-table"></i> Resumo Comparativo</h3>
+            <table style="width: 100%; font-size: 0.85rem;">
+                <thead>
+                    <tr style="background: rgba(255,255,255,0.1);">
+                        <th>Processo</th>
+                        <th>Produto</th>
+                        <th>Hormônio (+)</th>
+                        <th>Ativação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Glicólise</td>
+                        <td>Piruvato</td>
+                        <td>Insulina</td>
+                        <td>Pós-prandial</td>
+                    </tr>
+                    <tr>
+                        <td>Gliconeogênese</td>
+                        <td>Glicose</td>
+                        <td>Glucagon</td>
+                        <td>Jejum</td>
+                    </tr>
+                    <tr>
+                        <td>Glicogênese</td>
+                        <td>Glicogênio</td>
+                        <td>Insulina</td>
+                        <td>Excesso Energ.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="warning-section" style="margin: 20px; border: 1px solid #f87171;">
+            <h4 style="color: #f87171;"><i class="fas fa-stethoscope"></i> Aplicação Clínica (Insights 2026)</h4>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 10px;">
+                <div class="step" style="border-left-color: #f87171;">
+                    <strong>Doença de Von Gierke:</strong> Deficiência de G6Pase impede a liberação de glicose, causando hipoglicemia severa.
+                </div>
+                <div class="step" style="border-left-color: #f87171;">
+                    <strong>Efeito Warburg:</strong> Células tumorais aceleram a glicólise mesmo com oxigênio disponível.
+                </div>
+            </div>
+        </div>
+<div class="math-card" style="border-left: 5px solid #818cf8;">
+    <h4>A Reação de Contorno Térmico</h4>
+    <p>O Piruvato não pode virar PEP diretamente ($\Delta G'° \approx +31 kJ/mol$). O desvio requer:</p>
+    <div class="formula-box" style="background: #1e293b; padding: 15px; border-radius: 8px; font-family: 'Courier New', monospace; color: #60a5fa;">
+        1. Piruvato + HCO₃⁻ + ATP → Oxaloacetato + ADP + Pi <br>
+        2. Oxaloacetato + GTP → PEP + GDP + CO₂
+    </div>
+</div>
+        <div class="recomposition-box" style="margin: 20px; background: rgba(255,255,255,0.03);">
+            <h3 style="color: #60a5fa;"><i class="fas fa-pen-fancy"></i> Checkpoint de Estudo</h3>
+            <details style="margin-top: 15px; cursor: pointer;">
+                <summary style="color: #cbd5e1; font-weight: bold;">Ver Questões de Revisão (Interpretativas)</summary>
+                <ul style="padding: 15px; color: #94a3b8; font-size: 0.9rem; line-height: 1.6;">
+                    <li>1. Por que a gliconeogênese não é apenas o inverso da glicólise?</li>
+                    <li>2. Como o glicogênio hepático atua como "amortecedor" da glicemia?</li>
+                    <li>3. Explique por que o músculo não compartilha glicose com o sangue.</li>
+                </ul>
+            </details>
+        </div>
+
+        <div class="action-footer">
+            <button class="btn-glass" onclick="exportarSecaoPDF('metabolismo', 'Bioquimica_Glicose_Completo')">
+                <i class="fas fa-file-pdf"></i> Baixar Apostila Completa
+            </button>
+        </div>
+    </div>
+</section>
+<section id="incretinas" class="tab-content">
+    <div class="card-modern emagrecimento-container">
+        
+        <div class="hero-emagrecimento" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-bottom: 4px solid #10b981;">
+            <div class="icon-circle" style="background: #10b981;"><i class="fas fa-microscope"></i></div>
+            <h2 style="font-size: 2rem;">Farmacologia das Incretinas e Neurobiologia da Obesidade</h2>
+            <p style="color: #10b981; font-weight: 600;">Relatório Técnico-Científico | Atualização 2026</p>
+        </div>
+
+        <div class="math-card" style="margin-top: 30px;">
+            <div class="math-content">
+                <span class="math-title" style="color: #10b981; font-size: 1.2rem;">1. O Efeito Incretínico e a Fisiopatologia</span>
+                <p style="margin-top: 15px; line-height: 1.8; color: #cbd5e1;">
+                    O <strong>Efeito Incretínico</strong> define o fenômeno onde a glicose oral gera uma secreção insulínica ~70% superior à glicose intravenosa isoglicêmica. Na obesidade e no DM2, este efeito está embotado. A sinalização é mediada pelo <strong>GLP-1</strong> (Peptídeo-1 semelhante ao Glucagon) e pelo <strong>GIP</strong> (Polipeptídeo Insulinotrópico dependente de Glicose).
+                </p>
+                <blockquote style="border-left: 3px solid #10b981; padding-left: 15px; margin: 20px 0; color: #94a3b8; font-style: italic;">
+                    "A obesidade induz uma neuroinflamação hipotalâmica crônica de baixo grau, resultando em resistência à leptina e desregulação do 'set-point' metabólico no núcleo arqueado."
+                </blockquote>
+            </div>
+        </div>
+
+        <div class="recomposition-box" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.1);">
+            <h3 style="color: #60a5fa; margin-bottom: 20px;"><i class="fas fa-dna"></i> 2. Farmacodinâmica e Farmacocinética Comparada</h3>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div style="padding: 15px; background: rgba(255,255,255,0.03); border-radius: 10px;">
+                    <h4 style="color: #10b981;">Liraglutida (Saxenda/Victoza)</h4>
+                    <p style="font-size: 0.85rem; line-height: 1.6; color: #94a3b8;">
+                        Análogo de GLP-1 com 97% de homologia. Sua cadeia lateral de ácido palmítico permite a ligação à albumina, estendendo a meia-vida para 13 horas. 
+                        <strong>Eficácia (SCALE):</strong> Perda de ~8% do peso. Atuação predominante no esvaziamento gástrico e saciedade pós-prandial.
+                    </p>
+                </div>
+                <div style="padding: 15px; background: rgba(255,255,255,0.03); border-radius: 10px;">
+                    <h4 style="color: #10b981;">Semaglutida (Ozempic/Wegovy)</h4>
+                    <p style="font-size: 0.85rem; line-height: 1.6; color: #94a3b8;">
+                        Modificação na posição 8 (substituição por ácido aminoisobutírico) confere resistência total à enzima <strong>DPP-4</strong>. Meia-vida de 165 horas. 
+                        <strong>Eficácia (STEP 1):</strong> Perda de 14,9% a 17,4%. Redução de 20% em MACE (Eventos Cardiovasculares Maiores) no estudo SELECT.
+                    </p>
+                </div>
+                <div style="padding: 15px; background: rgba(255,255,255,0.03); border-radius: 10px;">
+                    <h4 style="color: #10b981;">Tirzepatida (Mounjaro/Zepbound)</h4>
+                    <p style="font-size: 0.85rem; line-height: 1.6; color: #94a3b8;">
+                        O primeiro <strong>Twincretin</strong> (Agonista Dual GLP-1/GIP). O GIP atua no tecido adiposo melhorando a sensibilidade à insulina e no hipotálamo potencializando a saciedade hedônica.
+                        <strong>Eficácia (SURMOUNT-1):</strong> Ruptura da barreira dos 20% de perda ponderal (média de 22,5kg).
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="math-card" style="border-left: 5px solid #ef4444; margin-top: 20px;">
+            <div class="math-content">
+                <span class="math-title" style="color: #ef4444; font-size: 1.2rem;">3. Impacto na Massa Isenta de Gordura (FFM)</span>
+                <p style="margin-top: 15px; line-height: 1.8;">
+                    Um efeito crítico das perdas rápidas (>15% do peso) é a <strong>Sarcopenia Funcional</strong>. Estudos de DXA indicam que até 40% do peso perdido pode ser massa magra se não houver manejo proteico-metabólico. 
+                </p>
+                <div style="background: rgba(239, 68, 68, 0.1); padding: 20px; border-radius: 10px; margin-top: 15px;">
+                    <h5 style="color: #f87171; margin-bottom: 10px;">Diretrizes de Manejo Nutricional (2025-2026):</h5>
+                    <ul style="font-size: 0.9rem; color: #cbd5e1; line-height: 1.8;">
+                        <li><strong>Aporte Proteico:</strong> 1.2 a 1.5g/kg de peso atual (evitar balanço nitrogenado negativo).</li>
+                        <li><strong>Resistência Muscular:</strong> Treinamento de força é inegociável para manutenção da densidade mitocondrial.</li>
+                        <li><strong>Qualidade Muscular:</strong> Embora haja perda de volume, ocorre redução da mioesteatose (gordura intramuscular), melhorando a funcionalidade residual.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="recomposition-box" style="margin-top: 20px; background: rgba(245, 158, 11, 0.05); border: 1px solid rgba(245, 158, 11, 0.2);">
+            <h3 style="color: #f59e0b;"><i class="fas fa-gavel"></i> 4. Panorama Regulatório e Comercial - Brasil</h3>
+            <p style="font-size: 0.95rem; line-height: 1.7; margin-bottom: 15px;">
+                Em 2025/2026, a ANVISA endureceu as regras para conter o uso estético indiscriminado e garantir a segurança do paciente:
+            </p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 8px;">
+                    <h5 style="color: #f59e0b;">IN 360/2025 e RE 214</h5>
+                    <ul style="font-size: 0.85rem; color: #94a3b8; padding-left: 15px;">
+                        <li>Retenção obrigatória de receita médica.</li>
+                        <li>Proibição estrita de manipulação magistral de análogos.</li>
+                        <li>Banimento de marcas irregulares (Synedica/TG).</li>
+                    </ul>
+                </div>
+                <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 8px;">
+                    <h5 style="color: #f59e0b;">Dinâmica de Mercado</h5>
+                    <p style="font-size: 0.85rem; color: #94a3b8;">
+                        A competição entre Eli Lilly (Mounjaro) e Novo Nordisk (Wegovy) resultou em reduções de preço de até R$ 280,00 no Brasil em 2026, visando democratizar o acesso clínico e combater o mercado paralelo.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="recomposition-box" style="margin-top: 30px; border-top: 4px solid #f87171;">
+    <h3 style="color: #f87171; margin-bottom: 20px;"><i class="fas fa-biohazard"></i> Análise de Impacto Terapêutico vs. Consequências Sistêmicas</h3>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px;">
+        
+        <div style="background: rgba(0,0,0,0.2); padding: 20px; border-radius: 12px;">
+            <h4 style="color: #f8fafc; border-bottom: 1px solid #334155; padding-bottom: 10px;">Efeitos Clínicos Esperados</h4>
+            <ul style="list-style: none; padding: 0; margin-top: 15px; font-size: 0.9rem; line-height: 1.8; color: #cbd5e1;">
+                <li><i class="fas fa-check-circle" style="color: #10b981;"></i> <strong>Liraglutida:</strong> Melhora aguda da glicemia pós-prandial e redução da gordura visceral. Ideal para manejo de pré-diabetes.</li>
+                <li><i class="fas fa-check-circle" style="color: #10b981;"></i> <strong>Semaglutida:</strong> Proteção endotelial e redução significativa de eventos ateroscleróticos (MACE). Modulação da "fome hedônica" (vontade de comer por prazer).</li>
+                <li><i class="fas fa-check-circle" style="color: #10b981;"></i> <strong>Tirzepatida:</strong> Remissão potencial do DM2 e melhora drástica do perfil lipídico (↓ Triglicérides e ↓ LDL).</li>
+            </ul>
+        </div>
+
+        <div style="background: rgba(239, 68, 68, 0.05); padding: 20px; border-radius: 12px; border: 1px solid rgba(239, 68, 68, 0.1);">
+            <h4 style="color: #f87171; border-bottom: 1px solid rgba(239, 68, 68, 0.2); padding-bottom: 10px;">Consequências e Riscos Colaterais</h4>
+            
+            <div style="margin-top: 15px;">
+                <p style="font-size: 0.85rem; color: #fca5a5;"><strong>Gastrointestinais (70-80% dos casos):</strong></p>
+                <p style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 10px;">Náuseas, vômitos e constipação severa devido ao retardo excessivo do esvaziamento gástrico (gastroparesia funcional).</p>
+                
+                <p style="font-size: 0.85rem; color: #fca5a5;"><strong>O Fenômeno "Ozempic Face":</strong></p>
+                <p style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 10px;">Perda acelerada dos coxins gordurosos faciais, resultando em flacidez cutânea e aparência envelhecida (decorrente da perda lipídica rápida).</p>
+                
+                <p style="font-size: 0.85rem; color: #fca5a5;"><strong>Riscos Pancreáticos e Biliares:</strong></p>
+                <p style="font-size: 0.8rem; color: #94a3b8;">Aumento estatístico de colelitíase (pedras na vesícula) e monitoramento necessário para pancreatite aguda, devido à hiperestimulação exócrina.</p>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top: 25px; padding: 20px; background: rgba(245, 158, 11, 0.1); border-radius: 12px; border: 1px dashed #f59e0b;">
+        <h4 style="color: #f59e0b;"><i class="fas fa-history"></i> A Consequência Crítica: Efeito Rebote (Reganho)</h4>
+        <p style="font-size: 0.9rem; color: #cbd5e1; margin-top: 10px; line-height: 1.6;">
+            A interrupção abrupta sem estratégia de "desmame" ou consolidação metabólica resulta no reganho de <strong>60% a 70% do peso</strong> em 12 meses. A biologia do corpo interpreta a perda rápida como um estado de inanição, elevando a <strong>Grelina</strong> (hormônio da fome) e reduzindo a taxa metabólica basal de forma adaptativa.
+        </p>
+    </div>
+</div>
+
+        <div class="math-card" style="margin-top: 20px; border-bottom: 5px solid #6366f1;">
+            <div class="math-content">
+                <span class="math-title" style="color: #818cf8; font-size: 1.2rem;">5. A Fronteira Final: Retatrutida</span>
+                <p style="margin-top: 10px; line-height: 1.8;">
+                    A Retatrutida (LY3437943) é um agonista triplo: <strong>GLP-1 / GIP / Glucagon</strong>. 
+                    Diferente das anteriores, o componente Glucagon aumenta o gasto energético via ativação do tecido adiposo marrom (termogênese).
+                </p>
+                <div class="formula-box" style="background: rgba(99, 102, 241, 0.1); border: 1px dashed #6366f1; padding: 15px; margin-top: 15px; font-family: monospace;">
+                    [TRIUMPH-4 Results]: -28.7% de perda ponderal média em 68 semanas. Eficácia comparável à Cirurgia Bariátrica (Bypass em Y-de-Roux).
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 40px; padding: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.75rem; color: #64748b;">
+            <p><strong>Fontes Acadêmicas:</strong> NEJM (STEP/SURMOUNT Programs), Nature Reviews Endocrinology, Consenso SBD 2025, Resoluções ANVISA 2026.</p>
+        </div>
+
+    </div>
+</section>
    
     </main> <script src="script.js"></script> 
     <button id="theme-toggle" onclick="toggleTheme()">
     <i class="fas fa-adjust"></i>
 </button>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
