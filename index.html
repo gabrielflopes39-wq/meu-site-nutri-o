@@ -142,17 +142,22 @@
     <div style="margin-top: 50px; border-top: 1px solid var(--border); padding-top: 40px; width: 100%;">
         <h3 style="color: var(--text-main); border-left: 4px solid var(--primary); padding-left: 15px; margin-bottom: 25px;">Mural da Comunidade</h3>
         
-        <div class="card-modern">
-    <input type="text" id="comentario-nome" placeholder="Seu nome" style="margin-bottom: 15px;">
-    <textarea id="comentario-texto" placeholder="Deixe sua dúvida ou contribuição sobre bioquímica..." style="height: 100px; margin-bottom: 15px;"></textarea>
-    <button onclick="postarComentario()" class="btn-primary" style="width: 100%; padding: 15px; font-weight: bold;">Postar no Mural</button>
+       <div class="card-modern" style="background: #1e293b; padding: 25px; border-radius: 20px; margin-bottom: 30px; border: 1px solid rgba(255,255,255,0.1);">
+    <h3 style="color: white; margin-bottom: 15px;">Nova Postagem</h3>
+    <input type="text" id="comentario-nome" placeholder="Seu nome ou apelido" class="search-bar" style="margin-bottom: 10px; width: 100%; padding: 10px; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white;">
+    <textarea id="comentario-texto" placeholder="Como está sendo sua jornada hoje?" class="search-bar" style="height: 100px; resize: none; width: 100%; padding: 10px; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white; margin-bottom: 15px;"></textarea>
+    
+    <button onclick="postarComentario()" class="btn-modern" style="width: 100%; padding: 15px; background: #6366f1; border: none; border-radius: 12px; color: white; font-weight: bold; cursor: pointer; transition: 0.3s;">
+        <i class="fas fa-paper-plane"></i> Compartilhar na Jornada
+    </button>
 </div>
 
-<div id="mural-comentarios" style="margin-top: 20px;"></div>
+<div id="lista-comentarios" style="display: flex; flex-direction: column; gap: 20px; min-height: 100px; margin-top: 20px;">
+    </div>
 
-<div class="card-modern" style="margin: 20px 0; border: 1px solid rgba(99, 102, 241, 0.3); background: linear-gradient(145deg, rgba(30, 41, 59, 0.5), rgba(15, 23, 42, 0.8));">
+<div class="card-modern" style="margin: 20px 0; border: 1px solid rgba(99, 102, 241, 0.3); background: rgba(30, 41, 59, 0.5); padding: 20px; border-radius: 20px;">
     <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
-        <div class="icon-circle" style="width: 45px; height: 45px; background: #6366f1; margin: 0; display: flex; align-items: center; justify-content: center; border-radius: 50%;">
+        <div style="width: 45px; height: 45px; background: #6366f1; display: flex; align-items: center; justify-content: center; border-radius: 50%;">
             <i class="fas fa-users" style="color: white;"></i>
         </div>
         <div>
@@ -160,57 +165,17 @@
             <p style="margin: 0; font-size: 0.85rem; color: #94a3b8;">Estudar é individual. Evoluir é coletivo.</p>
         </div>
     </div>
-</div>
 
-    <div id="poll-container" style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 12px; margin-bottom: 20px;">
-        <p style="font-size: 0.95rem; margin-bottom: 12px; font-weight: 500;">Como estão seus estudos de Bioquímica essa semana?</p>
+    <div id="poll-container" style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 12px;">
+        <p style="font-size: 0.95rem; margin-bottom: 12px; font-weight: 500; color: white;">Como estão seus estudos de Bioquímica essa semana?</p>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-            <button class="btn-glass" style="font-size: 0.8rem; padding: 8px;" onclick="votar('Focados')">🎯 Focados</button>
-            <button class="btn-glass" style="font-size: 0.8rem; padding: 8px;" onclick="votar('Sobrevivendo')">🔋 Sobrevivendo</button>
-            <button class="btn-glass" style="font-size: 0.8rem; padding: 8px;" onclick="votar('Atrasados')">⏳ Atrasados</button>
-            <button class="btn-glass" style="font-size: 0.8rem; padding: 8px;" onclick="votar('Vapor')">🚀 A todo vapor</button>
+            <button class="btn-glass" style="cursor:pointer;" onclick="alert('Voto registrado!')">🎯 Focados</button>
+            <button class="btn-glass" style="cursor:pointer;" onclick="alert('Voto registrado!')">🔋 Sobrevivendo</button>
+            <button class="btn-glass" style="cursor:pointer;" onclick="alert('Voto registrado!')">⏳ Atrasados</button>
+            <button class="btn-glass" style="cursor:pointer;" onclick="alert('Voto registrado!')">🚀 A todo vapor</button>
         </div>
-    </div>
-
-    <div style="text-align: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px;">
-        <p style="font-size: 0.9rem; color: #cbd5e1; margin-bottom: 15px;">Um espaço para aprender, compartilhar e evoluir juntos.</p>
-        <button class="btn-primary" onclick="nav('sobre')" style="width: 100%; background: linear-gradient(to right, #6366f1, #a855f7);">
-            <i class="fas fa-comments"></i> Acessar Mural da Comunidade
-        </button>
     </div>
 </div>
-    </div>
-</section>
-<section id="comunidade" class="tab-content">
-    <div class="header-modern" style="background: linear-gradient(135deg, #6366f1, #4338ca); padding: 40px; border-radius: 24px; margin-bottom: 30px; color: white;">
-        <h1 style="margin: 0;">Jornada da Comunidade</h1>
-        <p style="opacity: 0.8; margin-top: 5px;">Compartilhe sua evolução, dúvidas ou conquistas!</p>
-    </div>
-
-    <div class="card-modern" style="background: #1e293b; padding: 25px; border-radius: 20px; margin-bottom: 30px; border: 1px solid rgba(255,255,255,0.1);">
-        <h3 style="color: white; margin-bottom: 15px;">Nova Postagem</h3>
-        <input type="text" id="comentario-nome" placeholder="Seu nome ou apelido" class="search-bar" style="margin-bottom: 10px;">
-        <textarea id="comentario-texto" placeholder="Como está sendo sua jornada hoje?" class="search-bar" style="height: 100px; resize: none;"></textarea>
-        <button onclick="postarComentario()" class="btn-modern" style="width: 100%; padding: 15px; background: #6366f1; border: none; border-radius: 12px; color: white; font-weight: bold; cursor: pointer; transition: 0.3s;">
-            <i class="fas fa-paper-plane"></i> Compartilhar
-        </button>
-    </div>
-
-    <div id="lista-comentarios" style="display: flex; flex-direction: column; gap: 20px;">
-        </div>
-</section>
-<section id="termos" class="tab-content">
-    <h1>Termos de Uso</h1>
-    <div class="card-modern">
-        <p>Ao acessar o <strong>NutriScience Pro</strong>, você concorda em cumprir estes termos de serviço, todas as leis e regulamentos aplicáveis. O conteúdo aqui presente é estritamente educativo e baseado em literatura científica de bioquímica nutricional.</p>
-        
-        <h3 style="margin-top:20px; color:var(--primary);">1. Uso de Licença</h3>
-        <p>É concedida permissão para baixar temporariamente uma cópia dos materiais (informações ou software) no site apenas para visualização transitória pessoal e não comercial.</p>
-
-        <h3 style="margin-top:20px; color:var(--primary);">2. Isenção de Responsabilidade</h3>
-        <p>Os materiais no site são fornecidos 'como estão'. O NutriScience Pro não oferece garantias, expressas ou implícitas, e por este meio isenta e nega todas as outras garantias. <strong>Este site não substitui aconselhamento médico ou nutricional individualizado.</strong></p>
-    </div>
-</section>
 <section id="privacidade" class="tab-content">
     <h1>Política de Privacidade</h1>
     <div class="card-modern">

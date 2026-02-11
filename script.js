@@ -442,42 +442,43 @@ function exportarSecaoPDF(idSecao, nomeArquivo) {
 }
 // Verifique se este nome está EXATAMENTE igual ao do onclick do seu botão
 function postarComentario() {
-    // 1. IDs AJUSTADOS PARA O SEU HTML
     const nomeInput = document.getElementById('comentario-nome');
     const textoInput = document.getElementById('comentario-texto');
-    const muralDiv = document.getElementById('lista-comentarios'); // MUDADO AQUI!
+    // Pegando o mural pelo ID que está na sua seção "Comunidade"
+    const muralDiv = document.getElementById('lista-comentarios');
 
-    // 2. Verificar se os campos não estão vazios
     if (!nomeInput.value.trim() || !textoInput.value.trim()) {
-        alert("Preencha seu nome e o comentário antes de postar! 😉");
+        alert("Ops! Digite seu nome e sua mensagem. 😉");
         return;
     }
 
-    // 3. Criar o layout do comentário
+    // Criando o elemento
     const novoComentario = document.createElement('div');
-    novoComentario.style.background = "rgba(255, 255, 255, 0.05)";
-    novoComentario.style.padding = "15px";
-    novoComentario.style.borderRadius = "10px";
-    novoComentario.style.marginBottom = "15px";
-    novoComentario.style.borderLeft = "4px solid #6366f1"; // Cor combinando com sua jornada
+    
+    // Estilos bem fortes para garantir que ele apareça (Fundo azul escuro, borda roxa)
+    novoComentario.style.cssText = "background: #2d3748; padding: 20px; border-radius: 15px; margin-bottom: 20px; border: 2px solid #6366f1; color: white; display: block !important; visibility: visible !important; opacity: 1 !important;";
 
     const data = new Date().toLocaleDateString('pt-BR');
 
     novoComentario.innerHTML = `
-        <strong style="color: #6366f1;">${nomeInput.value}</strong> 
-        <small style="opacity: 0.5; margin-left: 10px; color: white;">${data}</small>
-        <p style="margin-top: 10px; line-height: 1.5; color: white;">${textoInput.value}</p>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <strong style="color: #818cf8; font-size: 1.1rem;">${nomeInput.value}</strong>
+            <span style="font-size: 0.8rem; opacity: 0.7;">${data}</span>
+        </div>
+        <p style="line-height: 1.6; color: #e2e8f0;">${textoInput.value}</p>
     `;
 
-    // 4. Adicionar ao mural
     if (muralDiv) {
         muralDiv.prepend(novoComentario);
         
-        // 5. Limpar os campos
+        // FOCO: Faz a tela descer até o comentário novo
+        novoComentario.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+        // Limpar campos
         nomeInput.value = "";
         textoInput.value = "";
     } else {
-        console.error("Erro: Não encontrei o id='lista-comentarios'");
-        alert("Erro técnico: O mural de exibição não foi encontrado.");
+        // Se der este erro, o ID no HTML é diferente de "lista-comentarios"
+        alert("Erro: Não encontrei o espaço dos comentários. Verifique o ID no HTML.");
     }
 }
