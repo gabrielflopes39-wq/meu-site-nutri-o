@@ -442,10 +442,10 @@ function exportarSecaoPDF(idSecao, nomeArquivo) {
 }
 // Verifique se este nome está EXATAMENTE igual ao do onclick do seu botão
 function postarComentario() {
-    // 1. Pegar os elementos pelos IDs que você usou no seu HTML
+    // 1. IDs AJUSTADOS PARA O SEU HTML
     const nomeInput = document.getElementById('comentario-nome');
     const textoInput = document.getElementById('comentario-texto');
-    const muralDiv = document.getElementById('mural-comentarios'); // Verifique se o seu mural tem esse ID
+    const muralDiv = document.getElementById('lista-comentarios'); // MUDADO AQUI!
 
     // 2. Verificar se os campos não estão vazios
     if (!nomeInput.value.trim() || !textoInput.value.trim()) {
@@ -459,25 +459,25 @@ function postarComentario() {
     novoComentario.style.padding = "15px";
     novoComentario.style.borderRadius = "10px";
     novoComentario.style.marginBottom = "15px";
-    novoComentario.style.borderLeft = "4px solid #00d4ff";
+    novoComentario.style.borderLeft = "4px solid #6366f1"; // Cor combinando com sua jornada
 
     const data = new Date().toLocaleDateString('pt-BR');
 
     novoComentario.innerHTML = `
-        <strong style="color: #00d4ff;">${nomeInput.value}</strong> 
-        <small style="opacity: 0.5; margin-left: 10px;">${data}</small>
-        <p style="margin-top: 10px; line-height: 1.5;">${textoInput.value}</p>
+        <strong style="color: #6366f1;">${nomeInput.value}</strong> 
+        <small style="opacity: 0.5; margin-left: 10px; color: white;">${data}</small>
+        <p style="margin-top: 10px; line-height: 1.5; color: white;">${textoInput.value}</p>
     `;
 
-    // 4. Adicionar ao mural (se o mural existir)
+    // 4. Adicionar ao mural
     if (muralDiv) {
         muralDiv.prepend(novoComentario);
         
-        // 5. Limpar os campos após postar
+        // 5. Limpar os campos
         nomeInput.value = "";
         textoInput.value = "";
     } else {
-        console.error("Erro: Não encontrei um elemento com o id='mural-comentarios' para exibir as mensagens.");
-        alert("Erro técnico: O mural de exibição não foi encontrado no código.");
+        console.error("Erro: Não encontrei o id='lista-comentarios'");
+        alert("Erro técnico: O mural de exibição não foi encontrado.");
     }
 }
