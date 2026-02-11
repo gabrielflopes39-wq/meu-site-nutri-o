@@ -440,3 +440,44 @@ function exportarSecaoPDF(idSecao, nomeArquivo) {
     // Mas o comando abaixo já ativa a função de salvar como PDF do navegador:
     window.print();
 }
+// Verifique se este nome está EXATAMENTE igual ao do onclick do seu botão
+function postarComentario() {
+    // 1. Pegar os elementos pelos IDs que você usou no seu HTML
+    const nomeInput = document.getElementById('comentario-nome');
+    const textoInput = document.getElementById('comentario-texto');
+    const muralDiv = document.getElementById('mural-comentarios'); // Verifique se o seu mural tem esse ID
+
+    // 2. Verificar se os campos não estão vazios
+    if (!nomeInput.value.trim() || !textoInput.value.trim()) {
+        alert("Preencha seu nome e o comentário antes de postar! 😉");
+        return;
+    }
+
+    // 3. Criar o layout do comentário
+    const novoComentario = document.createElement('div');
+    novoComentario.style.background = "rgba(255, 255, 255, 0.05)";
+    novoComentario.style.padding = "15px";
+    novoComentario.style.borderRadius = "10px";
+    novoComentario.style.marginBottom = "15px";
+    novoComentario.style.borderLeft = "4px solid #00d4ff";
+
+    const data = new Date().toLocaleDateString('pt-BR');
+
+    novoComentario.innerHTML = `
+        <strong style="color: #00d4ff;">${nomeInput.value}</strong> 
+        <small style="opacity: 0.5; margin-left: 10px;">${data}</small>
+        <p style="margin-top: 10px; line-height: 1.5;">${textoInput.value}</p>
+    `;
+
+    // 4. Adicionar ao mural (se o mural existir)
+    if (muralDiv) {
+        muralDiv.prepend(novoComentario);
+        
+        // 5. Limpar os campos após postar
+        nomeInput.value = "";
+        textoInput.value = "";
+    } else {
+        console.error("Erro: Não encontrei um elemento com o id='mural-comentarios' para exibir as mensagens.");
+        alert("Erro técnico: O mural de exibição não foi encontrado no código.");
+    }
+}
