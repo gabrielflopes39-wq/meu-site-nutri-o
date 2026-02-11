@@ -143,22 +143,24 @@
         <h3 style="color: var(--text-main); border-left: 4px solid var(--primary); padding-left: 15px; margin-bottom: 25px;">Mural da Comunidade</h3>
         
         <div class="card-modern">
-            <input type="text" id="comentario-nome" placeholder="Seu nome" style="margin-bottom: 15px;">
-            <textarea id="comentario-texto" placeholder="Deixe sua dúvida ou contribuição sobre bioquímica..." style="height: 100px; margin-bottom: 15px;"></textarea>
-            <button onclick="postarComentario()" class="btn-primary" style="width: 100%; padding: 15px; font-weight: bold;">Postar no Mural</button>
-        </div>
+    <input type="text" id="comentario-nome" placeholder="Seu nome" style="margin-bottom: 15px;">
+    <textarea id="comentario-texto" placeholder="Deixe sua dúvida ou contribuição sobre bioquímica..." style="height: 100px; margin-bottom: 15px;"></textarea>
+    <button onclick="postarComentario()" class="btn-primary" style="width: 100%; padding: 15px; font-weight: bold;">Postar no Mural</button>
+</div>
 
-        <div id="lista-comentarios" style="margin-top: 20px;">
-            </div>
-            <div class="card-modern" style="margin: 20px; border: 1px solid rgba(99, 102, 241, 0.3); background: linear-gradient(145deg, rgba(30, 41, 59, 0.5), rgba(15, 23, 42, 0.8));">
-    
+<div id="mural-comentarios" style="margin-top: 20px;"></div>
+
+<div class="card-modern" style="margin: 20px 0; border: 1px solid rgba(99, 102, 241, 0.3); background: linear-gradient(145deg, rgba(30, 41, 59, 0.5), rgba(15, 23, 42, 0.8));">
     <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
-        <div class="icon-circle" style="width: 45px; height: 45px; background: #6366f1; margin: 0;"><i class="fas fa-users"></i></div>
+        <div class="icon-circle" style="width: 45px; height: 45px; background: #6366f1; margin: 0; display: flex; align-items: center; justify-content: center; border-radius: 50%;">
+            <i class="fas fa-users" style="color: white;"></i>
+        </div>
         <div>
-            <h3 style="margin: 0; font-size: 1.2rem;">Espaço Coletivo</h3>
+            <h3 style="margin: 0; font-size: 1.2rem; color: white;">Espaço Coletivo</h3>
             <p style="margin: 0; font-size: 0.85rem; color: #94a3b8;">Estudar é individual. Evoluir é coletivo.</p>
         </div>
     </div>
+</div>
 
     <div id="poll-container" style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 12px; margin-bottom: 20px;">
         <p style="font-size: 0.95rem; margin-bottom: 12px; font-weight: 500;">Como estão seus estudos de Bioquímica essa semana?</p>

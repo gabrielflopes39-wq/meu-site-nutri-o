@@ -568,3 +568,58 @@ td:last-child { border-radius: 0 10px 10px 0; }
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
 }
+/* Efeito opcional para destacar o botão de conteúdo denso */
+.menu-item i.fa-atom {
+    color: #818cf8; /* Um roxo/azul bem científico */
+    filter: drop-shadow(0 0 5px rgba(129, 140, 248, 0.4));
+}
+/* Container do Mural */
+#mural-comentarios {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Item de Comentário Individual */
+.comentario-item {
+    background: rgba(255, 255, 255, 0.03); /* Efeito sutil de fundo */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 4px solid #00d4ff; /* Barra lateral que dá o tom tech */
+    padding: 20px;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.comentario-item:hover {
+    transform: translateX(5px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Estilo do Nome do Usuário */
+.comentario-nome {
+    font-family: 'Inter', sans-serif; /* Se não tiver Inter, usa Arial */
+    font-weight: 700;
+    color: #00d4ff;
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 4px;
+    letter-spacing: -0.5px;
+}
+
+/* Estilo da Data */
+.comentario-data {
+    font-size: 0.8rem;
+    color: #888;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* Estilo do Texto do Comentário */
+.comentario-texto {
+    margin-top: 12px;
+    color: #e0e0e0;
+    line-height: 1.6;
+    font-size: 1rem;
+    font-weight: 400;
+}
