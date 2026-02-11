@@ -90,16 +90,19 @@
                 <div class="menu-item" onclick="nav('privacidade')">Política de Privacidade</div>
             </div>
         </div>
+        <div class="menu-item" onclick="nav('sobre')"><i class="fas fa-user"></i> Minha Jornada</div>
     </div>
 </nav>
 <main class="main-content">
     <section id="inicio" class="tab-content active">
     <div style="text-align: center; padding: 40px 20px;">
-        <h1 style="font-size: 3.5rem; font-weight: 800; background: linear-gradient(to right, #6366f1, #a855f7); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 10px;">
-            NutriScience Pro
-        </h1>
-        <p style="font-size: 1.2rem; color: var(--text-muted);">Bem-vindo à sua central de Bioquímica Avançada e Performance.</p>
-    </div>
+       <h1 style="font-size: 3.5rem; font-weight: 800; background: linear-gradient(to right, #6366f1, #a855f7); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 10px;">
+    NutriScience Pro
+</h1>
+
+<p style="font-size: 1.1rem; color: var(--text-muted); max-width: 800px; margin: 0 auto; line-height: 1.6; font-weight: 300;">
+    Plataforma educativa em nutrição para <strong>estudantes</strong> e <strong>curiosos</strong> — com conteúdos científicos, ferramentas práticas e uma comunidade em crescimento.
+</p>
 
     <div id="quote-container" class="card-modern" style="border-left: 5px solid var(--primary);">
         <i class="fas fa-quote-left" style="color: var(--primary); font-size: 1.5rem; margin-bottom: 15px; display: block;"></i>
@@ -132,6 +135,33 @@
 
         <div id="lista-comentarios" style="margin-top: 20px;">
             </div>
+            <div class="card-modern" style="margin: 20px; border: 1px solid rgba(99, 102, 241, 0.3); background: linear-gradient(145deg, rgba(30, 41, 59, 0.5), rgba(15, 23, 42, 0.8));">
+    
+    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+        <div class="icon-circle" style="width: 45px; height: 45px; background: #6366f1; margin: 0;"><i class="fas fa-users"></i></div>
+        <div>
+            <h3 style="margin: 0; font-size: 1.2rem;">Espaço Coletivo</h3>
+            <p style="margin: 0; font-size: 0.85rem; color: #94a3b8;">Estudar é individual. Evoluir é coletivo.</p>
+        </div>
+    </div>
+
+    <div id="poll-container" style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 12px; margin-bottom: 20px;">
+        <p style="font-size: 0.95rem; margin-bottom: 12px; font-weight: 500;">Como estão seus estudos de Bioquímica essa semana?</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <button class="btn-glass" style="font-size: 0.8rem; padding: 8px;" onclick="votar('Focados')">🎯 Focados</button>
+            <button class="btn-glass" style="font-size: 0.8rem; padding: 8px;" onclick="votar('Sobrevivendo')">🔋 Sobrevivendo</button>
+            <button class="btn-glass" style="font-size: 0.8rem; padding: 8px;" onclick="votar('Atrasados')">⏳ Atrasados</button>
+            <button class="btn-glass" style="font-size: 0.8rem; padding: 8px;" onclick="votar('Vapor')">🚀 A todo vapor</button>
+        </div>
+    </div>
+
+    <div style="text-align: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px;">
+        <p style="font-size: 0.9rem; color: #cbd5e1; margin-bottom: 15px;">Tem algo travando seu aprendizado? Compartilhe com a gente!</p>
+        <button class="btn-primary" onclick="nav('sobre')" style="width: 100%; background: linear-gradient(to right, #6366f1, #a855f7);">
+            <i class="fas fa-comments"></i> Acessar Mural da Comunidade
+        </button>
+    </div>
+</div>
     </div>
 </section>
 <section id="comunidade" class="tab-content">
@@ -2260,6 +2290,112 @@
                 <i class="fas fa-file-download"></i> Baixar Protocolo Completo
             </button>
         </div>
+    </div>
+</section>
+<section id="sobre" class="tab-content">
+    <div class="card-modern emagrecimento-container">
+        
+        <div class="hero-emagrecimento" style="background: linear-gradient(135deg, #1e40af 0%, #1e1b4b 100%);">
+            <div class="icon-circle"><i class="fas fa-user-graduate"></i></div>
+            <h2>Ciência em Construção</h2>
+            <p>Unindo Tecnologia, Bioquímica e Futuro na Nutrição</p>
+        </div>
+
+        <div class="math-card">
+            <div class="math-content">
+                <span class="math-title">Quem está por trás do projeto?</span>
+                <div class="math-value" style="color: #60a5fa; font-size: 1.8rem;">Futuro Nutricionista <span>& Desenvolvedor</span></div>
+                <p>Atualmente cursando Nutrição - sétimo semestre, decidi que não precisava esperar o diploma para começar a transformar a ciência complexa em ferramentas acessíveis.</p>
+            </div>
+            <div class="math-visual">
+                <i class="fas fa-code" style="color: #60a5fa;"></i>
+            </div>
+        </div>
+
+        <div class="comparison-grid">
+            <div class="comp-card success" style="border-top: 4px solid #60a5fa;">
+                <div class="comp-header"><i class="fas fa-bullseye"></i> Meus Objetivos</div>
+                <ul>
+                    <li><i class="fas fa-check"></i> Democratizar a Bioquímica Nutricional.</li>
+                    <li><i class="fas fa-check"></i> Criar ferramentas práticas para estudantes e profissionais.</li>
+                    <li><i class="fas fa-check"></i> Estudar as fronteiras da nutrição de 2026.</li>
+                </ul>
+            </div>
+            <div class="comp-card success" style="border-top: 4px solid #34d399;">
+                <div class="comp-header"><i class="fas fa-lightbulb"></i> Filosofia do Projeto</div>
+                <ul>
+                    <li><i class="fas fa-brain"></i> Educação baseada em evidências.</li>
+                    <li><i class="fas fa-shield-alt"></i> Ética e transparência acadêmica.</li>
+                    <li><i class="fas fa-rocket"></i> Incentivo ao protagonismo estudantil.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="recomposition-box" style="background: rgba(255, 255, 255, 0.03); border: 1px dashed rgba(255,255,255,0.2);">
+            <h3 style="color: #f8fafc;"><i class="fas fa-quote-left"></i> Aos meus colegas de graduação</h3>
+            <p style="font-style: italic; color: #cbd5e1; margin-top: 10px;">
+                "A faculdade nos dá a base, mas o mercado exige a construção. Este site é o meu campo de provas. Se você é estudante, não espere o 'momento ideal'. Comece a criar, a escrever e a organizar seu conhecimento hoje. A nutrição do futuro é tecnológica e colaborativa."
+            </p>
+        </div>
+        <div class="recomposition-box" style="margin-top: 20px; background: rgba(99, 102, 241, 0.1);">
+    <h4 style="color: #a855f7; margin-bottom: 10px;"><i class="fas fa-graduation-cap"></i> Status Acadêmico</h4>
+    <p style="font-size: 0.9rem; margin-bottom: 5px;">Graduação em Nutrição - 7º Semestre</p>
+    <div style="width: 100%; height: 12px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden;">
+        <div style="width: 85%; height: 100%; background: linear-gradient(to right, #6366f1, #a855f7); border-radius: 10px;"></div>
+    </div>
+    <p style="font-size: 0.75rem; margin-top: 8px; color: #94a3b8;">Quase lá! Focando agora em Nutrição Clínica e Estágios Supervisionados.</p>
+</div>
+
+<div class="math-card" style="border: 1px solid #10b981; margin-top: 20px;">
+    <div class="math-content">
+        <span class="math-title" style="color: #10b981;">Mural da Comunidade</span>
+        <p style="margin-top: 10px;">Este espaço é seu! Sinta-se à vontade para:</p>
+        <ul style="list-style: none; padding: 0; margin-top: 10px; font-size: 0.9rem; color: #cbd5e1;">
+            <li><i class="fas fa-question-circle" style="color: #10b981;"></i> <strong>Tirar Dúvidas:</strong> Sobre os conteúdos e cálculos.</li>
+            <li><i class="fas fa-road" style="color: #10b981;"></i> <strong>Compartilhar sua Jornada:</strong> Conte como você está estudando.</li>
+            <li><i class="fas fa-comment-dots" style="color: #10b981;"></i> <strong>Feedback:</strong> Sugira ferramentas ou novos temas para o site.</li>
+        </ul>
+    </div>
+</div>
+
+        <div style="padding: 20px; font-size: 0.8rem; color: #64748b; text-align: center;">
+            <p><i class="fas fa-info-circle"></i> <strong>Nota:</strong> Este portal tem caráter estritamente educativo e informativo, desenvolvido como parte de um portfólio acadêmico. Não substitui consulta nutricional personalizada.</p>
+        </div>
+<div class="recomposition-box" style="margin: 20px; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 20px; padding: 30px;">
+    <h3 style="color: #10b981; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+        <i class="fas fa-comments"></i> Mural da Comunidade
+    </h3>
+    
+    <p style="font-size: 1.05rem; color: #f8fafc; line-height: 1.6; margin-bottom: 20px;">
+        O Mural da Comunidade foi criado para conectar estudantes e apaixonados por nutrição em um espaço de troca real. <strong>Aqui você pode compartilhar:</strong>
+    </p>
+
+    <div class="comparison-grid" style="grid-template-columns: 1fr; gap: 10px; padding: 0; margin-bottom: 20px;">
+        <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+            <li style="background: rgba(16, 185, 129, 0.1); padding: 12px; border-radius: 10px; color: #cbd5e1; font-size: 0.95rem;">
+                <i class="fas fa-seedling" style="color: #10b981; margin-right: 8px;"></i> Seu progresso nos estudos
+            </li>
+            <li style="background: rgba(16, 185, 129, 0.1); padding: 12px; border-radius: 10px; color: #cbd5e1; font-size: 0.95rem;">
+                <i class="fas fa-chart-line" style="color: #10b981; margin-right: 8px;"></i> Evolução em dietas ou rotina
+            </li>
+            <li style="background: rgba(16, 185, 129, 0.1); padding: 12px; border-radius: 10px; color: #cbd5e1; font-size: 0.95rem;">
+                <i class="fas fa-graduation-cap" style="color: #10b981; margin-right: 8px;"></i> Dúvidas acadêmicas
+            </li>
+            <li style="background: rgba(16, 185, 129, 0.1); padding: 12px; border-radius: 10px; color: #cbd5e1; font-size: 0.95rem;">
+                <i class="fas fa-lightbulb" style="color: #10b981; margin-right: 8px;"></i> Sugestões de conteúdo
+            </li>
+            <li style="background: rgba(16, 185, 129, 0.1); padding: 12px; border-radius: 10px; color: #cbd5e1; font-size: 0.95rem;">
+                <i class="fas fa-comment-heart" style="color: #10b981; margin-right: 8px;"></i> Feedback sobre o site
+            </li>
+        </ul>
+    </div>
+
+    <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; margin-top: 20px;"></div>
+        <p style="font-size: 1.1rem; color: #10b981; font-weight: 500; text-align: center; font-style: italic;">
+            "A ideia é transformar o aprendizado em algo coletivo — porque crescer sozinho é bom, mas crescer em comunidade é melhor."
+        </p>
+    </div>
+</div>
     </div>
 </section>
    

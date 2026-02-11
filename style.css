@@ -546,3 +546,25 @@ td:last-child { border-radius: 0 10px 10px 0; }
 @media (max-width: 600px) {
     .eta-grid { grid-template-columns: 1fr; }
 }
+.tagline {
+    font-size: 1.1rem;
+    color: #94a3b8; /* Um cinza azulado suave para não cansar a vista */
+    max-width: 700px; /* Evita que a frase fique muito larga em telas grandes */
+    margin: 15px auto 0; /* Centraliza e dá espaço pro topo */
+    line-height: 1.6;
+    font-weight: 300;
+    font-style: italic;
+    letter-spacing: 0.5px;
+    animation: fadeIn 1.5s ease-in-out; /* Efeito de entrada suave */
+}
+
+/* Opcional: Destaque em algumas palavras */
+.tagline strong {
+    color: #60a5fa; 
+    font-weight: 500;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
