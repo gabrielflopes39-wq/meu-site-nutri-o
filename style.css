@@ -392,3 +392,157 @@ td:last-child { border-radius: 0 10px 10px 0; }
 .protein { background: rgba(52, 211, 153, 0.2); color: #34d399; border: 1px solid #34d399; }
 .carbs { background: rgba(251, 191, 36, 0.2); color: #fbbf24; border: 1px solid #fbbf24; }
 .fats { background: rgba(248, 113, 113, 0.2); color: #f87171; border: 1px solid #f87171; }
+/* DESIGN PREMIUM EMAGRECIMENTO */
+.emagrecimento-container {
+    padding: 0 !important;
+    overflow: hidden;
+    background: #0f172a !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+}
+
+.hero-emagrecimento {
+    background: linear-gradient(135deg, #ef4444 0%, #991b1b 100%);
+    padding: 40px 20px;
+    text-align: center;
+    color: white;
+}
+
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    font-size: 24px;
+}
+
+.math-card {
+    background: rgba(255,255,255,0.03);
+    margin: 20px;
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.math-value {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #f87171;
+    margin: 10px 0;
+}
+
+.math-value span { font-size: 1rem; color: #94a3b8; }
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.comp-card {
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.02);
+}
+
+.comp-card.danger { border-top: 4px solid #ef4444; }
+.comp-card.success { border-top: 4px solid #10b981; }
+
+.comp-header {
+    font-weight: bold;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.comp-card ul { list-style: none; padding: 0; }
+.comp-card li { margin-bottom: 10px; font-size: 0.9rem; color: #cbd5e1; }
+
+.recomposition-box {
+    padding: 20px;
+    margin: 0 20px 20px;
+    background: rgba(96, 165, 250, 0.05);
+    border-radius: 15px;
+}
+
+.timeline { margin-top: 20px; }
+.timeline-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    align-items: flex-start;
+}
+
+.time-icon {
+    background: #60a5fa;
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-weight: bold;
+}
+
+.btn-glass {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-glass:hover { background: #ef4444; border-color: #ef4444; }
+
+.action-footer { padding: 20px; text-align: center; }
+
+/* Mobile */
+@media (max-width: 600px) {
+    .comparison-grid { grid-template-columns: 1fr; }
+    .math-card { flex-direction: column; text-align: center; }
+}
+/* AJUSTES PARA O ETA GRID PREMIUM */
+.eta-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 15px;
+    padding: 0 20px;
+}
+
+.eta-block {
+    padding: 20px 10px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.eta-block .label { display: block; font-size: 0.8rem; opacity: 0.8; margin-bottom: 5px; }
+.eta-block .value { display: block; font-size: 1.4rem; font-weight: 800; }
+.eta-block p { font-size: 0.7rem; margin-top: 5px; opacity: 0.6; }
+
+.eta-block.protein { border-bottom: 4px solid #34d399; background: rgba(52, 211, 153, 0.05); color: #34d399; }
+.eta-block.carbs { border-bottom: 4px solid #fbbf24; background: rgba(251, 191, 36, 0.05); color: #fbbf24; }
+.eta-block.fats { border-bottom: 4px solid #f87171; background: rgba(248, 113, 113, 0.05); color: #f87171; }
+
+.eta-section-premium h4 { text-align: center; margin-top: 30px; color: #94a3b8; font-size: 1rem; }
+
+/* Ajuste fino na Timeline */
+.timeline-item p { font-size: 0.9rem; color: #94a3b8; margin: 5px 0 0 0; line-height: 1.4; }
+.timeline-item strong { color: #f8fafc; font-size: 1rem; }
+
+@media (max-width: 600px) {
+    .eta-grid { grid-template-columns: 1fr; }
+}
