@@ -362,3 +362,33 @@ td:last-child { border-radius: 0 10px 10px 0; }
     color: white;
     transform: translateX(3px);
 }
+/* Estilo para as etapas da lipólise */
+.process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+.step {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 3px solid #60a5fa;
+}
+
+/* Estilo para o Efeito Térmico (ETA) */
+.eta-cards {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+.eta-item {
+    flex: 1;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 0.85em;
+}
+.protein { background: rgba(52, 211, 153, 0.2); color: #34d399; border: 1px solid #34d399; }
+.carbs { background: rgba(251, 191, 36, 0.2); color: #fbbf24; border: 1px solid #fbbf24; }
+.fats { background: rgba(248, 113, 113, 0.2); color: #f87171; border: 1px solid #f87171; }

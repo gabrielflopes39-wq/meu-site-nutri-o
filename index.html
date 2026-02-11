@@ -56,19 +56,19 @@
             </div>
         </div>
 
-        <div class="menu-category">
-            <button class="dropdown-btn" onclick="toggleDropdown(this)">
-                <span><i class="fas fa-stethoscopes"></i> Clínica & Saúde</span>
-                <i class="fas fa-chevron-down arrow"></i>
-            </button>
-            <div class="dropdown-container" style="display: none;">
-                <div class="menu-item" onclick="nav('obesidade')"><i class="fas fa-weight"></i> Obesidade & Emagrecimento</div>
-                <div class="menu-item" onclick="nav('diabetes')"><i class="fas fa-syringe"></i> Diabetes Mellitus</div>
-                <div class="menu-item" onclick="nav('celiaca')"><i class="fas fa-bread-slice" style="color: #ef4444;"></i> Doença Celíaca</div>
-                <div class="menu-item" onclick="nav('transtornos')"><i class="fas fa-brain"></i> Transtornos Alimentares</div>
-            </div>
-        </div>
-
+<div class="menu-category">
+    <button class="dropdown-btn" onclick="toggleDropdown(this)">
+        <span><i class="fas fa-stethoscopes"></i> Clínica & Saúde</span>
+        <i class="fas fa-chevron-down arrow"></i>
+    </button>
+    <div class="dropdown-container" style="display: none;">
+        <div class="menu-item" onclick="nav('obesidade')"><i class="fas fa-weight"></i> Obesidade & Emagrecimento</div>
+        <div class="menu-item" onclick="nav('diabetes')"><i class="fas fa-syringe"></i> Diabetes Mellitus</div>
+        <div class="menu-item" onclick="nav('celiaca')"><i class="fas fa-bread-slice" style="color: #ef4444;"></i> Doença Celíaca</div>
+        <div class="menu-item" onclick="nav('transtornos')"><i class="fas fa-brain"></i> Transtornos Alimentares</div>
+        <div class="menu-item" onclick="nav('emagrecimento')"><i class="fas fa-fire-alt"></i> Ciência do Emagrecimento</div>
+    </div>
+</div>
         <div class="menu-category">
             <button class="dropdown-btn" onclick="toggleDropdown(this)">
                 <span><i class="fas fa-tools"></i> Ferramentas</span>
@@ -2156,6 +2156,106 @@
         <button onclick="exportarSecaoPDF('bioenergetica', 'Bioenergetica_Master')" class="btn-pdf">
             <i class="fas fa-file-pdf"></i> Baixar Apostila Completa
         </button>
+    </div>
+</section>
+<section id="emagrecimento" class="tab-content">
+    <div class="card-modern">
+        <div class="header-section">
+            <h2><i class="fas fa-fire-alt"></i> Ciência do Emagrecimento 2026</h2>
+            <p class="subtitle">Da Bioquímica Celular às Estratégias de Preservação Metabólica</p>
+        </div>
+
+        <div class="grid-container">
+            <div class="sub-card">
+                <h3><i class="fas fa-balance-scale-left"></i> Perda de Peso</h3>
+                <p>Redução da massa total (água, glicogênio e músculos). Comum em dietas restritivas, levando à queda da Taxa Metabólica Basal (TMB).</p>
+            </div>
+            <div class="sub-card active-border">
+                <h3><i class="fas fa-user-check"></i> Emagrecimento Saudável</h3>
+                <p>Redução específica do percentual de gordura com preservação da Massa Livre de Gordura (MLG), mantendo o metabolismo ativo.</p>
+            </div>
+        </div>
+
+        <div class="table-container" style="margin-top: 20px;">
+            <h4>Gasto Energético por Tecido (kcal/kg/dia)</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tecido</th>
+                        <th>Consumo Médio</th>
+                        <th>Função no Emagrecimento</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><i class="fas fa-dumbbell"></i> Músculo Esquelético</td>
+                        <td>13 a 35 kcal</td>
+                        <td>Eleva TMB e melhora sensibilidade à insulina</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-cheese"></i> Tecido Adiposo</td>
+                        <td>4,5 a 6 kcal</td>
+                        <td>Reserva passiva; baixa contribuição basal</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="info-box-highlight" style="margin-top: 30px;">
+            <h3><i class="fas fa-microscope"></i> Bioquímica da Lipólise e Oxidação</h3>
+            <div class="process-steps">
+                <div class="step">
+                    <strong>1. Lipólise (Mobilização):</strong>
+                    <p>Triglicerídeos são quebrados em glicerol e ácidos graxos (AGLs) pela enzima <strong>LHS (Lipase Hormônio-Sensível)</strong>, estimulada por catecolaminas e inibida pela insulina.</p>
+                </div>
+                <div class="step">
+                    <strong>2. Transporte (CPT-I):</strong>
+                    <p>Os AGLs viajam via albumina e entram na mitocôndria através do transportador Carnitina Palmitoiltransferase-I.</p>
+                </div>
+                <div class="step">
+                    <strong>3. Beta-Oxidação:</strong>
+                    <p>Ocorre a transformação em Acetil-CoA para gerar ATP, liberando CO2 pelos pulmões e H2O pelo suor/urina.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="eta-section" style="margin-top: 30px;">
+            <h4>O Efeito Térmico dos Alimentos (ETA)</h4>
+            <div class="eta-cards">
+                <div class="eta-item protein"><strong>Proteínas:</strong> 20% - 30% de gasto na digestão</div>
+                <div class="eta-item carbs"><strong>Carboidratos:</strong> 5% - 10%</div>
+                <div class="eta-item fats"><strong>Gorduras:</strong> 0% - 3%</div>
+            </div>
+            <p style="font-size: 0.9em; margin-top: 10px; color: #94a3b8;">* Dietas proteicas (1,2 a 1,6g/kg) aumentam o gasto metabólico e preservam músculos.</p>
+        </div>
+
+        <div class="grid-container" style="margin-top: 30px;">
+            <div class="sub-card">
+                <h4><i class="fas fa-sync"></i> Adaptação Metabólica</h4>
+                <p>O corpo economiza energia reduzindo o NEAT e a TMB em déficits prolongados. Use <em>Refeeds</em> para mitigar esse efeito.</p>
+            </div>
+            <div class="sub-card">
+                <h4><i class="fas fa-bolt"></i> Flexibilidade Metabólica</h4>
+                <p>Capacidade de alternar entre queimar carbo e gordura. Restaurada com musculação e períodos planejados de aumento calórico.</p>
+            </div>
+        </div>
+
+        <div class="alert-box" style="margin-top: 30px; border-left: 4px solid #f59e0b;">
+            <h4><i class="fas fa-pills"></i> Fronteiras de 2026</h4>
+            <ul>
+                <li><strong>Incretinas:</strong> Agonistas triplos (Retatrutida) que elevam gasto energético basal.</li>
+                <li><strong>Irisina:</strong> Exercício induz o "Browning" (transforma gordura branca em bege que queima caloria).</li>
+            </ul>
+        </div>
+
+        <div style="margin-top: 40px; display: flex; gap: 15px; flex-wrap: wrap;">
+            <button class="btn-primary" onclick="exportarSecaoPDF('emagrecimento', 'Bioquimica_Emagrecimento')">
+                <i class="fas fa-file-pdf"></i> Exportar Guia Completo
+            </button>
+            <button class="btn-secondary" onclick="compartilharSite()">
+                <i class="fas fa-share-alt"></i> Compartilhar Material
+            </button>
+        </div>
     </div>
 </section>
    
