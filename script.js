@@ -408,3 +408,35 @@ function renderizarGraficos() {
 
 // Chame essa função dentro da sua função nav() para garantir que o gráfico carregue
 // Exemplo: if(id === 'lactato') renderizarGraficos();
+// FUNÇÃO PARA COMPARTILHAR O SITE
+function compartilharSite() {
+    if (navigator.share) {
+        navigator.share({
+            title: 'NutriScience Pro',
+            text: 'Confira esta ferramenta incrível de Bioquímica e Nutrição!',
+            url: window.location.href
+        }).then(() => {
+            console.log('Compartilhado com sucesso!');
+        }).catch((error) => {
+            console.log('Erro ao compartilhar:', error);
+        });
+    } else {
+        // Caso o navegador não suporte a API de compartilhamento (ex: PC)
+        alert("Copiado para a área de transferência: " + window.location.href);
+        navigator.clipboard.writeText(window.location.href);
+    }
+}
+
+// FUNÇÃO PARA EXPORTAR PDF (SIMPLES E EFICAZ)
+function exportarSecaoPDF(idSecao, nomeArquivo) {
+    const conteudo = document.getElementById(idSecao);
+    if (!conteudo) {
+        alert("Erro: Seção não encontrada!");
+        return;
+    }
+
+    // Abre a janela de impressão do navegador focada na seção ou usa o print padrão
+    // Dica: Para um PDF profissional mesmo, seria necessário a biblioteca html2pdf.
+    // Mas o comando abaixo já ativa a função de salvar como PDF do navegador:
+    window.print();
+}
