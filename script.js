@@ -482,3 +482,21 @@ function postarComentario() {
         alert("Erro: Não encontrei o espaço dos comentários. Verifique o ID no HTML.");
     }
 }
+function simularDigestao(tipo) {
+    const res = document.getElementById('resultado-digestao');
+    let texto = "";
+
+    if (tipo === 'carb') {
+        texto = "🍞 <strong>Carboidratos:</strong> A digestão começa na boca (amilase salivar), para no estômago (pH ácido inativa a amilase) e termina no intestino com a amilase pancreática e dissacaridases (lactase, maltase, sucrase).";
+    } else if (tipo === 'prot') {
+        texto = "🥩 <strong>Proteínas:</strong> Começa no estômago com o HCl desnaturando a proteína e a pepsina quebrando cadeias. No duodeno, as proteases pancreáticas (tripsina e quimiotripsina) finalizam em aminoácidos.";
+    } else if (tipo === 'lip') {
+        texto = "🥑 <strong>Lipídios:</strong> Exigem a bile para emulsificação. Sem a bile (emulsificante), a lipase pancreática não consegue acessar a gordura para quebrá-la em ácidos graxos e glicerol.";
+   } else if (tipo === 'fibra') {
+        texto = "🥗 <strong>Fibras:</strong> Não são digeridas por enzimas humanas. No intestino grosso, são fermentadas pela microbiota, produzindo <strong>AGCC</strong> e auxiliando na formação do bolo fecal.";
+    }
+
+    res.innerHTML = texto;
+    res.style.border = "1px solid #10b981";
+    res.style.animation = "fadeIn 0.5s";
+}

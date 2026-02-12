@@ -623,3 +623,7 @@ td:last-child { border-radius: 0 10px 10px 0; }
     font-size: 1rem;
     font-weight: 400;
 }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}

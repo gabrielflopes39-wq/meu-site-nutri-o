@@ -45,6 +45,7 @@
             </button>
             <div class="dropdown-container" style="display: none;">
                 <div class="menu-item" onclick="nav('quimica')"><i class="fas fa-atom"></i> Nomenclatura Química</div>
+                <div class="menu-item" onclick="nav('digestorio')"><i class="fas fa-Stomach"></i> Sistema Digestório</div>
                 <div class="menu-item" onclick="nav('carb')"><i class="fas fa-bread-slice"></i> Carboidratos</div>
                 <div class="menu-item" onclick="nav('lip')"><i class="fas fa-tint"></i> Lipídios</div>
                 <div class="menu-item" onclick="nav('prot')"><i class="fas fa-dumbbell"></i> Proteínas</div>
@@ -2676,6 +2677,128 @@
             <p><strong>Fontes Acadêmicas:</strong> NEJM (STEP/SURMOUNT Programs), Nature Reviews Endocrinology, Consenso SBD 2025, Resoluções ANVISA 2026.</p>
         </div>
 
+    </div>
+</section>
+<section id="digestorio" class="tab-content">
+    <div class="header-modern" style="background: linear-gradient(135deg, #059669, #065f46); padding: 40px; border-radius: 24px; margin-bottom: 30px; color: white;">
+        <h1 style="margin: 0;">Tratado de Fisiologia Gastrointestinal</h1>
+        <p style="opacity: 0.9; margin-top: 5px;">Da mastigação à excreção: o processamento bioquímico da vida.</p>
+    </div>
+    <div class="card-modern" style="border: 1px solid #10b981; background: rgba(16, 185, 129, 0.05); margin-top: 25px;">
+    <h3 style="color: #10b981; margin-bottom: 15px;"><i class="fas fa-vial"></i> Simulador de Destino Metabólico</h3>
+    <p style="margin-bottom: 20px; font-size: 0.9rem; color: #cbd5e1;">Selecione uma macromolécula para mapear as enzimas, transportadores e hormônios envolvidos:</p>
+    
+    <div style="display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap;">
+        <button onclick="simularDigestao('carb')" class="btn-glass" style="border-color: #fbbf24; color: #fbbf24; cursor: pointer;">Carboidratos</button>
+        <button onclick="simularDigestao('prot')" class="btn-glass" style="border-color: #ef4444; color: #ef4444; cursor: pointer;">Proteínas</button>
+        <button onclick="simularDigestao('lip')" class="btn-glass" style="border-color: #3b82f6; color: #3b82f6; cursor: pointer;">Lipídios</button>
+        <button onclick="simularDigestao('fibra')" class="btn-glass" style="border-color: #a78bfa; color: #a78bfa; cursor: pointer;">Fibras</button>
+    </div>
+
+    <div id="resultado-digestao" style="padding: 20px; border-radius: 12px; background: rgba(0,0,0,0.3); min-height: 120px; font-size: 0.95rem; border: 1px dashed rgba(255,255,255,0.1); line-height: 1.6;">
+        <span style="color: #94a3b8;">Aguardando seleção do nutriente para iniciar o mapeamento fisiológico...</span>
+    </div>
+</div>
+
+    <div class="card-modern" style="background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2);">
+        <h3 style="color: #10b981; margin-bottom: 15px;"><i class="fas fa-clock"></i> Cronometria da Digestão (Média)</h3>
+        <div style="display: flex; justify-content: space-between; text-align: center; flex-wrap: wrap; gap: 10px;">
+            <div style="flex: 1; min-width: 80px;"><strong>Boca</strong><br><small>1-2 min</small></div>
+            <div style="flex: 1; min-width: 80px;"><strong>Estômago</strong><br><small>2-4 horas</small></div>
+            <div style="flex: 1; min-width: 80px;"><strong>I. Delgado</strong><br><small>3-5 horas</small></div>
+            <div style="flex: 1; min-width: 80px;"><strong>I. Grosso</strong><br><small>10-72 horas</small></div>
+        </div>
+    </div>
+
+    <div class="card-modern" style="margin-top: 25px;">
+        <h3 style="color: #10b981;"><i class="fas fa-mouth"></i> 1. Etapa Oral e Esofágica</h3>
+        <p>A digestão começa no cérebro (fase cefálica). A saliva contém <strong>Ptialina (Amilase Salivar)</strong> e <strong>Lipase Lingual</strong>.</p>
+        <blockquote style="border-left: 3px solid #10b981; padding-left: 15px; margin: 10px 0; font-size: 0.9rem; color: #94a3b8;">
+            <strong>Mecanismo:</strong> O bolo alimentar desce via movimentos peristálticos pelo esôfago, cruzando o esfíncter esofágico inferior (EEI).
+        </blockquote>
+    </div>
+
+    <div class="card-modern">
+        <h3 style="color: #ef4444;"><i class="fas fa-biohazard"></i> 2. Estômago: Digestão Química Pesada</h3>
+        <p>Aqui o bolo alimentar vira <strong>Quimo</strong>. As células parietais secretam HCl, reduzindo o pH para 1.5 - 2.0.</p>
+        <ul style="font-size: 0.9rem; color: #cbd5e1; line-height: 1.6;">
+            <li><strong>Células Principais:</strong> Secretam Pepsinogênio (inativo).</li>
+            <li><strong>Ativação:</strong> HCl converte Pepsinogênio em <strong>Pepsina</strong> (quebra proteínas).</li>
+            <li><strong>Fator Intrínseco:</strong> Essencial para a absorção futura de Vitamina B12.</li>
+        </ul>
+    </div>
+
+    <div class="card-modern" style="border-left: 5px solid #6366f1;">
+        <h3 style="color: #818cf8;"><i class="fas fa-microchip"></i> 3. Intestino Delgado: O Ápice Bioquímico</h3>
+        <p>Dividido em Duodeno, Jejuno e Íleo. É onde ocorre 90% da absorção via <strong>Canais e Transportadores</strong>.</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-top: 15px;">
+            <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 10px;">
+                <h4 style="color: #818cf8;">Canais de Absorção</h4>
+                <ul style="font-size: 0.8rem; list-style: none; padding: 0;">
+                    <li><strong>SGLT1:</strong> Glicose e Galactose (Transporte Ativo com Sódio).</li>
+                    <li><strong>GLUT5:</strong> Frutose (Difusão Facilitada).</li>
+                    <li><strong>Pept1:</strong> Dipeptídeos e Tripeptídeos.</li>
+                    <li><strong>CD36:</strong> Ácidos Graxos de cadeia longa.</li>
+                </ul>
+            </div>
+            <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 10px;">
+                <h4 style="color: #818cf8;">Vias de Sinalização</h4>
+                <ul style="font-size: 0.8rem; list-style: none; padding: 0;">
+                    <li><strong>CCK (Colecistoquinina):</strong> Estimula a bile e enzimas pancreáticas.</li>
+                    <li><strong>Secretina:</strong> Estimula bicarbonato para neutralizar o ácido.</li>
+                    <li><strong>GLP-1 e GIP:</strong> Incretinas que estimulam insulina (Efeito Incretínico).</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-modern" style="border-left: 5px solid #8b5cf6;">
+        <h3 style="color: #a78bfa;"><i class="fas fa-bacteria"></i> 4. Intestino Grosso e Microbiota</h3>
+        <p>O que não foi absorvido vira o <strong>Quilo</strong> e entra no Ceco. Aqui ocorre a reabsorção de água e eletrólitos.</p>
+        
+        <h4 style="margin-top: 15px; color: #a78bfa;">A Formação do Bolo Fecal e Fibras:</h4>
+        <div style="font-size: 0.9rem; background: rgba(139, 92, 246, 0.1); padding: 15px; border-radius: 12px;">
+            <strong>Fibras Insolúveis:</strong> Dão volume e estimulam o peristaltismo (aceleram o trânsito).<br>
+            <strong>Fibras Solúveis:</strong> Formam géis, lentificam a absorção de glicose e são fermentadas por bactérias, gerando <strong>AGCC (Acetato, Propionato e Butirato)</strong>, que nutrem os colonócitos.
+        </div>
+    </div>
+
+    <div class="card-modern">
+        <h3 style="margin-bottom: 20px;">Catálogo Enzimático Completo</h3>
+        <div style="overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; font-size: 0.8rem;">
+                <thead style="background: #065f46;">
+                    <tr>
+                        <th style="padding: 10px;">Enzima</th>
+                        <th style="padding: 10px;">Local de Ação</th>
+                        <th style="padding: 10px;">Ação Bioquímica</th>
+                    </tr>
+                </thead>
+                <tbody style="color: #cbd5e1;">
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td>Lipase Pancreática</td>
+                        <td>Duodeno</td>
+                        <td>Triacilgliceróis $\rightarrow$ 2-Monoacilglicerol + Ácidos Graxos.</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td>Tripsina / Quimiotripsina</td>
+                        <td>Duodeno</td>
+                        <td>Clivagem de ligações peptídicas internas.</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td>Enteroquinase</td>
+                        <td>Borda em Escova</td>
+                        <td>Ativa o tripsinogênio em tripsina (A chave de tudo).</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td>Lactase / Sacarase</td>
+                        <td>Borda em Escova</td>
+                        <td>Dissacarídeos $\rightarrow$ Monossacarídeos.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </section>
    
