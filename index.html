@@ -2932,5 +2932,87 @@
     <i class="fas fa-adjust"></i>
 </button>
 <script defer src="/_vercel/insights/script.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+
+<script>
+  // COLE AQUI O SEU firebaseConfig (aquele das imagens que você tirou print)
+  const firebaseConfig = {
+    apiKey: "AIzaSyBoRggo9HN5z4c-oFdLSESR0idFh0nCmBs",
+    authDomain: "nutrisciencepro-2b2b2.firebaseapp.com",
+    projectId: "nutrisciencepro-2b2b2",
+    storageBucket: "nutrisciencepro-2b2b2.firebasestorage.app",
+    messagingSenderId: "857318370386",
+    appId: "1:857318370386:web:04338ed37da7a96f41838b",
+    measurementId: "G-L3Y2K8W2HM"
+  };
+
+  // Inicializa o Firebase
+  const app = firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+
+  // FUNÇÃO PARA POSTAR NO FIREBASE
+  function postarComentario() {
+    const nome = document.getElementById('comentario-nome').value;
+    const texto = document.getElementById('comentario-texto').value;
+
+    if (nome && texto) {
+      db.collection("comentarios").add({
+        nome: nome,
+        texto: texto,
+        data: new Date()
+      })
+      .then(() => {
+        document.getElementById('comentario-nome').value = '';
+        document.getElementById('comentario-texto').value = '';
+        alert("Comentário enviado para a jornada!");
+      })
+      .catch((error) => {
+        console.error("Erro ao postar: ", error);
+      });
+    } else {
+      alert("Preencha seu nome e a mensagem!");
+    }
+  }
+
+  // FUNÇÃO PARA LER DO FIREBASE EM TEMPO REAL
+  db.collection("comentarios").orderBy("data", "desc").onSnapshot((snapshot) => {
+    const lista = document.getElementById('lista-comentarios');
+    lista.innerHTML = ''; // Limpa a lista antes de atualizar
+    
+    snapshot.forEach((doc) => {
+      const item = doc.data();
+      lista.innerHTML += `
+        <div class="card-modern" style="margin-bottom: 10px; border-left: 4px solid #6366f1;">
+          <strong style="color: #818cf8;">${item.nome}</strong>
+          <p style="margin: 5px 0; font-size: 0.9rem;">${item.texto}</p>
+        </div>
+      `;
+    });
+  });
+</script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyBoRggo9HN5z4c-oFdLSESR0idFh0nCmBs",
+    authDomain: "nutrisciencepro-2b2b2.firebaseapp.com",
+    projectId: "nutrisciencepro-2b2b2",
+    storageBucket: "nutrisciencepro-2b2b2.firebasestorage.app",
+    messagingSenderId: "857318370386",
+    appId: "1:857318370386:web:04338ed37da7a96f41838b",
+    measurementId: "G-L3Y2K8W2HM"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
 </body>
 </html>
