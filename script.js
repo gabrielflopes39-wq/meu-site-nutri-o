@@ -500,3 +500,17 @@ function simularDigestao(tipo) {
     res.style.border = "1px solid #10b981";
     res.style.animation = "fadeIn 0.5s";
 }
+function darLike(idComentario) {
+    // Referência direta para o comentário específico no seu banco
+    const refComentario = firebase.database().ref('mural/' + idComentario + '/likes');
+
+    // Usamos transaction para garantir que a soma seja precisa
+    refComentario.transaction((currentLikes) => {
+        return (currentLikes || 0) + 1;
+    }).then(() => {
+        console.log("Like computado!");
+        // Opcional: Você pode mudar a cor do coração para indicar que o clique funcionou
+    }).catch((error) => {
+        console.error("Erro ao dar like:", error);
+    });
+}

@@ -44,6 +44,7 @@
                 <i class="fas fa-chevron-down arrow"></i>
             </button>
             <div class="dropdown-container" style="display: none;">
+                 <div class="menu-item" onclick="nav('faq-section')"><i class="fas fa-question-circle"></i> FAQ</div>
                 <div class="menu-item" onclick="nav('quimica')"><i class="fas fa-atom"></i> Nomenclatura Química</div>
                 <div class="menu-item" onclick="nav('digestorio')"><i class="fas fa-Stomach"></i> Sistema Digestório</div>
                 <div class="menu-item" onclick="nav('carb')"><i class="fas fa-bread-slice"></i> Carboidratos</div>
@@ -68,6 +69,7 @@
                 <div class="menu-item" onclick="nav('metabolismo')"><i class="fas fa-atom"></i><span>Metabolismo</span></div>
                 <div class="menu-item" onclick="nav('agcc')"><i class="fas fa-bacteria"></i> AGCC (Ácidos Graxos)</div>
                 <div class="menu-item" onclick="nav('bioenergetica')"><i class="fas fa-bolt"></i> ATP, ADP, NAD & NADH</div>
+                <div class="menu-item" onclick="nav('hormonios-metabolismo')"><i class="fas fa-dna"></i> Hormônios</div>
             </div>
         </div>
 
@@ -3074,6 +3076,215 @@
     </div>
 </div>
 </section>
+<section id="hormonios-metabolismo" class="tab-content">
+    <div class="header-modern" style="background: linear-gradient(135deg, #1e1b4b, #312e81); padding: 40px; border-radius: 24px; margin-bottom: 30px; border-left: 8px solid #818cf8;">
+        <h1 style="margin: 0; color: #818cf8;">Hormônios</h1>
+        <p style="opacity: 0.9; margin-top: 10px;">Entenda os mensageiros químicos que decidem se você estoca gordura ou constrói músculos.</p>
+    </div>
+
+    <div class="card-modern" style="margin-bottom: 30px; border: 1px solid rgba(129, 140, 248, 0.3); background: rgba(15, 23, 42, 0.6);">
+        <h2 style="color: #818cf8; border-bottom: 2px solid #818cf8; padding-bottom: 10px; display: inline-block;">O que são Hormônios?</h2>
+        <p style="margin-top: 20px; line-height: 1.6; color: #e2e8f0;">
+            Os hormônios são <strong>mensageiros químicos</strong> produzidos pelas glândulas do sistema endócrino. Imagine-os como o "sistema de correios" do seu corpo: eles viajam pela corrente sanguínea levando instruções específicas para órgãos e tecidos.
+        </p>
+
+        <div style="background: rgba(239, 68, 68, 0.1); border-left: 6px solid #ef4444; padding: 20px; border-radius: 12px; margin-top: 25px;">
+            <h4 style="color: #ef4444; margin: 0 0 10px 0; display: flex; align-items: center;">
+                <i class="fas fa-exclamation-triangle" style="margin-right: 10px;"></i> AVISO DE SEGURANÇA CRÍTICO
+            </h4>
+            <p style="color: #f87171; margin: 0; font-size: 0.95rem; line-height: 1.6;">
+                O sistema endócrino opera em um equilíbrio sensível. <strong>Qualquer modulação hormonal deve ser feita sob supervisão médica.</strong> O uso inadvertido pode causar danos graves e irreversíveis. O excesso é tão prejudicial quanto a falta.
+            </p>
+        </div>
+    </div>
+
+    <h2 style="color: #818cf8; margin-bottom: 20px;"><i class="fas fa-fire"></i> Eixo Energético e Glicêmico</h2>
+    <div class="hormonios-grid">
+        <div class="card-modern">
+            <h3 style="color: #10b981;">Insulina (O Porteiro)</h3>
+            <p><strong>Origem:</strong> Pâncreas.</p>
+            <p>Abre a porta das células para a glicose entrar. É o principal hormônio de armazenamento.</p>
+            <p style="color: #94a3b8; font-size: 0.9rem;"><strong>Ponto Crítico:</strong> Níveis altos bloqueiam a queima de gordura.</p>
+        </div>
+        <div class="card-modern">
+            <h3 style="color: #f59e0b;">Glucagon (O Mobilizador)</h3>
+            <p><strong>Origem:</strong> Pâncreas.</p>
+            <p>Faz o oposto da insulina: retira energia do estoque para o sangue quando a glicemia cai.</p>
+        </div>
+        <div class="card-modern">
+            <h3 style="color: #3b82f6;">T3 e T4 (O Termostato)</h3>
+            <p><strong>Origem:</strong> Tireoide.</p>
+            <p>Regulam a velocidade com que suas células queimam energia (Metabolismo Basal).</p>
+        </div>
+    </div>
+
+    <h2 style="color: #ec4899; margin-bottom: 20px;"><i class="fas fa-dna"></i> Eixo de Construção e Reparação</h2>
+    <div class="hormonios-grid">
+        <div class="card-modern">
+            <h3 style="color: #ec4899;">Testosterona (O Construtor)</h3>
+            <p>Aumenta síntese proteica e força. Vital para massa magra em homens e mulheres.</p>
+        </div>
+        <div class="card-modern">
+            <h3 style="color: #a78bfa;">GH (Crescimento)</h3>
+            <p>Estimula regeneração celular e mobiliza gordura durante o sono profundo.</p>
+        </div>
+        <div class="card-modern">
+            <h3 style="color: #10b981;">IGF-1</h3>
+            <p>Braço direito do GH, promove o crescimento real das células musculares.</p>
+        </div>
+    </div>
+
+    <h2 style="color: #ef4444; margin-bottom: 20px;"><i class="fas fa-exclamation-triangle"></i> Eixo de Estresse e Alerta</h2>
+    <div class="hormonios-grid">
+        <div class="card-modern">
+            <h3 style="color: #ef4444;">Cortisol (Alerta)</h3>
+            <p>Prepara para luta ou fuga. Alto cronicamente, gera acúmulo de gordura abdominal.</p>
+        </div>
+        <div class="card-modern">
+            <h3 style="color: #f43f5e;">Adrenalina</h3>
+            <p>Aumenta batimentos e quebra gordura rapidamente durante exercícios intensos.</p>
+        </div>
+    </div>
+
+    <h2 style="color: #14b8a6; margin-bottom: 20px;"><i class="fas fa-brain"></i> Eixo Neuro-Endócrino (Fome)</h2>
+    <div class="hormonios-grid">
+        <div class="card-modern">
+            <h3 style="color: #14b8a6;">Leptina (O Freio)</h3>
+            <p>Produzida pela gordura, avisa o cérebro que você já tem energia estocada.</p>
+        </div>
+        <div class="card-modern">
+            <h3 style="color: #fb923c;">Grelina (A Campainha)</h3>
+            <p>Produzida no estômago vazio, gera a sensação de fome.</p>
+        </div>
+    </div>
+
+    <h2 style="color: #60a5fa; margin-bottom: 20px;"><i class="fas fa-microchip"></i> Eixo Hipofisário (Comando Central)</h2>
+    <div class="hormonios-grid">
+        <div class="card-modern">
+            <h3 style="color: #60a5fa;">TSH (Tireoestimulante)</h3>
+            <p>Sinal da hipófise que comanda a produção de hormônios na tireoide.</p>
+        </div>
+        <div class="card-modern">
+            <h3 style="color: #f472b6;">LH & FSH</h3>
+            <p>Regulam a produção de hormônios sexuais e a fertilidade (gametas).</p>
+        </div>
+        <div class="card-modern">
+            <h3 style="color: #fb7185;">PRL (Prolactina)</h3>
+            <p>Responsável pela produção de leite e modulação do comportamento parental.</p>
+        </div>
+        <div class="card-modern">
+            <h3 style="color: #2dd4bf;">ADH (Antidiurético)</h3>
+            <p>Controla a reabsorção de água nos rins, evitando a desidratação.</p>
+        </div>
+    </div>
+
+    <h2 style="color: #f472b6; margin-bottom: 20px;"><i class="fas fa-venus-mars"></i> Sexuais e Neuromoduladores</h2>
+    <div class="hormonios-grid">
+        <div class="card-modern">
+            <h3 style="color: #f472b6;">Estradiol & Estrogênio</h3>
+            <p>Proteção cardiovascular, saúde óssea e ciclo feminino.</p>
+        </div>
+        <div class="card-modern">
+            <h3 style="color: #fb923c;">Progesterona</h3>
+            <p>Hormônio calmante e essencial para a manutenção do endométrio.</p>
+        </div>
+        <div class="card-modern">
+            <h3 style="color: #ec4899;">Ocitocina</h3>
+            <p>Hormônio do vínculo social, confiança e bem-estar afetivo.</p>
+        </div>
+        <div class="card-modern">
+            <h3 style="color: #a78bfa;">Dopamina</h3>
+            <p>Motivação e recompensa. Essencial para foco e busca de objetivos.</p>
+        </div>
+        <div class="card-modern">
+            <h3 style="color: #312e81;">Melatonina</h3>
+            <p>Regula o ciclo do sono e atua como um potente antioxidante.</p>
+        </div>
+    </div>
+
+    <h2 style="color: #10b981; margin-bottom: 20px;"><i class="fas fa-utensils"></i> Hormônios Gastrointestinais</h2>
+    <div class="hormonios-grid">
+        <div class="card-modern">
+            <h3 style="color: #10b981;">Gastrina</h3>
+            <p>Estimula a secreção de ácido gástrico para iniciar a digestão proteica.</p>
+        </div>
+        <div class="card-modern">
+            <h3 style="color: #10b981;">Colecistocinina (CCK)</h3>
+            <p>Estimula a bile e envia sinais de saciedade ao cérebro após a refeição.</p>
+        </div>
+    </div>
+</section>
+<section id="faq-section" class="tab-content">
+    <div class="card-modern" style="padding: 20px;">
+        
+        <details style="margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px;">
+            <summary style="font-weight: 600; cursor: pointer; color: #34d399; font-size: 1.1rem; outline: none;">
+                <i class="fas fa-tint"></i> Quanto de água eu devo beber por dia?
+            </summary>
+            <p style="margin-top: 15px; color: #94a3b8; line-height: 1.6;">
+                O cálculo preciso é de **35ml a 45ml por quilo de peso corporal**. <br>
+                Exemplo: Alguém de 80kg deve beber entre **2,8L e 3,6L**. <br>
+                <strong>Dica:</strong> A cor da urina é o melhor indicador. Ela deve estar sempre em um tom amarelo claro (limonada). Se estiver amarelo escuro, você já está desidratado.
+            </p>
+        </details>
+
+        <details style="margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px;">
+            <summary style="font-weight: 600; cursor: pointer; color: #34d399; font-size: 1.1rem; outline: none;">
+                <i class="fas fa-pills"></i> Creatina precisa fazer "saturação"?
+            </summary>
+            <p style="margin-top: 15px; color: #94a3b8; line-height: 1.6;">
+                Não é obrigatório. A saturação (20g/dia por 5-7 dias) serve apenas para preencher os estoques do músculo **mais rápido**. Tomar 3g a 5g todos os dias terá o mesmo efeito final após 21-28 dias. <br>
+                <strong>Importante:</strong> Creatina é de uso crônico. Deve ser tomada inclusive nos dias que você não treina.
+            </p>
+        </details>
+
+        <details style="margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px;">
+            <summary style="font-weight: 600; cursor: pointer; color: #34d399; font-size: 1.1rem; outline: none;">
+                <i class="fas fa-fire-alt"></i> Suco detox queima gordura abdominal?
+            </summary>
+            <p style="margin-top: 15px; color: #94a3b8; line-height: 1.6;">
+                Nenhum alimento isolado tem o poder de queimar gordura, muito menos de forma localizada. O suco verde pode ser uma boa fonte de micronutrientes, mas a "detoxificação" é feita pelo seu **fígado e rins**. Para perder gordura abdominal, o único caminho é o **déficit calórico** e treino de força.
+            </p>
+        </details>
+
+        <details style="margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px;">
+            <summary style="font-weight: 600; cursor: pointer; color: #34d399; font-size: 1.1rem; outline: none;">
+                <i class="fas fa-bolt"></i> É verdade que comer de 3 em 3 horas acelera o metabolismo?
+            </summary>
+            <p style="margin-top: 15px; color: #94a3b8; line-height: 1.6;">
+                Mito. O que dita o metabolismo é o **Efeito Térmico dos Alimentos (ETA)** e o total calórico do dia. Se você comer 2.000kcal em 6 refeições ou em 2 refeições, o gasto energético para digerir será praticamente o mesmo. Coma na frequência que melhor se adapta à sua rotina e controle de fome.
+            </p>
+        </details>
+
+        <details style="margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px;">
+            <summary style="font-weight: 600; cursor: pointer; color: #34d399; font-size: 1.1rem; outline: none;">
+                <i class="fas fa-moon"></i> O sono realmente influencia no ganho de massa muscular?
+            </summary>
+            <p style="margin-top: 15px; color: #94a3b8; line-height: 1.6;">
+                Totalmente. É durante o sono profundo que ocorre o pico de liberação de **GH (Hormônio do Crescimento)** e a síntese proteica se intensifica. Além disso, uma noite mal dormida aumenta o **Cortisol** (catabólico) e a **Grelina** (hormônio da fome), fazendo você comer mais e queimar menos gordura no dia seguinte.
+            </p>
+        </details>
+
+        <details style="margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px;">
+            <summary style="font-weight: 600; cursor: pointer; color: #34d399; font-size: 1.1rem; outline: none;">
+                <i class="fas fa-egg"></i> Quantos ovos posso comer por dia?
+            </summary>
+            <p style="margin-top: 15px; color: #94a3b8; line-height: 1.6;">
+                Para a maioria das pessoas saudáveis, o consumo de 1 a 3 ovos por dia não traz riscos cardiovasculares e é uma excelente fonte de colina e proteína de alto valor biológico. O impacto do colesterol dietético no sangue é muito menor do que o impacto das **gorduras saturadas e trans** (presentes em ultraprocessados).
+            </p>
+        </details>
+
+        <details style="margin-bottom: 10px;">
+            <summary style="font-weight: 600; cursor: pointer; color: #34d399; font-size: 1.1rem; outline: none;">
+                <i class="fas fa-hourglass-half"></i> Jejum intermitente é melhor que dieta convencional?
+            </summary>
+            <p style="margin-top: 15px; color: #94a3b8; line-height: 1.6;">
+                Estudos mostram que o Jejum Intermitente **não é superior** à restrição calórica diária quando as calorias são iguais. Ele é uma ferramenta de adesão: se você prefere fazer refeições maiores em uma janela menor de tempo, o jejum ajuda. Se você sente muita fome ou tem tendência a compulsão, pode ser pior.
+            </p>
+        </details>
+
+    </div>
+</section>
 
 <style>
     .mito-item {
@@ -3111,7 +3322,7 @@
 <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
 
 <script>
-  // 2. Suas chaves de acesso (Firebase Config)
+  // 2. Configuração do Firebase
   const firebaseConfig = {
     apiKey: "AIzaSyBoRggo9HN5z4c-oFdLSESR0idFh0nCmBs",
     authDomain: "nutrisciencepro-2b2b2.firebaseapp.com",
@@ -3122,11 +3333,11 @@
     measurementId: "G-L3Y2K8W2HM"
   };
 
-  // 3. Inicializa o banco de dados
+  // 3. Inicializa o Firebase e Firestore
   const app = firebase.initializeApp(firebaseConfig);
   const db = firebase.firestore();
 
-  // 4. Função para enviar o comentário para o Banco de Dados
+  // 4. Função para postar comentário (agora com likes iniciando em 0)
   function postarComentario() {
     const nome = document.getElementById('comentario-nome').value;
     const texto = document.getElementById('comentario-texto').value;
@@ -3135,33 +3346,49 @@
       db.collection("comentarios").add({
         nome: nome,
         texto: texto,
-        data: new Date()
+        data: new Date(),
+        likes: 0 // Inicia com zero curtidas
       })
       .then(() => {
-        // Limpa os campos após postar
         document.getElementById('comentario-nome').value = '';
         document.getElementById('comentario-texto').value = '';
       })
       .catch((error) => {
         console.error("Erro ao postar: ", error);
-        alert("Erro ao postar. Verificou as 'Regras' no console do Firebase?");
+        alert("Erro ao postar. Verifique as Regras no Firebase.");
       });
     } else {
       alert("Por favor, preencha nome e mensagem.");
     }
   }
 
-  // 5. Função que 'escuta' o banco e atualiza o mural na hora para todo mundo
+  // 5. Função para dar Like (Firestore)
+  function darLike(idDoc) {
+    const docRef = db.collection("comentarios").doc(idDoc);
+    
+    // Incrementa o valor de likes no Firestore de forma atômica
+    docRef.update({
+      likes: firebase.firestore.FieldValue.increment(1)
+    });
+  }
+
+  // 6. Escuta o banco e atualiza o mural com o botão de Like
   db.collection("comentarios").orderBy("data", "desc").onSnapshot((snapshot) => {
     const lista = document.getElementById('lista-comentarios');
     lista.innerHTML = ''; 
     
     snapshot.forEach((doc) => {
       const item = doc.data();
+      const id = doc.id; // Pegamos o ID único do documento
+      
       lista.innerHTML += `
-        <div class="card-modern" style="margin-bottom: 10px; border-left: 4px solid #6366f1; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px;">
+        <div class="card-modern" style="margin-bottom: 15px; border-left: 4px solid #6366f1; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px;">
           <strong style="color: #818cf8; display: block; margin-bottom: 5px;">${item.nome}</strong>
           <p style="margin: 0; font-size: 0.95rem; color: #cbd5e1;">${item.texto}</p>
+          
+          <button onclick="darLike('${id}')" style="background: rgba(239, 68, 68, 0.1); border: none; color: #ef4444; padding: 5px 12px; border-radius: 20px; cursor: pointer; display: flex; align-items: center; gap: 6px; margin-top: 10px; transition: 0.3s; font-size: 0.85rem;">
+            <i class="fas fa-heart"></i> <span>${item.likes || 0}</span>
+          </button>
         </div>
       `;
     });

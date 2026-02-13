@@ -627,3 +627,15 @@ td:last-child { border-radius: 0 10px 10px 0; }
     from { opacity: 0; transform: translateY(-5px); }
     to { opacity: 1; transform: translateY(0); }
 }
+details summary::-webkit-details-marker {
+    display: none; /* Esconde a seta padrão se quiser usar ícones personalizados */
+}
+
+details[open] summary {
+    color: #ffffff !important;
+    transition: 0.3s;
+}
+
+details summary:hover {
+    opacity: 0.8;
+}
