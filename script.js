@@ -440,47 +440,40 @@ function exportarSecaoPDF(idSecao, nomeArquivo) {
     // Mas o comando abaixo já ativa a função de salvar como PDF do navegador:
     window.print();
 }
-// Verifique se este nome está EXATAMENTE igual ao do onclick do seu botão
 function postarComentario() {
-    const nomeInput = document.getElementById('comentario-nome');
+    const user = firebase.auth().currentUser; // Pega o usuário logado
     const textoInput = document.getElementById('comentario-texto');
-    // Pegando o mural pelo ID que está na sua seção "Comunidade"
-    const muralDiv = document.getElementById('lista-comentarios');
 
-    if (!nomeInput.value.trim() || !textoInput.value.trim()) {
-        alert("Ops! Digite seu nome e sua mensagem. 😉");
+    // 1. Verifica se está logado
+    if (!user) {
+        alert("Você precisa estar logado para compartilhar na jornada!");
         return;
     }
 
-    // Criando o elemento
-    const novoComentario = document.createElement('div');
-    
-    // Estilos bem fortes para garantir que ele apareça (Fundo azul escuro, borda roxa)
-    novoComentario.style.cssText = "background: #2d3748; padding: 20px; border-radius: 15px; margin-bottom: 20px; border: 2px solid #6366f1; color: white; display: block !important; visibility: visible !important; opacity: 1 !important;";
-
-    const data = new Date().toLocaleDateString('pt-BR');
-
-    novoComentario.innerHTML = `
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-            <strong style="color: #818cf8; font-size: 1.1rem;">${nomeInput.value}</strong>
-            <span style="font-size: 0.8rem; opacity: 0.7;">${data}</span>
-        </div>
-        <p style="line-height: 1.6; color: #e2e8f0;">${textoInput.value}</p>
-    `;
-
-    if (muralDiv) {
-        muralDiv.prepend(novoComentario);
-        
-        // FOCO: Faz a tela descer até o comentário novo
-        novoComentario.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-        // Limpar campos
-        nomeInput.value = "";
-        textoInput.value = "";
-    } else {
-        // Se der este erro, o ID no HTML é diferente de "lista-comentarios"
-        alert("Erro: Não encontrei o espaço dos comentários. Verifique o ID no HTML.");
+    // 2. Verifica se tem texto
+    if (!textoInput.value.trim()) {
+        alert("Escreva algo antes de compartilhar. 😉");
+        return;
     }
+
+    // 3. SALVA NO FIREBASE (Isso faz o comentário ser eterno)
+    db.collection("comentarios").add({
+        nome: user.displayName,   // Nome do Google
+        foto: user.photoURL,      // Foto do Google
+        texto: textoInput.value,  // Sua mensagem
+        data: firebase.firestore.FieldValue.serverTimestamp(), // Hora oficial do servidor
+        likes: 0,
+        userId: user.uid
+    })
+    .then(() => {
+        // Limpa o campo de texto após postar
+        textoInput.value = "";
+        console.log("Postado com sucesso!");
+    })
+    .catch((error) => {
+        console.error("Erro ao salvar no banco: ", error);
+        alert("Erro ao postar. Verifique sua conexão.");
+    });
 }
 function simularDigestao(tipo) {
     const res = document.getElementById('resultado-digestao');
@@ -501,18 +494,13 @@ function simularDigestao(tipo) {
     res.style.animation = "fadeIn 0.5s";
 }
 function darLike(idComentario) {
-    // Referência direta para o comentário específico no seu banco
-    const refComentario = firebase.database().ref('mural/' + idComentario + '/likes');
-
-    // Usamos transaction para garantir que a soma seja precisa
-    refComentario.transaction((currentLikes) => {
-        return (currentLikes || 0) + 1;
-    }).then(() => {
-        console.log("Like computado!");
-        // Opcional: Você pode mudar a cor do coração para indicar que o clique funcionou
-    }).catch((error) => {
-        console.error("Erro ao dar like:", error);
-    });
+    const ref = db.collection("comentarios").doc(idComentario);
+    
+    ref.update({
+        likes: firebase.firestore.FieldValue.increment(1)
+    })
+    .then(() => console.log("Like dado!"))
+    .catch(err => console.error("Erro ao dar like:", err));
 }
 // Verifica múltipla escolha
 function verificarMultipla(botao, eCorreta) {
@@ -575,5 +563,79 @@ function toggleGabarito(id) {
     const box = document.getElementById(id);
     box.style.display = (box.style.display === 'block') ? 'none' : 'block';
 }
-const auth = firebase.auth();
-const provider = new firebase.auth.GoogleAuthProvider();
+// --- FUNÇÃO 1: SALVAR NO BANCO ---
+function salvarResultadoSimulado(tema, acertos, total) {
+    const user = firebase.auth().currentUser;
+
+    if (!user) {
+        console.log("Usuário não logado. Progresso não será salvo no banco.");
+        return; 
+    }
+
+    const aproveitamento = (acertos / total) * 100;
+
+    db.collection("usuarios").doc(user.uid).collection("progresso").doc(tema).set({
+        tema: tema,
+        acertos: acertos,
+        total: total,
+        porcentagem: aproveitamento.toFixed(1) + "%",
+        data: firebase.firestore.FieldValue.serverTimestamp()
+    }, { merge: true })
+    .then(() => {
+        console.log("Progresso de " + tema + " salvo com sucesso!");
+    })
+    .catch((error) => {
+        console.error("Erro ao salvar progresso:", error);
+    });
+}
+
+// --- FUNÇÃO 2: MOSTRAR ALERTA E CHAMAR A FUNÇÃO 1 ---
+function mostrarResultadoFinal(tema, acertos, total) {
+    alert("Você acertou " + acertos + " de " + total);
+    salvarResultadoSimulado(tema, acertos, total);
+}
+// Monitora o estado do Login e carrega os dados
+firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+        // 1. Atualiza Nome e Foto na aba Jornada
+        const nomeEl = document.getElementById('jornada-nome');
+        const fotoEl = document.getElementById('jornada-foto');
+
+        if (nomeEl) nomeEl.innerText = user.displayName.split(' ')[0]; // Pega só o primeiro nome
+        if (fotoEl) fotoEl.src = user.photoURL;
+
+        // 2. Carrega os resultados salvos no Firestore
+        carregarHistoricoJornada(user.uid);
+    }
+});
+
+// Função para buscar os resultados do banco de dados
+function carregarHistoricoJornada(userId) {
+    const lista = document.getElementById('lista-progresso');
+    if (!lista) return;
+
+    db.collection("usuarios").doc(userId).collection("progresso")
+      .orderBy("data", "desc")
+      .limit(5)
+      .onSnapshot((snapshot) => {
+          if (snapshot.empty) {
+              lista.innerHTML = '<p style="color: #64748b; font-size: 0.9rem;">Nenhum simulado feito ainda. Vamos estudar?</p>';
+              return;
+          }
+
+          lista.innerHTML = ""; // Limpa o "Carregando..."
+          snapshot.forEach((doc) => {
+              const dados = doc.data();
+              const item = document.createElement('div');
+              item.style = "background: rgba(255,255,255,0.03); padding: 12px; border-radius: 10px; margin-bottom: 10px; border-left: 4px solid #6366f1;";
+              item.innerHTML = `
+                  <div style="display: flex; justify-content: space-between; align-items: center;">
+                      <strong style="color: white; font-size: 0.9rem;">${dados.tema}</strong>
+                      <span style="color: #4ade80; font-weight: bold;">${dados.porcentagem}</span>
+                  </div>
+                  <small style="color: #94a3b8;">${dados.acertos}/${dados.total} acertos</small>
+              `;
+              lista.appendChild(item);
+          });
+      });
+}
