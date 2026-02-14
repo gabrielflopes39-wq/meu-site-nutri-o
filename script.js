@@ -514,3 +514,66 @@ function darLike(idComentario) {
         console.error("Erro ao dar like:", error);
     });
 }
+// Verifica múltipla escolha
+function verificarMultipla(botao, eCorreta) {
+    const pai = botao.parentElement;
+    const botoes = pai.querySelectorAll('.opt-btn');
+    
+    // Desabilita outros botões após clicar
+    botoes.forEach(b => b.style.pointerEvents = 'none');
+
+    if (eCorreta) {
+        botao.classList.add('correta');
+    } else {
+        botao.classList.add('errada');
+        // Mostra qual era a certa mesmo se errou
+        botoes.forEach(b => {
+            if (b.innerText.includes('b)')) b.classList.add('correta');
+        });
+    }
+}
+
+// Mostra o gabarito da dissertativa
+function verificarDissertativa(id) {
+    const gabarito = document.getElementById('gabarito-' + id);
+    gabarito.style.display = 'block';
+    // Rola suavemente até o gabarito
+    gabarito.scrollIntoView({ behavior: 'smooth' });
+}
+// Função para filtrar questões
+function filtrarQuestoes(categoria) {
+    // Atualiza botões
+    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+
+    // Mostra/Esconde questões
+    const questoes = document.querySelectorAll('.questao');
+    questoes.forEach(q => {
+        if (categoria === 'todos' || q.classList.contains(categoria)) {
+            q.style.display = 'block';
+        } else {
+            q.style.display = 'none';
+        }
+    });
+}
+
+// Verifica resposta múltipla escolha
+function verificarMultipla(btn, correta, idQuestao) {
+    const botoes = btn.parentElement.querySelectorAll('.opt-btn');
+    botoes.forEach(b => b.style.pointerEvents = 'none'); // Trava cliques
+
+    if (correta) {
+        btn.classList.add('correta');
+    } else {
+        btn.classList.add('errada');
+        // Opcional: Destacar a correta
+    }
+}
+
+// Toggle do Gabarito
+function toggleGabarito(id) {
+    const box = document.getElementById(id);
+    box.style.display = (box.style.display === 'block') ? 'none' : 'block';
+}
+const auth = firebase.auth();
+const provider = new firebase.auth.GoogleAuthProvider();

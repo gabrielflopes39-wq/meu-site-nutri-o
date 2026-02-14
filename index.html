@@ -28,16 +28,32 @@
 
 <nav class="sidebar" id="sidebar">
     <div class="brand"><i class="fas fa-atom"></i> NutriScience Pro</div>
+    
     <button onclick="compartilharSite()" class="card-modern" style="cursor: pointer; border: 1px solid #4f46e5; background: rgba(79, 70, 229, 0.1); color: #818cf8; padding: 10px; width: 90%; margin: 10px auto; border-radius: 8px; font-weight: bold; display: block;">
         <i class="fas fa-share-alt"></i> Compartilhar
     </button>
-    <ul class="menu" style="list-style: none; padding: 0;">
-        <li class="menu-item active" onclick="nav('inicio')" style="cursor: pointer;">
-            <i class="fas fa-home"></i> Início
-        </li>
-    </ul>
-        
+        </div>
+        <div id="user-area" style="padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 10px;">
+    <div id="login-section">
+        <button onclick="fazerLogin()" style="width: 100%; padding: 10px; border-radius: 8px; border: none; background: #4285f4; color: white; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: bold;">
+            <i class="fab fa-google"></i> Entrar com Google
+        </button>
+    </div>
+
+    <div id="profile-section" style="display: none; text-align: center;">
+        <img id="user-photo" src="" style="width: 45px; height: 45px; border-radius: 50%; border: 2px solid #6366f1;">
+        <p id="user-name" style="color: white; font-size: 0.9rem; margin: 5px 0; font-weight: bold;"></p>
+        <button onclick="fazerLogout()" style="background: none; border: none; color: #ef4444; cursor: pointer; font-size: 0.75rem; text-decoration: underline;">Sair</button>
+    </div>
+</div>
+
     <div class="sidebar-nav">
+        <ul class="menu" style="list-style: none; padding: 0; margin-bottom: 10px;">
+            <li class="menu-item active" onclick="nav('inicio')" style="cursor: pointer;">
+                <i class="fas fa-home"></i> Início
+            </li>
+        </ul>
+
         <div class="menu-category">
             <button class="dropdown-btn" onclick="toggleDropdown(this)">
                 <span><i class="fas fa-microscope"></i> Fundamentos</span>
@@ -46,7 +62,7 @@
             <div class="dropdown-container" style="display: none;">
                  <div class="menu-item" onclick="nav('faq-section')"><i class="fas fa-question-circle"></i> FAQ</div>
                 <div class="menu-item" onclick="nav('quimica')"><i class="fas fa-atom"></i> Nomenclatura Química</div>
-                <div class="menu-item" onclick="nav('digestorio')"><i class="fas fa-Stomach"></i> Sistema Digestório</div>
+                <div class="menu-item" onclick="nav('digestorio')"><i class="fas fa-stomach"></i> Sistema Digestório</div>
                 <div class="menu-item" onclick="nav('carb')"><i class="fas fa-bread-slice"></i> Carboidratos</div>
                 <div class="menu-item" onclick="nav('lip')"><i class="fas fa-tint"></i> Lipídios</div>
                 <div class="menu-item" onclick="nav('prot')"><i class="fas fa-dumbbell"></i> Proteínas</div>
@@ -89,6 +105,8 @@
             </div>
         </div>
 
+        <div class="menu-item" onclick="nav('estudos-section')"><i class="fas fa-graduation-cap"></i> Simulados</div>
+
         <div class="menu-category">
             <button class="dropdown-btn" onclick="toggleDropdown(this)">
                 <span><i class="fas fa-tools"></i> Ferramentas</span>
@@ -100,16 +118,6 @@
             </div>
         </div>
 
-        <div class="menu-category">
-            <button class="dropdown-btn" onclick="toggleDropdown(this)">
-                <span><i class="fas fa-shield-alt"></i> Institucional</span>
-                <i class="fas fa-chevron-down arrow"></i>
-            </button>
-            <div class="dropdown-container" style="display: none;">
-                <div class="menu-item" onclick="nav('termos')">Termos de Uso</div>
-                <div class="menu-item" onclick="nav('privacidade')">Política de Privacidade</div>
-            </div>
-        </div>
         <div class="menu-item" onclick="nav('sobre')"><i class="fas fa-user"></i> Minha Jornada</div>
         <div class="menu-item" onclick="nav('combate-mitos')"><i class="fas fa-shield-alt"></i> Fato ou Mito?</div>
     </div>
@@ -186,6 +194,7 @@
             </div>
         </div>
     </section>
+
 <section id="privacidade" class="tab-content">
     <h1>Política de Privacidade</h1>
     <div class="card-modern">
@@ -3214,6 +3223,183 @@
         </div>
     </div>
 </section>
+<section id="estudos-section" class="tab-content">
+    <div class="header-modern" style="background: linear-gradient(135deg, #6366f1, #4338ca); padding: 40px; border-radius: 24px; margin-bottom: 30px; border-left: 8px solid #a5b4fc;">
+        <h1 style="margin: 0; color: white;">Simulados Científicos</h1>
+        <p style="color: white; opacity: 0.9; margin-top: 10px;">Pratique seus conhecimentos com questões de alto nível.</p>
+    </div>
+
+    <div style="margin-bottom: 30px; display: flex; gap: 10px; flex-wrap: wrap;">
+        <button class="filter-btn active" onclick="filtrarQuestoes('todos')">Todos</button>
+        <button class="filter-btn" onclick="filtrarQuestoes('cat-hormonios')">Hormônios</button>
+        <button class="filter-btn" onclick="filtrarQuestoes('cat-macros')">Macronutrientes</button>
+        <button class="filter-btn" onclick="filtrarQuestoes('cat-metabolismo')">Metabolismo</button>
+    </div>
+
+    <div id="container-questoes">
+        
+        <div class="questao cat-hormonios card-modern" style="margin-bottom: 25px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                <span style="background: #10b981; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold;">ALTERNATIVA</span>
+                <span style="color: #818cf8; font-size: 0.8rem; font-weight: bold;">TEMA: HORMÔNIOS</span>
+            </div>
+            <h3 style="color: #e2e8f0; font-size: 1.1rem;">Qual hormônio é secretado pelas células alfa do pâncreas em resposta à hipoglicemia?</h3>
+            <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 15px;">
+                <button class="opt-btn" onclick="verificarMultipla(this, false, 'q1')">a) Insulina</button>
+                <button class="opt-btn" onclick="verificarMultipla(this, true, 'q1')">b) Glucagon</button>
+                <button class="opt-btn" onclick="verificarMultipla(this, false, 'q1')">c) Somatostatina</button>
+                <button class="opt-btn" onclick="verificarMultipla(this, false, 'q1')">d) Adrenalina</button>
+            </div>
+        </div>
+
+        <div class="questao cat-metabolismo card-modern" style="margin-bottom: 25px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                <span style="background: #f59e0b; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold;">DISSERTATIVA</span>
+                <span style="color: #f59e0b; font-size: 0.8rem; font-weight: bold;">TEMA: METABOLISMO</span>
+            </div>
+            <h3 style="color: #e2e8f0; font-size: 1.1rem;">Defina a Taxa Metabólica Basal (TMB) e cite um fator que pode aumentá-la significativamente.</h3>
+            <textarea id="resp-q2" placeholder="Sua resposta..." style="width: 100%; background: rgba(0,0,0,0.2); border: 1px solid #475569; border-radius: 8px; padding: 12px; color: white; margin-top: 10px; min-height: 80px;"></textarea>
+            <button class="btn-gabarito" onclick="toggleGabarito('gab-q2')">Ver Gabarito</button>
+            <div id="gab-q2" class="gabarito-box">
+                <strong>Gabarito:</strong> A TMB é a quantidade mínima de energia necessária para manter as funções vitais em repouso. Um fator que a aumenta é a quantidade de <strong>Massa Muscular</strong>.
+            </div>
+        </div>
+
+        <div class="questao cat-macros card-modern" style="margin-bottom: 25px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+        <span style="background: #10b981; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold;">ALTERNATIVA</span>
+        <span style="color: #94a3b8; font-size: 0.8rem;">FONTE: Residência Multiprofissional</span>
+    </div>
+    <h3 style="color: #e2e8f0; font-size: 1.1rem;">No metabolismo de lipídeos, qual lipoproteína é responsável pelo transporte reverso do colesterol (dos tecidos para o fígado)?</h3>
+    <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 15px;">
+        <button class="opt-btn" onclick="verificarMultipla(this, false)">a) Chylomicron</button>
+        <button class="opt-btn" onclick="verificarMultipla(this, false)">b) VLDL</button>
+        <button class="opt-btn" onclick="verificarMultipla(this, false)">c) LDL</button>
+        <button class="opt-btn" onclick="verificarMultipla(this, true)">d) HDL</button>
+    </div>
+</div>
+
+<div class="questao cat-hormonios card-modern" style="margin-bottom: 25px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+        <span style="background: #f59e0b; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold;">DISSERTATIVA</span>
+        <span style="color: #94a3b8; font-size: 0.8rem;">FONTE: Prova de Título - Sociedade de Endocrinologia</span>
+    </div>
+    <h3 style="color: #e2e8f0; font-size: 1.1rem;">Diferencie a função endócrina do pâncreas da sua função exócrina.</h3>
+    <textarea id="resp-q4" placeholder="Escreva sua resposta técnica..." style="width: 100%; background: rgba(0,0,0,0.2); border: 1px solid #475569; border-radius: 8px; padding: 12px; color: white; margin-top: 10px; min-height: 80px;"></textarea>
+    <button class="btn-gabarito" onclick="toggleGabarito('gab-q4')">Ver Gabarito Técnico</button>
+    <div id="gab-q4" class="gabarito-box">
+        <strong>Gabarito Esperado:</strong> A função <strong>endócrina</strong> envolve a secreção de hormônios (insulina e glucagon) diretamente na corrente sanguínea para controle glicêmico. A função <strong>exócrina</strong> envolve a produção de suco pancreático e enzimas digestivas (amilase, lipase, tripsina) lançadas no duodeno para a digestão de nutrientes.
+    </div>
+</div>
+<div class="questao cat-metabolismo card-modern" style="margin-bottom: 25px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+        <span style="background: #10b981; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold;">ALTERNATIVA</span>
+        <span style="color: #94a3b8; font-size: 0.8rem;">TEMA: BIOENERGÉTICA</span>
+    </div>
+    <h3 style="color: #e2e8f0; font-size: 1.1rem;">Sobre o lactato produzido durante o exercício intenso, qual é o nome do ciclo metabólico onde ele é convertido de volta em glicose no fígado?</h3>
+    <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 15px;">
+        <button class="opt-btn" onclick="verificarMultipla(this, false)">a) Ciclo de Krebs</button>
+        <button class="opt-btn" onclick="verificarMultipla(this, true)">b) Ciclo de Cori</button>
+        <button class="opt-btn" onclick="verificarMultipla(this, false)">c) Ciclo da Ureia</button>
+        <button class="opt-btn" onclick="verificarMultipla(this, false)">d) Ciclo de Randle</button>
+    </div>
+</div>
+
+<div class="questao cat-hormonios card-modern" style="margin-bottom: 25px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+        <span style="background: #f59e0b; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold;">DISSERTATIVA</span>
+        <span style="color: #f59e0b; font-size: 0.8rem; font-weight: bold;">TEMA: SÍNTESE PROTEICA</span>
+    </div>
+    <h3 style="color: #e2e8f0; font-size: 1.1rem;">O que é a via sinalizadora mTOR e qual aminoácido essencial é conhecido por ser seu principal ativador nutricional?</h3>
+    <textarea id="resp-q6" placeholder="Sua resposta técnica..." style="width: 100%; background: rgba(0,0,0,0.2); border: 1px solid #475569; border-radius: 8px; padding: 12px; color: white; margin-top: 10px; min-height: 80px;"></textarea>
+    <button class="btn-gabarito" onclick="toggleGabarito('gab-q6')">Ver Gabarito Técnico</button>
+    <div id="gab-q6" class="gabarito-box">
+        <strong>Gabarito:</strong> O mTOR (Alvo da Rapamicina em Mamíferos) é um complexo proteico que atua como o principal regulador do crescimento celular e síntese proteica. O aminoácido <strong>Leucina</strong> é o principal gatilho nutricional para ativar essa via.
+    </div>
+</div>
+
+<div class="questao cat-macros card-modern" style="margin-bottom: 25px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+        <span style="background: #10b981; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold;">ALTERNATIVA</span>
+        <span style="color: #94a3b8; font-size: 0.8rem;">TEMA: QUÍMICA ORGÂNICA</span>
+    </div>
+    <h3 style="color: #e2e8f0; font-size: 1.1rem;">Na nomenclatura de ácidos graxos, o que significa o termo "Omega-3" (ω-3)?</h3>
+    <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 15px;">
+        <button class="opt-btn" onclick="verificarMultipla(this, false)">a) Que a molécula possui apenas 3 átomos de carbono.</button>
+        <button class="opt-btn" onclick="verificarMultipla(this, true)">b) Que a primeira ligação dupla ocorre no terceiro carbono a partir da extremidade metila (cauda).</button>
+        <button class="opt-btn" onclick="verificarMultipla(this, false)">c) Que existem 3 ligações triplas na cadeia carbônica.</button>
+        <button class="opt-btn" onclick="verificarMultipla(this, false)">d) Que a molécula só é estável em temperaturas abaixo de 3°C.</button>
+    </div>
+</div>
+
+<div class="questao cat-metabolismo card-modern" style="margin-bottom: 25px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+        <span style="background: #f59e0b; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold;">DISSERTATIVA</span>
+        <span style="color: #f59e0b; font-size: 0.8rem; font-weight: bold;">TEMA: VIA ANAERÓBIA</span>
+    </div>
+    <h3 style="color: #e2e8f0; font-size: 1.1rem;">Explique a diferença entre a Glicólise Aeróbia e a Glicólise Anaeróbia em termos de destino do Piruvato.</h3>
+    <textarea id="resp-q8" placeholder="Sua resposta..." style="width: 100%; background: rgba(0,0,0,0.2); border: 1px solid #475569; border-radius: 8px; padding: 12px; color: white; margin-top: 10px; min-height: 80px;"></textarea>
+    <button class="btn-gabarito" onclick="toggleGabarito('gab-q8')">Ver Gabarito</button>
+    <div id="gab-q8" class="gabarito-box">
+        <strong>Gabarito:</strong> Na glicólise <strong>aeróbia</strong> (presença de O2), o piruvato entra na mitocôndria e é convertido em Acetil-CoA para o Ciclo de Krebs. Na glicólise <strong>anaeróbia</strong> (baixa oferta de O2 ou alta intensidade), o piruvato é reduzido a <strong>lactato</strong> no citosol para regenerar o NAD+ e manter a produção de ATP.
+    </div>
+</div>
+<div class="questao cat-metabolismo card-modern" style="margin-bottom: 25px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+        <span style="background: #10b981; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold;">ALTERNATIVA</span>
+        <span style="color: #94a3b8; font-size: 0.8rem;">TEMA: MICRONUTRIENTES</span>
+    </div>
+    <h3 style="color: #e2e8f0; font-size: 1.1rem;">A deficiência grave de qual vitamina do complexo B está associada à patologia conhecida como Pelagra (caracterizada pelos 3 "Ds": Dermatite, Diarreia e Demência)?</h3>
+    <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 15px;">
+        <button class="opt-btn" onclick="verificarMultipla(this, false)">a) Vitamina B1 (Tiamina)</button>
+        <button class="opt-btn" onclick="verificarMultipla(this, false)">b) Vitamina B12 (Cobalamina)</button>
+        <button class="opt-btn" onclick="verificarMultipla(this, true)">c) Vitamina B3 (Niacina)</button>
+        <button class="opt-btn" onclick="verificarMultipla(this, false)">d) Vitamina B6 (Piridoxina)</button>
+    </div>
+</div>
+
+<div class="questao cat-metabolismo card-modern" style="margin-bottom: 25px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+        <span style="background: #f59e0b; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold;">DISSERTATIVA</span>
+        <span style="color: #f59e0b; font-size: 0.8rem; font-weight: bold;">TEMA: DIGESTÃO</span>
+    </div>
+    <h3 style="color: #e2e8f0; font-size: 1.1rem;">Explique o papel do Ácido Clorídrico (HCl) na digestão de proteínas e cite qual célula gástrica é responsável por sua secreção.</h3>
+    <textarea id="resp-q10" placeholder="Responda sobre a desnaturação e a pepsina..." style="width: 100%; background: rgba(0,0,0,0.2); border: 1px solid #475569; border-radius: 8px; padding: 12px; color: white; margin-top: 10px; min-height: 80px;"></textarea>
+    <button class="btn-gabarito" onclick="toggleGabarito('gab-q10')">Ver Gabarito Técnico</button>
+    <div id="gab-q10" class="gabarito-box">
+        <strong>Gabarito:</strong> O HCl é secretado pelas <strong>células parietais</strong>. Ele atua na desnaturação das proteínas (abrindo sua estrutura) e ativa o pepsinogênio em <strong>pepsina</strong>, a principal enzima que inicia a quebra das cadeias polipeptídicas no estômago.
+    </div>
+</div>
+
+<div class="questao cat-macros card-modern" style="margin-bottom: 25px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+        <span style="background: #10b981; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold;">ALTERNATIVA</span>
+        <span style="color: #94a3b8; font-size: 0.8rem;">TEMA: QUÍMICA DE ALIMENTOS</span>
+    </div>
+    <h3 style="color: #e2e8f0; font-size: 1.1rem;">Qual a principal diferença estrutural entre um Ácido Graxo Saturado e um Ácido Graxo Insaturado?</h3>
+    <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 15px;">
+        <button class="opt-btn" onclick="verificarMultipla(this, false)">a) O número de átomos de oxigênio na cadeia.</button>
+        <button class="opt-btn" onclick="verificarMultipla(this, true)">b) A presença de ligações duplas entre carbonos na cadeia insaturada.</button>
+        <button class="opt-btn" onclick="verificarMultipla(this, false)">c) A saturação ocorre apenas em cadeias de carbonos ímpares.</button>
+        <button class="opt-btn" onclick="verificarMultipla(this, false)">d) Ácidos saturados são sempre líquidos em temperatura ambiente.</button>
+    </div>
+</div>
+
+<div class="questao cat-metabolismo card-modern" style="margin-bottom: 25px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+        <span style="background: #f59e0b; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold;">DISSERTATIVA</span>
+        <span style="color: #f59e0b; font-size: 0.8rem; font-weight: bold;">TEMA: RADICAIS LIVRES</span>
+    </div>
+    <h3 style="color: #e2e8f0; font-size: 1.1rem;">O que são Espécies Reativas de Oxigênio (EROs) e cite um sistema de defesa antioxidante endógeno do corpo humano.</h3>
+    <textarea id="resp-q12" placeholder="Fale sobre elétrons desemparelhados..." style="width: 100%; background: rgba(0,0,0,0.2); border: 1px solid #475569; border-radius: 8px; padding: 12px; color: white; margin-top: 10px; min-height: 80px;"></textarea>
+    <button class="btn-gabarito" onclick="toggleGabarito('gab-q12')">Ver Gabarito</button>
+    <div id="gab-q12" class="gabarito-box">
+        <strong>Gabarito:</strong> EROs são moléculas ou íons que possuem um elétron desemparelhado na sua última camada, tornando-as altamente instáveis e reativas. Exemplos de defesas endógenas: enzimas <strong>Superóxido Dismutase (SOD)</strong>, <strong>Catalase</strong> ou a <strong>Glutationa Peroxidase</strong>.
+    </div>
+</div>
+
+    </div>
+</section>
 <section id="faq-section" class="tab-content">
     <div class="card-modern" style="padding: 20px;">
         
@@ -3285,7 +3471,6 @@
 
     </div>
 </section>
-
 <style>
     .mito-item {
         background: rgba(255,255,255,0.03);
@@ -3310,89 +3495,114 @@
         line-height: 1.5;
     }
 </style>
-   
-    </main> <script src="script.js"></script> 
-    <button id="theme-toggle" onclick="toggleTheme()">
-    <i class="fas fa-adjust"></i>
-</button>
-<script defer src="/_vercel/insights/script.js"></script>
+
+</main>
+
 <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
 
 <script>
-  // 2. Configuração do Firebase
-  const firebaseConfig = {
-    apiKey: "AIzaSyBoRggo9HN5z4c-oFdLSESR0idFh0nCmBs",
-    authDomain: "nutrisciencepro-2b2b2.firebaseapp.com",
-    projectId: "nutrisciencepro-2b2b2",
-    storageBucket: "nutrisciencepro-2b2b2.firebasestorage.app",
-    messagingSenderId: "857318370386",
-    appId: "1:857318370386:web:04338ed37da7a96f41838b",
-    measurementId: "G-L3Y2K8W2HM"
-  };
+    // 2. CONFIGURAÇÃO
+    const firebaseConfig = {
+        apiKey: "AIzaSyBoRggo9HN5z4c-oFdLSESR0idFh0nCmBs",
+        authDomain: "nutrisciencepro-2b2b2.firebaseapp.com",
+        projectId: "nutrisciencepro-2b2b2",
+        storageBucket: "nutrisciencepro-2b2b2.firebasestorage.app",
+        messagingSenderId: "857318370386",
+        appId: "1:857318370386:web:04338ed37da7a96f41838b",
+        measurementId: "G-L3Y2K8W2HM"
+    };
 
-  // 3. Inicializa o Firebase e Firestore
-  const app = firebase.initializeApp(firebaseConfig);
-  const db = firebase.firestore();
-
-  // 4. Função para postar comentário (agora com likes iniciando em 0)
-  function postarComentario() {
-    const nome = document.getElementById('comentario-nome').value;
-    const texto = document.getElementById('comentario-texto').value;
-
-    if (nome && texto) {
-      db.collection("comentarios").add({
-        nome: nome,
-        texto: texto,
-        data: new Date(),
-        likes: 0 // Inicia com zero curtidas
-      })
-      .then(() => {
-        document.getElementById('comentario-nome').value = '';
-        document.getElementById('comentario-texto').value = '';
-      })
-      .catch((error) => {
-        console.error("Erro ao postar: ", error);
-        alert("Erro ao postar. Verifique as Regras no Firebase.");
-      });
-    } else {
-      alert("Por favor, preencha nome e mensagem.");
+    // 3. INICIALIZAÇÃO
+    if (!firebase.apps.length) {
+        firebase.initializeApp(firebaseConfig);
     }
-  }
+    const db = firebase.firestore();
+    const auth = firebase.auth();
+    const provider = new firebase.auth.GoogleAuthProvider();
 
-  // 5. Função para dar Like (Firestore)
-  function darLike(idDoc) {
-    const docRef = db.collection("comentarios").doc(idDoc);
-    
-    // Incrementa o valor de likes no Firestore de forma atômica
-    docRef.update({
-      likes: firebase.firestore.FieldValue.increment(1)
+    // 4. MONITOR DE USUÁRIO (Faz a troca automática de Botão por Foto)
+    auth.onAuthStateChanged((user) => {
+        const loginSec = document.getElementById('login-section');
+        const profileSec = document.getElementById('profile-section');
+        
+        if (user) {
+            if(loginSec) loginSec.style.display = 'none';
+            if(profileSec) {
+                profileSec.style.display = 'block';
+                document.getElementById('user-photo').src = user.photoURL;
+                document.getElementById('user-name').innerText = user.displayName;
+            }
+        } else {
+            if(loginSec) loginSec.style.display = 'block';
+            if(profileSec) profileSec.style.display = 'none';
+        }
     });
-  }
 
-  // 6. Escuta o banco e atualiza o mural com o botão de Like
-  db.collection("comentarios").orderBy("data", "desc").onSnapshot((snapshot) => {
-    const lista = document.getElementById('lista-comentarios');
-    lista.innerHTML = ''; 
-    
-    snapshot.forEach((doc) => {
-      const item = doc.data();
-      const id = doc.id; // Pegamos o ID único do documento
-      
-      lista.innerHTML += `
-        <div class="card-modern" style="margin-bottom: 15px; border-left: 4px solid #6366f1; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px;">
-          <strong style="color: #818cf8; display: block; margin-bottom: 5px;">${item.nome}</strong>
-          <p style="margin: 0; font-size: 0.95rem; color: #cbd5e1;">${item.texto}</p>
-          
-          <button onclick="darLike('${id}')" style="background: rgba(239, 68, 68, 0.1); border: none; color: #ef4444; padding: 5px 12px; border-radius: 20px; cursor: pointer; display: flex; align-items: center; gap: 6px; margin-top: 10px; transition: 0.3s; font-size: 0.85rem;">
-            <i class="fas fa-heart"></i> <span>${item.likes || 0}</span>
-          </button>
-        </div>
-      `;
+    // 5. FUNÇÕES DE LOGIN/LOGOUT
+    function fazerLogin() {
+        auth.signInWithPopup(provider).catch(error => {
+            console.error("Erro no login:", error);
+            alert("Erro ao logar: " + error.message);
+        });
+    }
+
+    function fazerLogout() {
+        auth.signOut();
+    }
+
+    // 6. FUNÇÕES DO MURAL
+    function postarComentario() {
+        const nome = document.getElementById('comentario-nome').value;
+        const texto = document.getElementById('comentario-texto').value;
+        if (nome && texto) {
+            db.collection("comentarios").add({
+                nome: nome, texto: texto, data: new Date(), likes: 0
+            }).then(() => {
+                document.getElementById('comentario-nome').value = '';
+                document.getElementById('comentario-texto').value = '';
+            });
+        }
+    }
+
+    function darLike(idDoc) {
+        db.collection("comentarios").doc(idDoc).update({
+            likes: firebase.firestore.FieldValue.increment(1)
+        });
+    }
+
+    db.collection("comentarios").orderBy("data", "desc").onSnapshot((snapshot) => {
+        const lista = document.getElementById('lista-comentarios');
+        if (lista) {
+            lista.innerHTML = ''; 
+            snapshot.forEach((doc) => {
+                const item = doc.data();
+                lista.innerHTML += `
+                    <div class="card-modern" style="margin-bottom: 15px; border-left: 4px solid #6366f1; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px;">
+                        <strong style="color: #818cf8; display: block; margin-bottom: 5px;">${item.nome}</strong>
+                        <p style="margin: 0; font-size: 0.95rem; color: #cbd5e1;">${item.texto}</p>
+                        <button onclick="darLike('${doc.id}')" style="background: rgba(239, 68, 68, 0.1); border: none; color: #ef4444; padding: 5px 12px; border-radius: 20px; cursor: pointer; display: flex; align-items: center; gap: 6px; margin-top: 10px; font-size: 0.85rem;">
+                            <i class="fas fa-heart"></i> <span>${item.likes || 0}</span>
+                        </button>
+                    </div>`;
+            });
+        }
     });
-  });
 </script>
+
+<script src="script.js"></script>
+
+<button id="theme-toggle" onclick="toggleTheme()">
+    <i class="fas fa-adjust"></i>
+</button>
+
+<style>
+    .opt-btn { background: rgba(255,255,255,0.05); border: 1px solid #475569; color: #cbd5e1; padding: 12px; text-align: left; border-radius: 8px; cursor: pointer; transition: 0.3s; width: 100%; margin-bottom: 5px; }
+    .opt-btn:hover { background: rgba(99, 102, 241, 0.2); }
+    .correta { background: #065f46 !important; border-color: #10b981 !important; color: white !important; }
+    .errada { background: #7f1d1d !important; border-color: #ef4444 !important; color: white !important; }
+    .gabarito-box { display: none; background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px; margin-top: 10px; border: 1px dashed #6366f1; color: #e2e8f0; font-size: 0.9rem; }
+</style>
 </body>
 </html>
