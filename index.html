@@ -91,7 +91,7 @@
 
         <div class="menu-category">
             <button class="dropdown-btn" onclick="toggleDropdown(this)">
-                <span><i class="fas fa-stethoscopes"></i> Clínica & Saúde</span>
+                <span><i class="fas fa-stethoscopes"></i> Nutrição Clínica & Saúde</span>
                 <i class="fas fa-chevron-down arrow"></i>
             </button>
             <div class="dropdown-container" style="display: none;">
@@ -102,7 +102,7 @@
                 <div class="menu-item" onclick="nav('emagrecimento')"><i class="fas fa-fire-alt"></i> Ciência do Emagrecimento</div>
                 <div class="menu-item" onclick="nav('incretinas')"><i class="fas fa-syringe"></i><span>Canetas Emagrecedoras</span></div>
                 <div class="menu-item" onclick="nav('patologias-lipídicas')"><i class="fas fa-heart-broken"></i> Excesso de Saturadas</div>
-            </div>
+                <div class="menu-item" onclick="nav('dietas-hospitalares')"><i class="fas fa-hospital-alt"></i> Dietas Hospitalares</div>
         </div>
 
         <div class="menu-item" onclick="nav('estudos-section')"><i class="fas fa-graduation-cap"></i> Simulados</div>
@@ -1403,6 +1403,104 @@
 <button onclick="exportarSecaoPDF('plantbased', 'Relatorio_Plant Based_NutriScience')" class="btn-pdf">
     <i class="fas fa-file-pdf"></i> Baixar Guia de Plant Based
 </button>
+</section>
+<section id="dietas-hospitalares" class="secao-conteudo" style="display: none; padding: 20px;"></section>
+    <div style="background: linear-gradient(135deg, #10b981, #059669); padding: 30px; border-radius: 15px; margin-bottom: 30px;">
+        <h1 style="color: white; margin: 0; font-size: 1.8rem;">1. O que são Dietas Hospitalares?</h1>
+        <p style="color: rgba(255,255,255,0.9); margin-top: 10px; line-height: 1.6;">
+            Planos alimentares adaptados às condições clínicas do paciente para manter/recuperar o estado nutricional, prevenir complicações e auxiliar no tratamento. Prescritas por médicos e ajustadas por nutricionistas.
+        </p>
+    </div>
+
+    <h2 style="color: #e2e8f0; border-bottom: 2px solid #10b981; padding-bottom: 10px; display: inline-block;">📊 2. Classificação das Dietas</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 20px 0 40px 0;">
+        <div class="card-clinica" style="background: #1e293b; padding: 20px; border-radius: 12px; border-top: 4px solid #10b981;">
+            <h4 style="color: #10b981;">Consistência</h4>
+            <p style="color: #94a3b8; font-size: 0.9rem;">Geral, Branda, Pastosa, Líquida e Líquida Restrita.</p>
+        </div>
+        <div class="card-clinica" style="background: #1e293b; padding: 20px; border-radius: 12px; border-top: 4px solid #f59e0b;">
+            <h4 style="color: #f59e0b;">Modificação de Nutrientes</h4>
+            <p style="color: #94a3b8; font-size: 0.9rem;">Hipossódica, Hipocalórica, Hiperproteica, Hipolipídica, Diabética.</p>
+        </div>
+        <div class="card-clinica" style="background: #1e293b; padding: 20px; border-radius: 12px; border-top: 4px solid #ef4444;">
+            <h4 style="color: #ef4444;">Finalidade Terapêutica</h4>
+            <p style="color: #94a3b8; font-size: 0.9rem;">Renal, Hepática, Cardioprotetora, Enteral e Parenteral.</p>
+        </div>
+    </div>
+
+    <h2 style="color: #e2e8f0; margin-bottom: 20px;">🥣 3. Dietas Quanto à Consistência</h2>
+    <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 40px;">
+        <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 10px; border-left: 4px solid #4ade80;">
+            <strong style="color: #4ade80;">🥗 Dieta Geral:</strong> Pacientes sem restrições. Alimentação normal, todos os grupos, temperos moderados.
+        </div>
+        <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 10px; border-left: 4px solid #fbbf24;">
+            <strong style="color: #fbbf24;">🍲 Dieta Branda:</strong> Pós-op leve, problemas gastrointestinais. Fácil mastigação, cozidos, pouca fibra insolúvel e gordura.
+        </div>
+        <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 10px; border-left: 4px solid #60a5fa;">
+            <strong style="color: #60a5fa;">🥣 Dieta Pastosa:</strong> Disfagia, Pós-AVC, neurológicos. Homogênea, sem pedaços (purês).
+        </div>
+        <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 10px; border-left: 4px solid #a78bfa;">
+            <strong style="color: #a78bfa;">🥤 Dieta Líquida Completa:</strong> Transição pós-cirúrgica. Sopas coadas, leite, vitaminas e sucos.
+        </div>
+        <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 10px; border-left: 4px solid #f87171;">
+            <strong style="color: #f87171;">💧 Dieta Líquida Restrita (Clara):</strong> Pré-operatório/Exames. Chá, gelatina, água. Baixo valor calórico → Curto período.
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 40px;">
+        <div style="background: #0f172a; padding: 20px; border-radius: 12px;">
+            <h3 style="color: #10b981;">🧂 Modificadas</h3>
+            <ul style="color: #cbd5e1; line-height: 1.8; font-size: 0.9rem;">
+                <li><strong>Hipossódica:</strong> Restrição de sal (HAS/Renal).</li>
+                <li><strong>Diabetes:</strong> Controle de CHO e baixo IG.</li>
+                <li><strong>Hiperproteica:</strong> Pós-cirúrgico e queimaduras.</li>
+                <li><strong>Hipolipídica:</strong> Pancreatite e dislipidemias.</li>
+            </ul>
+        </div>
+        <div style="background: #0f172a; padding: 20px; border-radius: 12px;">
+            <h3 style="color: #f59e0b;">🩺 Terapêuticas</h3>
+            <ul style="color: #cbd5e1; line-height: 1.8; font-size: 0.9rem;">
+                <li><strong>Renal:</strong> Controle de PTN, K, P e Na.</li>
+                <li><strong>Hepática:</strong> Fracionada, avalia PTN na encefalopatia.</li>
+                <li><strong>Cardioprotetora:</strong> Baixa gordura saturada e sódio.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); padding: 20px; border-radius: 12px; margin-bottom: 40px;">
+        <h3 style="color: #f87171; margin-top: 0;">🧪 6. Dietas para Exames</h3>
+        <p style="color: #cbd5e1; font-size: 0.95rem;">Objetivo: Reduzir conteúdo intestinal. Inclui: Sem resíduos, Líquida clara e Jejum absoluto (colonoscopia).</p>
+    </div>
+
+    <h2 style="color: #e2e8f0;">🧠 7. Pontos Técnicos Importantes</h2>
+    <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 40px;">
+        <span style="background: #334155; color: #fff; padding: 8px 15px; border-radius: 20px; font-size: 0.8rem;">📌 Evolução: Jejum → Liq. Restrita → Geral</span>
+        <span style="background: #334155; color: #fff; padding: 8px 15px; border-radius: 20px; font-size: 0.8rem;">📌 Risco: Desnutrição e Sarcopenia Hospitalar</span>
+    </div>
+
+    <h2 style="color: #e2e8f0; margin-bottom: 15px;">📚 Resumo Estrutural Final</h2>
+    <table style="width: 100%; border-collapse: collapse; background: #1e293b; border-radius: 10px; overflow: hidden; color: #cbd5e1;">
+        <thead style="background: #10b981; color: white;">
+            <tr>
+                <th style="padding: 15px; text-align: left;">Classificação</th>
+                <th style="padding: 15px; text-align: left;">Tipos</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="border-bottom: 1px solid #334155;">
+                <td style="padding: 15px; font-weight: bold;">Consistência</td>
+                <td style="padding: 15px;">Geral, Branda, Pastosa, Líquida</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #334155;">
+                <td style="padding: 15px; font-weight: bold;">Modificação</td>
+                <td style="padding: 15px;">Hipossódica, Hiperproteica, Diabética</td>
+            </tr>
+            <tr>
+                <td style="padding: 15px; font-weight: bold;">Terapêutica</td>
+                <td style="padding: 15px;">Renal, Hepática, Cardioprotetora</td>
+            </tr>
+        </tbody>
+    </table>
 </section>
 <section id="alimentos" class="tab-content">
     <div class="header-modern" style="background: linear-gradient(135deg, #10b981, #064e3b); padding: 40px; border-radius: 24px; margin-bottom: 30px; color: white;">
@@ -3547,7 +3645,60 @@
             <button class="opt-btn" onclick="verificarResposta(this, false)">d) Creatina Quinase</button>
         </div>
     </div>
-    
+    <div class="questao card-modern" style="margin-bottom: 25px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+            <span style="background: #10b981; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold;">ALTERNATIVA</span>
+            <span style="color: #60a5fa; font-size: 0.8rem; font-weight: bold;">TEMA: TÉCNICA DIETÉTICA</span>
+        </div>
+        <h3 style="color: #e2e8f0; font-size: 1.1rem;">Qual dieta é indicada para pacientes com dificuldade de mastigação e deglutição, composta por alimentos moídos, abrandados pela cocção e mecanicamente?</h3>
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 15px;">
+            <button class="opt-btn" onclick="verificarResposta(this, false)">a) Dieta Líquida Estrita</button>
+            <button class="opt-btn" onclick="verificarResposta(this, true)">b) Dieta Pastosa</button>
+            <button class="opt-btn" onclick="verificarResposta(this, false)">c) Dieta Branda</button>
+            <button class="opt-btn" onclick="verificarResposta(this, false)">d) Dieta Livre</button>
+        </div>
+    </div>
+
+    <div class="questao card-modern" style="margin-bottom: 25px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+            <span style="background: #10b981; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold;">ALTERNATIVA</span>
+            <span style="color: #fb7185; font-size: 0.8rem; font-weight: bold;">TEMA: NUTRIÇÃO ENTERAL</span>
+        </div>
+        <h3 style="color: #e2e8f0; font-size: 1.1rem;">Segundo a RDC 63/2000, qual a definição de Nutrição Enteral?</h3>
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 15px;">
+            <button class="opt-btn" onclick="verificarResposta(this, false)">a) Alimento para administração exclusiva por via intravenosa.</button>
+            <button class="opt-btn" onclick="verificarResposta(this, true)">b) Alimento para fins especiais, administrado por sonda ou via oral, industrializado ou não.</button>
+            <button class="opt-btn" onclick="verificarResposta(this, false)">c) Suplementação vitamínica para pacientes ambulatoriais.</button>
+            <button class="opt-btn" onclick="verificarResposta(this, false)">d) Dieta líquida servida exclusivamente em ambiente hospitalar.</button>
+        </div>
+    </div>
+
+    <div class="questao card-modern" style="margin-bottom: 25px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+            <span style="background: #f59e0b; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold;">DISSERTATIVA</span>
+            <span style="color: #f59e0b; font-size: 0.8rem; font-weight: bold;">TEMA: SUPORTE NUTRICIONAL</span>
+        </div>
+        <h3 style="color: #e2e8f0; font-size: 1.1rem;">Quando está indicada a Nutrição Parenteral (NP) e qual a principal diferença de via em relação à Enteral?</h3>
+        <textarea id="resp-parenteral" placeholder="Fale sobre o trato gastrointestinal..." style="width: 100%; background: rgba(0,0,0,0.2); border: 1px solid #475569; border-radius: 8px; padding: 12px; color: white; margin-top: 10px; min-height: 80px;"></textarea>
+        <button class="btn-gabarito" onclick="toggleGabarito('gab-parenteral')" style="margin-top:10px; background:#475569; border:none; color:white; padding:8px 15px; border-radius:6px; cursor:pointer;">Ver Gabarito</button>
+        <div id="gab-parenteral" class="gabarito-box" style="display:none; margin-top:10px; padding:15px; background:rgba(255,255,255,0.05); border-radius:8px; color:#cbd5e1;">
+            <strong>Gabarito:</strong> A NP é indicada quando o <strong>trato gastrointestinal não está funcionante</strong> ou está inacessível. A principal diferença é a via: a NP é administrada diretamente na <strong>veia (intravenosa)</strong>, pulando a digestão.
+        </div>
+    </div>
+
+    <div class="questao card-modern" style="margin-bottom: 25px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+            <span style="background: #10b981; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold;">ALTERNATIVA</span>
+            <span style="color: #94a3b8; font-size: 0.8rem;">TEMA: GERIATRIA</span>
+        </div>
+        <h3 style="color: #e2e8f0; font-size: 1.1rem;">Para combater a sarcopenia em idosos, qual a recomendação proteica média por refeição para maximizar a síntese proteica?</h3>
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 15px;">
+            <button class="opt-btn" onclick="verificarResposta(this, false)">a) 5 a 10g por refeição.</button>
+            <button class="opt-btn" onclick="verificarResposta(this, false)">b) 10 a 15g por refeição.</button>
+            <button class="opt-btn" onclick="verificarResposta(this, true)">c) 25 a 30g por refeição (rica em leucina).</button>
+            <button class="opt-btn" onclick="verificarResposta(this, false)">d) Idosos devem consumir pouca proteína para não sobrecarregar os rins.</button>
+        </div>
+    </div>
     <button onclick="mostrarResultadoFinal('Simulado Geral', acertos, 5)" 
             style="background: linear-gradient(90deg, #6366f1, #4f46e5); color: white; padding: 20px; border-radius: 15px; font-weight: bold; width: 100%; margin-top: 20px; border: none; cursor: pointer; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);">
         <i class="fas fa-save"></i> Finalizar e Salvar na Jornada
