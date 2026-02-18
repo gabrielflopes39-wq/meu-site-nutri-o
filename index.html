@@ -103,7 +103,10 @@
                 <div class="menu-item" onclick="nav('incretinas')"><i class="fas fa-syringe"></i><span>Canetas Emagrecedoras</span></div>
                 <div class="menu-item" onclick="nav('patologias-lipídicas')"><i class="fas fa-heart-broken"></i> Excesso de Saturadas</div>
                 <div class="menu-item" onclick="nav('dietas-hospitalares')"><i class="fas fa-hospital-alt"></i> Dietas Hospitalares</div>
-        </div>
+                <div class="menu-item" onclick="nav('enteral-parenteral')"><i class="fas fa-syringe"></i> Enteral e Parenteral</div>
+                <div class="menu-item" onclick="nav('avaliacao-clinica')"><i class="fas fa-clipboard-list"></i> Avaliação Clínica</div>
+          </div>
+        </div> 
 
         <div class="menu-item" onclick="nav('estudos-section')"><i class="fas fa-graduation-cap"></i> Simulados</div>
 
@@ -1404,103 +1407,258 @@
     <i class="fas fa-file-pdf"></i> Baixar Guia de Plant Based
 </button>
 </section>
-<section id="dietas-hospitalares" class="secao-conteudo" style="display: none; padding: 20px;">
-    <div style="background: linear-gradient(135deg, #10b981, #059669); padding: 30px; border-radius: 15px; margin-bottom: 30px;">
-        <h1 style="color: white; margin: 0; font-size: 1.8rem;">1. O que são Dietas Hospitalares?</h1>
-        <p style="color: rgba(255,255,255,0.9); margin-top: 10px; line-height: 1.6;">
-            Planos alimentares adaptados às condições clínicas do paciente para manter/recuperar o estado nutricional, prevenir complicações e auxiliar no tratamento. Prescritas por médicos e ajustadas por nutricionistas.
+<section id="dietas-hospitalares" class="tab-content">
+    <div style="background: linear-gradient(135deg, #10b981, #059669); padding: 30px; border-radius: 15px; margin-bottom: 25px; border: 1px solid rgba(255,255,255,0.1);">
+        <h1 style="color: white; margin: 0; font-size: 1.8rem;"><i class="fas fa-hospital-alt"></i> Dietoterapia Hospitalar</h1>
+        <p style="color: #d1fae5; margin-top: 10px; font-size: 1rem;">
+            Padronização de dietas conforme a <strong>consistência reológica</strong> e <strong>modificações químicas</strong>.
         </p>
     </div>
 
-    <h2 style="color: #e2e8f0; border-bottom: 2px solid #10b981; padding-bottom: 10px; display: inline-block;">📊 2. Classificação das Dietas</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 20px 0 40px 0;">
-        <div class="card-clinica" style="background: #1e293b; padding: 20px; border-radius: 12px; border-top: 4px solid #10b981;">
-            <h4 style="color: #10b981;">Consistência</h4>
-            <p style="color: #94a3b8; font-size: 0.9rem;">Geral, Branda, Pastosa, Líquida e Líquida Restrita.</p>
+    <h2 style="color: #34d399; border-bottom: 2px solid #059669; padding-bottom: 8px; margin-top: 30px;">🥣 1. Progressão de Consistência</h2>
+    <p style="color: #cbd5e1; line-height: 1.6;">A progressão visa a transição segura da nutrição parenteral/enteral para a via oral, ou conforme a tolerância gastrointestinal do paciente.</p>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-top: 20px;">
+        <div style="background: #1e293b; padding: 20px; border-radius: 12px; border: 1px solid #334155;">
+            <h4 style="color: #fbbf24; margin-top: 0;">Líquida Restrita / Clara</h4>
+            <p style="color: #94a3b8; font-size: 0.85rem; line-height: 1.6;">
+                <strong>Objetivo:</strong> Repouso digestivo e hidratação. Isenta de resíduos e lactose.<br>
+                <strong>Indicação:</strong> Pré/pós-operatório imediato, preparo de exames.<br>
+                <span style="color: #f87171;">⚠️ Nutricionalmente incompleta (uso máx. 48h).</span>
+            </p>
         </div>
-        <div class="card-clinica" style="background: #1e293b; padding: 20px; border-radius: 12px; border-top: 4px solid #f59e0b;">
-            <h4 style="color: #f59e0b;">Modificação de Nutrientes</h4>
-            <p style="color: #94a3b8; font-size: 0.9rem;">Hipossódica, Hipocalórica, Hiperproteica, Hipolipídica, Diabética.</p>
+        <div style="background: #1e293b; padding: 20px; border-radius: 12px; border: 1px solid #334155;">
+            <h4 style="color: #60a5fa; margin-top: 0;">Pastosa</h4>
+            <p style="color: #94a3b8; font-size: 0.85rem; line-height: 1.6;">
+                <strong>Objetivo:</strong> Facilitar mastigação e deglutição. Alimentos em forma de purês, cremes e papas.<br>
+                <strong>Indicação:</strong> Pacientes com disfagia, ausência de prótese dentária ou fadiga mastigatória.
+            </p>
         </div>
-        <div class="card-clinica" style="background: #1e293b; padding: 20px; border-radius: 12px; border-top: 4px solid #ef4444;">
-            <h4 style="color: #ef4444;">Finalidade Terapêutica</h4>
-            <p style="color: #94a3b8; font-size: 0.9rem;">Renal, Hepática, Cardioprotetora, Enteral e Parenteral.</p>
+        <div style="background: #1e293b; padding: 20px; border-radius: 12px; border: 1px solid #334155;">
+            <h4 style="color: #34d399; margin-top: 0;">Branda</h4>
+            <p style="color: #94a3b8; font-size: 0.85rem; line-height: 1.6;">
+                <strong>Objetivo:</strong> Facilitar a digestão mecânica e química. Tecidos conjuntivos e fibras são abrandados pelo cozimento.<br>
+                <strong>Diferença:</strong> Próxima à normal, mas sem alimentos crus, fritos ou flatulentos.
+            </p>
         </div>
     </div>
 
-    <h2 style="color: #e2e8f0; margin-bottom: 20px;">🥣 3. Dietas Quanto à Consistência</h2>
-    <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 40px;">
-        <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 10px; border-left: 4px solid #4ade80;">
-            <strong style="color: #4ade80;">🥗 Dieta Geral:</strong> Pacientes sem restrições. Alimentação normal, todos os grupos, temperos moderados.
-        </div>
-        <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 10px; border-left: 4px solid #fbbf24;">
-            <strong style="color: #fbbf24;">🍲 Dieta Branda:</strong> Pós-op leve, problemas gastrointestinais. Fácil mastigação, cozidos, pouca fibra insolúvel e gordura.
-        </div>
-        <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 10px; border-left: 4px solid #60a5fa;">
-            <strong style="color: #60a5fa;">🥣 Dieta Pastosa:</strong> Disfagia, Pós-AVC, neurológicos. Homogênea, sem pedaços (purês).
-        </div>
-        <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 10px; border-left: 4px solid #a78bfa;">
-            <strong style="color: #a78bfa;">🥤 Dieta Líquida Completa:</strong> Transição pós-cirúrgica. Sopas coadas, leite, vitaminas e sucos.
-        </div>
-        <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 10px; border-left: 4px solid #f87171;">
-            <strong style="color: #f87171;">💧 Dieta Líquida Restrita (Clara):</strong> Pré-operatório/Exames. Chá, gelatina, água. Baixo valor calórico → Curto período.
-        </div>
+    <h2 style="color: #34d399; border-bottom: 2px solid #059669; padding-bottom: 8px; margin-top: 40px;">🧪 2. Principais Dietas Terapêuticas</h2>
+    
+    <div style="background: #0f172a; padding: 20px; border-radius: 12px; margin-top: 20px;">
+        <table style="width: 100%; border-collapse: collapse; color: #cbd5e1; font-size: 0.9rem;">
+            <thead>
+                <tr style="border-bottom: 2px solid #334155; text-align: left;">
+                    <th style="padding: 12px; color: #4ade80;">Dieta</th>
+                    <th style="padding: 12px; color: #4ade80;">Características Técnicas</th>
+                    <th style="padding: 12px; color: #4ade80;">Exemplo de Uso</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="border-bottom: 1px solid #1e293b;">
+                    <td style="padding: 12px; font-weight: bold;">Hipossódica</td>
+                    <td style="padding: 12px;">Restrição de Sódio (< 2g Na/dia).</td>
+                    <td style="padding: 12px;">HAS, Insuficiência Renal, ICC.</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #1e293b;">
+                    <td style="padding: 12px; font-weight: bold;">Hipolipídica</td>
+                    <td style="padding: 12px;">Redução de gorduras totais e saturadas.</td>
+                    <td style="padding: 12px;">Dislipidemias, Pancreatite aguda.</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #1e293b;">
+                    <td style="padding: 12px; font-weight: bold;">Hiperproteica</td>
+                    <td style="padding: 12px;">Aumento da oferta proteica (> 1.5g/kg).</td>
+                    <td style="padding: 12px;">Grandes queimados, Úlceras por pressão.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 12px; font-weight: bold;">Sem Resíduos</td>
+                    <td style="padding: 12px;">Pobre em fibras e lactose.</td>
+                    <td style="padding: 12px;">Diarreia crônica, Preparo para Colonoscopia.</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 40px;">
-        <div style="background: #0f172a; padding: 20px; border-radius: 12px;">
-            <h3 style="color: #10b981;">🧂 Modificadas</h3>
-            <ul style="color: #cbd5e1; line-height: 1.8; font-size: 0.9rem;">
-                <li><strong>Hipossódica:</strong> Restrição de sal (HAS/Renal).</li>
-                <li><strong>Diabetes:</strong> Controle de CHO e baixo IG.</li>
-                <li><strong>Hiperproteica:</strong> Pós-cirúrgico e queimaduras.</li>
-                <li><strong>Hipolipídica:</strong> Pancreatite e dislipidemias.</li>
+    <div style="margin-top: 30px; padding: 20px; background: rgba(52, 211, 153, 0.1); border-radius: 10px; border: 1px dashed #059669;">
+        <p style="color: #34d399; font-size: 0.9rem; margin: 0;">
+            <strong>📌 Importância do Nutricionista Hospitalar:</strong> A prescrição dietética deve ser dinâmica. Um paciente pode entrar em dieta líquida e, em 24h, evoluir para branda. O monitoramento evita a <strong>Desnutrição Hospitalar</strong>, que atinge cerca de 50% dos pacientes internados no Brasil (Estudo IBRANUTRI).
+        </p>
+    </div>
+</section>
+<section id="enteral-parenteral" class="tab-content">
+    <div style="background: linear-gradient(135deg, #3b82f6, #1d4ed8); padding: 30px; border-radius: 15px; margin-bottom: 25px; border: 1px solid rgba(255,255,255,0.1);">
+        <h1 style="color: white; margin: 0; font-size: 1.8rem;"><i class="fas fa-syringe"></i> Terapia de Nutrição Enteral e Parenteral (TNE/TNP)</h1>
+        <p style="color: #bfdbfe; margin-top: 10px; font-size: 1rem;">
+            Gestão da Terapia Nutricional conforme <strong>RDC 63/2000</strong>, <strong>RDC 67/2001</strong> e <strong>Diretrizes BRASPEN 2023</strong>.
+        </p>
+    </div>
+
+    <h2 style="color: #60a5fa; border-bottom: 2px solid #3b82f6; padding-bottom: 8px; margin-top: 30px;">🧬 1. Nutrição Enteral (NE)</h2>
+    <p style="color: #cbd5e1; line-height: 1.6;">Indicada quando o TGI está funcionante, mas a ingestão via oral é insuficiente (menor que 60% das necessidades por mais de 3 a 5 dias).</p>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+        <div style="background: #1e293b; padding: 20px; border-radius: 12px; border: 1px solid #334155;">
+            <h4 style="color: #4ade80; margin-top: 0;">🧪 Classificação das Fórmulas</h4>
+            <ul style="color: #94a3b8; font-size: 0.9rem; line-height: 1.8; padding-left: 15px;">
+                <li><strong>Poliméricas:</strong> Macronutrientes íntegros. Requer capacidade digestiva preservada.</li>
+                <li><strong>Oligoméricas:</strong> Proteínas hidrolisadas (peptídeos). Indicada para má absorção (ex: DII, Crohn).</li>
+                <li><strong>Elementares:</strong> Aminoácidos livres. Alta osmolaridade, uso restrito.</li>
+                <li><strong>Módulos:</strong> Nutrientes isolados (ex: módulo de proteína ou fibra).</li>
             </ul>
         </div>
-        <div style="background: #0f172a; padding: 20px; border-radius: 12px;">
-            <h3 style="color: #f59e0b;">🩺 Terapêuticas</h3>
-            <ul style="color: #cbd5e1; line-height: 1.8; font-size: 0.9rem;">
-                <li><strong>Renal:</strong> Controle de PTN, K, P e Na.</li>
-                <li><strong>Hepática:</strong> Fracionada, avalia PTN na encefalopatia.</li>
-                <li><strong>Cardioprotetora:</strong> Baixa gordura saturada e sódio.</li>
+
+        <div style="background: #1e293b; padding: 20px; border-radius: 12px; border: 1px solid #334155;">
+            <h4 style="color: #4ade80; margin-top: 0;">📍 Vias de Acesso</h4>
+            <ul style="color: #94a3b8; font-size: 0.9rem; line-height: 1.8; padding-left: 15px;">
+                <li><strong>Curto Prazo (< 4-6 sem):</strong> Sonda Nasogástrica ou Nasoenteral.</li>
+                <li><strong>Longo Prazo (> 6 sem):</strong> Gastrostomia (GTT) ou Jejunostomia (JET).</li>
+                <li><strong>Ponto Crítico:</strong> Posicionamento pós-pilórico é indicado em casos de alto risco de aspiração ou refluxo grave.</li>
             </ul>
         </div>
     </div>
 
-    <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); padding: 20px; border-radius: 12px; margin-bottom: 40px;">
-        <h3 style="color: #f87171; margin-top: 0;">🧪 6. Dietas para Exames</h3>
-        <p style="color: #cbd5e1; font-size: 0.95rem;">Objetivo: Reduzir conteúdo intestinal. Inclui: Sem resíduos, Líquida clara e Jejum absoluto (colonoscopia).</p>
+    <h2 style="color: #a78bfa; border-bottom: 2px solid #8b5cf6; padding-bottom: 8px; margin-top: 40px;">💉 2. Nutrição Parenteral (NP)</h2>
+    <p style="color: #cbd5e1; line-height: 1.6;">Indicação absoluta: TGI não funcionante ou inacessível (Obstrução intestinal, fístulas de alto débito, íleo paralítico).</p>
+
+    <div style="background: rgba(139, 92, 246, 0.05); border: 1px solid rgba(139, 92, 246, 0.2); padding: 25px; border-radius: 12px; margin-top: 20px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
+            <div>
+                <h4 style="color: #a78bfa; margin-top: 0;">NPP (Periférica)</h4>
+                <ul style="color: #94a3b8; font-size: 0.85rem; line-height: 1.6;">
+                    <li>Duração curta (< 14 dias).</li>
+                    <li>Osmolaridade máxima: <strong>900 mOsm/L</strong>.</li>
+                    <li>Acesso mais simples, porém menor densidade calórica.</li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="color: #a78bfa; margin-top: 0;">NPC (Central)</h4>
+                <ul style="color: #94a3b8; font-size: 0.85rem; line-height: 1.6;">
+                    <li>Longa duração ou alta necessidade calórica.</li>
+                    <li>Osmolaridade elevada.</li>
+                    <li>Acesso em veia central (Subclávia ou Jugular).</li>
+                </ul>
+            </div>
+        </div>
     </div>
 
-    <h2 style="color: #e2e8f0;">🧠 7. Pontos Técnicos Importantes</h2>
-    <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 40px;">
-        <span style="background: #334155; color: #fff; padding: 8px 15px; border-radius: 20px; font-size: 0.8rem;">📌 Evolução: Jejum → Liq. Restrita → Geral</span>
-        <span style="background: #334155; color: #fff; padding: 8px 15px; border-radius: 20px; font-size: 0.8rem;">📌 Risco: Desnutrição e Sarcopenia Hospitalar</span>
+    <h2 style="color: #fbbf24; border-bottom: 2px solid #f59e0b; padding-bottom: 8px; margin-top: 40px;">⚠️ 3. Diretrizes de Manejo (Críticos)</h2>
+    <div style="background: #0f172a; padding: 25px; border-radius: 12px; margin-top: 20px;">
+        <table style="width: 100%; border-collapse: collapse; color: #cbd5e1; font-size: 0.9rem;">
+            <tr style="border-bottom: 1px solid #334155;">
+                <td style="padding: 12px; font-weight: bold; color: #fbbf24;">NE Precoce</td>
+                <td style="padding: 12px;">Iniciar em <strong>24h a 48h</strong> da admissão se estável.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #334155;">
+                <td style="padding: 12px; font-weight: bold; color: #fbbf24;">Meta Proteica</td>
+                <td style="padding: 12px;"><strong>1.2 a 2.0 g/kg/dia</strong> (Diretriz BRASPEN).</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #334155;">
+                <td style="padding: 12px; font-weight: bold; color: #fbbf24;">Meta Calórica</td>
+                <td style="padding: 12px;"><strong>25 a 30 kcal/kg/dia</strong> (Ajustar conforme fase da doença).</td>
+            </tr>
+            <tr>
+                <td style="padding: 12px; font-weight: bold; color: #fbbf24;">Glicemia</td>
+                <td style="padding: 12px;">Manter entre <strong>140 e 180 mg/dL</strong>.</td>
+            </tr>
+        </table>
     </div>
 
-    <h2 style="color: #e2e8f0; margin-bottom: 15px;">📚 Resumo Estrutural Final</h2>
-    <table style="width: 100%; border-collapse: collapse; background: #1e293b; border-radius: 10px; overflow: hidden; color: #cbd5e1;">
-        <thead style="background: #10b981; color: white;">
-            <tr>
-                <th style="padding: 15px; text-align: left;">Classificação</th>
-                <th style="padding: 15px; text-align: left;">Tipos</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr style="border-bottom: 1px solid #334155;">
-                <td style="padding: 15px; font-weight: bold;">Consistência</td>
-                <td style="padding: 15px;">Geral, Branda, Pastosa, Líquida</td>
-            </tr>
-            <tr style="border-bottom: 1px solid #334155;">
-                <td style="padding: 15px; font-weight: bold;">Modificação</td>
-                <td style="padding: 15px;">Hipossódica, Hiperproteica, Diabética</td>
-            </tr>
-            <tr>
-                <td style="padding: 15px; font-weight: bold;">Terapêutica</td>
-                <td style="padding: 15px;">Renal, Hepática, Cardioprotetora</td>
-            </tr>
-        </tbody>
-    </table>
+    <div style="margin-top: 40px; padding: 20px; background: rgba(239, 68, 68, 0.1); border-left: 5px solid #ef4444; border-radius: 8px;">
+        <h4 style="color: #f87171; margin-top: 0;"><i class="fas fa-exclamation-triangle"></i> Síndrome de Realimentação</h4>
+        <p style="color: #cbd5e1; font-size: 0.9rem; margin: 0;">
+            Ocorre no início da terapia nutricional em pacientes com desnutrição grave. O pico de insulina causa entrada rápida de eletrólitos nas células, resultando em: 
+            <strong>Hipofosfatemia (principal marcador)</strong>, Hipocalemia e Hipomagnesemia. 
+            <em>Conduta: Iniciar com 25% da meta e repor eletrólitos antes.</em>
+        </p>
+    </div>
+</div>
+</section>
+<section id="avaliacao-clinica" class="tab-content">
+    <div style="background: linear-gradient(135deg, #4f46e5, #7c3aed); padding: 30px; border-radius: 15px; margin-bottom: 25px;">
+        <h1 style="color: white; margin: 0; font-size: 1.8rem;"><i class="fas fa-microscope"></i> Avaliação Nutricional Hospitalar</h1>
+        <p style="color: #e0e7ff; margin-top: 10px;">Do rastreamento ao diagnóstico: Protocolos <strong>GLIM</strong>, <strong>ASG</strong> e <strong>BRASPEN</strong>.</p>
+    </div>
+
+    <h2 style="color: #818cf8; border-bottom: 2px solid #4f46e5; padding-bottom: 8px;">🎯 1. Triagem Nutricional (Screening)</h2>
+    <p style="color: #cbd5e1; font-size: 0.95rem;">Obrigatória nas primeiras **24-48h**. O objetivo é identificar o risco, não o diagnóstico.</p>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-bottom: 30px;">
+        <div style="background: #1e293b; padding: 20px; border-radius: 10px; border-left: 4px solid #4f46e5;">
+            <strong style="color: white;">NRS-2002 (Padrão Ouro)</strong>
+            <p style="color: #94a3b8; font-size: 0.85rem;">Avalia IMC, perda de peso, ingestão alimentar e **gravidade da doença** (estresse metabólico).</p>
+        </div>
+        <div style="background: #1e293b; padding: 20px; border-radius: 10px; border-left: 4px solid #4f46e5;">
+            <strong style="color: white;">MAN (Mini Avaliação)</strong>
+            <p style="color: #94a3b8; font-size: 0.85rem;">Exclusiva para idosos. Considera aspectos neuropsicológicos e mobilidade.</p>
+        </div>
+        <div style="background: #1e293b; padding: 20px; border-radius: 10px; border-left: 4px solid #4f46e5;">
+            <strong style="color: white;">MUST</strong>
+            <p style="color: #94a3b8; font-size: 0.85rem;">Focado em perda de peso e efeito da doença aguda na ingestão > 5 dias.</p>
+        </div>
+    </div>
+
+    <h2 style="color: #818cf8; border-bottom: 2px solid #4f46e5; padding-bottom: 8px;">📏 2. Antropometria e Estimativas</h2>
+    <div style="background: #0f172a; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
+        <p style="color: #cbd5e1;">Em pacientes impossibilitados de deambular, utilizamos as **Equações de Chumlea**: </p>
+        <ul style="color: #94a3b8; font-size: 0.9rem; line-height: 1.8;">
+            <li><strong>Altura Estimada:</strong> Baseada na Altura do Joelho (AJ) e Idade.</li>
+            <li><strong>Peso Estimado:</strong> Utiliza CP (Panturrilha), AJ, CB (Braço) e Dobra Cutânea Subescapular.</li>
+            <li><strong>CP (Circunferência da Panturrilha):</strong> O melhor marcador de massa muscular no idoso (Ponto de corte < 31cm para risco).</li>
+        </ul>
+    </div>
+
+    <div style="background: rgba(79, 70, 229, 0.1); border: 1px solid #4f46e5; padding: 25px; border-radius: 15px; margin-bottom: 30px;">
+        <h3 style="color: #a5b4fc; margin-top: 0;">🔬 Diagnóstico Global (Critérios GLIM)</h3>
+        <p style="color: #cbd5e1; font-size: 0.9rem;">Para diagnosticar desnutrição, é necessário pelo menos **1 critério Fenotípico** + **1 critério Etiológico**:</p>
+        <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 200px;">
+                <h4 style="color: #fbbf24; margin-bottom: 5px;">Fenotípicos</h4>
+                <ul style="color: #94a3b8; font-size: 0.85rem; padding-left: 15px;">
+                    <li>Perda de peso involuntária.</li>
+                    <li>Baixo IMC.</li>
+                    <li>Redução de Massa Muscular.</li>
+                </ul>
+            </div>
+            <div style="flex: 1; min-width: 200px;">
+                <h4 style="color: #fbbf24; margin-bottom: 5px;">Etiológicos</h4>
+                <ul style="color: #94a3b8; font-size: 0.85rem; padding-left: 15px;">
+                    <li>Redução da ingestão/absorção.</li>
+                    <li>Inflamação ou gravidade da doença.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px;">
+        <div style="background: #1e293b; padding: 20px; border-radius: 12px;">
+            <h3 style="color: white; font-size: 1.1rem;">🩺 Exame Físico focado (NFPE)</h3>
+            <ul style="color: #94a3b8; font-size: 0.85rem; line-height: 1.6;">
+                <li><strong>Gordura:</strong> Orbital, tríceps e costelas.</li>
+                <li><strong>Músculo:</strong> Têmpora, clavícula, interósseos e quadríceps.</li>
+                <li><strong>Funcionalidade:</strong> Força de preensão palmar (Dinamometria).</li>
+            </ul>
+        </div>
+        <div style="background: #1e293b; padding: 20px; border-radius: 12px;">
+            <h3 style="color: white; font-size: 1.1rem;">🧪 Marcadores Bioquímicos</h3>
+            <ul style="color: #94a3b8; font-size: 0.85rem; line-height: 1.6;">
+                <li><strong>PCR vs Albumina:</strong> Em inflamação aguda, a Albumina cai (proteína de fase aguda negativa) e o PCR sobe.</li>
+                <li><strong>Balanço Nitrogenado:</strong> Avalia o catabolismo proteico.</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2 style="color: #818cf8; border-bottom: 2px solid #4f46e5; padding-bottom: 8px;">🚑 Peculiaridades por Público</h2>
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="padding: 15px; background: rgba(255,255,255,0.03); border-radius: 8px;">
+            <strong style="color: #60a5fa;">Paciente Crítico (UTI):</strong> Hipermetabolismo e catabolismo intenso. Foco em evitar superalimentação (overfeeding) na fase aguda.
+        </div>
+        <div style="padding: 15px; background: rgba(255,255,255,0.03); border-radius: 8px;">
+            <strong style="color: #34d399;">Lesão por Pressão (LPP):</strong> Necessidade aumentada de PTN (1.2-1.5g/kg), Zinco, Vitamina C e Arginina.
+        </div>
+        <div style="padding: 15px; background: rgba(255,255,255,0.03); border-radius: 8px;">
+            <strong style="color: #fbbf24;">Pediatria:</strong> Uso de curvas da OMS (Z-score). Atenção à velocidade de crescimento e desidratação.
+        </div>
+    </div>
 </section>
 <section id="alimentos" class="tab-content">
     <div class="header-modern" style="background: linear-gradient(135deg, #10b981, #064e3b); padding: 40px; border-radius: 24px; margin-bottom: 30px; color: white;">
