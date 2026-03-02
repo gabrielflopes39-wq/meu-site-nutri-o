@@ -705,3 +705,19 @@ details summary:hover {
     margin: 0 auto;
     font-family: 'Roboto', sans-serif;
 }
+.post {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #334155;
+    transition: transform 0.2s;
+}
+/* Configuração das Abas */
+.tab-content {
+    display: none; /* Esconde por padrão */
+}
+
+.tab-content.active {
+    display: block !important; /* Mostra quando ativo */
+}

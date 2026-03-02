@@ -2,25 +2,29 @@
 // 1. NAVEGAÇÃO ENTRE ABAS
 // ==========================================================================
 function nav(id) {
-    // Remove 'active' de todas as seções
-    const secoes = document.querySelectorAll('.tab-content');
-    secoes.forEach(s => s.classList.remove('active'));
+    console.log("Tentando abrir a aba: " + id);
 
-    // Mostra a seção desejada
-    const secaoAtiva = document.getElementById(id);
-    if (secaoAtiva) {
-        secaoAtiva.classList.add('active');
+    // 1. Seleciona todas as seções e esconde
+    const secoes = document.querySelectorAll('.tab-content');
+    secoes.forEach(secao => {
+        secao.classList.remove('active');
+        secao.style.display = 'none'; // Garante que tudo suma
+    });
+
+    // 2. Tenta encontrar a seção que você quer abrir
+    const secaoDesejada = document.getElementById(id);
+
+    if (secaoDesejada) {
+        secaoDesejada.classList.add('active');
+        secaoDesejada.style.display = 'block'; // Força a exibição
         window.scrollTo(0, 0);
+        console.log("Sucesso! A seção " + id + " agora está visível.");
     } else {
-        console.error("Seção não encontrada: " + id);
+        console.error("ERRO: Não existe nenhuma seção com o ID: " + id);
     }
 
-    // Atualiza o visual dos itens da sidebar
+    // 3. Atualiza os botões do menu (opcional)
     document.querySelectorAll('.menu-item').forEach(item => item.classList.remove('active'));
-    
-    // Tenta encontrar o botão que foi clicado para marcar como ativo
-    const linkAtivo = document.querySelector(`[onclick="nav('${id}')"]`);
-    if (linkAtivo) linkAtivo.classList.add('active');
 }
 
 // ==========================================================================
@@ -638,4 +642,27 @@ function carregarHistoricoJornada(userId) {
               lista.appendChild(item);
           });
       });
+}
+
+// ==========================================
+// 1. SISTEMA DE NAVEGAÇÃO
+// ==========================================
+function nav(id) {
+    console.log("Navegando para: " + id);
+    
+    // Esconde todas as seções
+    const secoes = document.querySelectorAll('.tab-content');
+    secoes.forEach(s => {
+        s.style.display = 'none';
+        s.classList.remove('active');
+    });
+
+    // Mostra a seção alvo
+    const alvo = document.getElementById(id);
+    if (alvo) {
+        alvo.style.display = 'block';
+        alvo.classList.add('active');
+    } else {
+        console.error("ERRO: Seção não encontrada -> " + id);
+    }
 }
