@@ -666,3 +666,16 @@ function nav(id) {
         console.error("ERRO: Seção não encontrada -> " + id);
     }
 }
+import { Analytics } from '@vercel/analytics/react';
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="pt-br">
+      <body>
+        {children}
+        {/* O componente deve ficar aqui, antes de fechar o body */}
+        <Analytics /> 
+      </body>
+    </html>
+  );
+}
